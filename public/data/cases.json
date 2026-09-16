@@ -1,0 +1,254 @@
+[
+  {
+    "case_id": "C-10481",
+    "complaint_id": "NCRP-DEMO-10481",
+    "created_at": "2026-09-16T12:04:18+05:30",
+    "status": "ACTION_INITIATED",
+    "crime_category": "CYBER_FINANCIAL_FRAUD",
+    "reported_amount": 92000,
+    "reporting_timestamp": "2026-09-16T12:04:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (R. Kumar)",
+      "contact_masked": "+91-******100"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX4867",
+      "bank_name": "State Bank Of India"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-RANGA-REDDY-01",
+      "unit_name": "Ranga Reddy Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10482",
+    "complaint_id": "NCRP-DEMO-10482",
+    "created_at": "2026-09-16T10:31:18+05:30",
+    "status": "FINANCIAL_INTELLIGENCE_PROCESSING",
+    "crime_category": "UPI_FRAUD",
+    "reported_amount": 172000,
+    "reporting_timestamp": "2026-09-16T10:31:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (S. Reddy)",
+      "contact_masked": "+91-******101"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX6486",
+      "bank_name": "State Bank Of India"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-HYDERABAD-01",
+      "unit_name": "Hyderabad Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10483",
+    "complaint_id": "NCRP-DEMO-10483",
+    "created_at": "2026-09-16T11:01:18+05:30",
+    "status": "RESOLVED",
+    "crime_category": "ONLINE_BANKING_FRAUD",
+    "reported_amount": 118000,
+    "reporting_timestamp": "2026-09-16T11:01:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (A. Sharma)",
+      "contact_masked": "+91-******102"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX8105",
+      "bank_name": "Kotak Mahindra Bank Limited"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-MEDCHAL-MALKAJGIRI-01",
+      "unit_name": "Medchal Malkajgiri Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10484",
+    "complaint_id": "NCRP-DEMO-10484",
+    "created_at": "2026-09-16T11:27:18+05:30",
+    "status": "UNDER_INVESTIGATION",
+    "crime_category": "INVESTMENT_SCAM",
+    "reported_amount": 59000,
+    "reporting_timestamp": "2026-09-16T11:27:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (P. Rao)",
+      "contact_masked": "+91-******103"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX9724",
+      "bank_name": "ICICI Bank Ltd"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-SANGAREDDY-01",
+      "unit_name": "Sangareddy Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10485",
+    "complaint_id": "NCRP-DEMO-10485",
+    "created_at": "2026-09-16T08:54:18+05:30",
+    "status": "FINANCIAL_INTELLIGENCE_PROCESSING",
+    "crime_category": "PHISHING",
+    "reported_amount": 119000,
+    "reporting_timestamp": "2026-09-16T08:54:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (M. Iyer)",
+      "contact_masked": "+91-******104"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX2343",
+      "bank_name": "ICICI Bank Ltd"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-JOGULAMBA-GADWAL-01",
+      "unit_name": "Jogulamba Gadwal Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10486",
+    "complaint_id": "NCRP-DEMO-10486",
+    "created_at": "2026-09-16T10:10:18+05:30",
+    "status": "RESOLVED",
+    "crime_category": "CYBER_FINANCIAL_FRAUD",
+    "reported_amount": 189000,
+    "reporting_timestamp": "2026-09-16T10:10:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (V. Naidu)",
+      "contact_masked": "+91-******105"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX3962",
+      "bank_name": "State Bank Of India"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-WANAPARTHY-01",
+      "unit_name": "Wanaparthy Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10487",
+    "complaint_id": "NCRP-DEMO-10487",
+    "created_at": "2026-09-16T10:39:18+05:30",
+    "status": "UNDER_INVESTIGATION",
+    "crime_category": "UPI_FRAUD",
+    "reported_amount": 154000,
+    "reporting_timestamp": "2026-09-16T10:39:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (K. Prasad)",
+      "contact_masked": "+91-******106"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX5581",
+      "bank_name": "State Bank Of India"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-NALGONDA-01",
+      "unit_name": "Nalgonda Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10488",
+    "complaint_id": "NCRP-DEMO-10488",
+    "created_at": "2026-09-16T09:28:18+05:30",
+    "status": "FINANCIAL_INTELLIGENCE_PROCESSING",
+    "crime_category": "ONLINE_BANKING_FRAUD",
+    "reported_amount": 182000,
+    "reporting_timestamp": "2026-09-16T09:28:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (D. Varma)",
+      "contact_masked": "+91-******107"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX7200",
+      "bank_name": "Bank Of Baroda"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-SURYAPET-01",
+      "unit_name": "Suryapet Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10489",
+    "complaint_id": "NCRP-DEMO-10489",
+    "created_at": "2026-09-16T09:45:18+05:30",
+    "status": "RESOLVED",
+    "crime_category": "INVESTMENT_SCAM",
+    "reported_amount": 176000,
+    "reporting_timestamp": "2026-09-16T09:45:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (N. Chandra)",
+      "contact_masked": "+91-******108"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX8819",
+      "bank_name": "Axis Bank Ltd"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-KHAMMAM-01",
+      "unit_name": "Khammam Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10490",
+    "complaint_id": "NCRP-DEMO-10490",
+    "created_at": "2026-09-16T09:55:18+05:30",
+    "status": "UNDER_INVESTIGATION",
+    "crime_category": "PHISHING",
+    "reported_amount": 156000,
+    "reporting_timestamp": "2026-09-16T09:55:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (J. Rao)",
+      "contact_masked": "+91-******109"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX1993",
+      "bank_name": "State Bank Of India"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-VIKARABAD-01",
+      "unit_name": "Vikarabad Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10491",
+    "complaint_id": "NCRP-DEMO-10491",
+    "created_at": "2026-09-16T11:24:18+05:30",
+    "status": "FINANCIAL_INTELLIGENCE_PROCESSING",
+    "crime_category": "CYBER_FINANCIAL_FRAUD",
+    "reported_amount": 49000,
+    "reporting_timestamp": "2026-09-16T11:24:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (L. Shetty)",
+      "contact_masked": "+91-******110"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX9374",
+      "bank_name": "State Bank Of India"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-BHADRADRI-KOTHAGUDEM-01",
+      "unit_name": "Bhadradri Kothagudem Cybercrime Unit"
+    }
+  },
+  {
+    "case_id": "C-10492",
+    "complaint_id": "NCRP-DEMO-10492",
+    "created_at": "2026-09-16T10:20:18+05:30",
+    "status": "RESOLVED",
+    "crime_category": "UPI_FRAUD",
+    "reported_amount": 86000,
+    "reporting_timestamp": "2026-09-16T10:20:18+05:30",
+    "victim": {
+      "display_name": "Masked Victim (T. Menon)",
+      "contact_masked": "+91-******111"
+    },
+    "known_financial_context": {
+      "victim_account_masked": "XXXXXX7755",
+      "bank_name": "ICICI Bank Ltd"
+    },
+    "assigned_lea": {
+      "unit_id": "LEA-TG-MEDAK-01",
+      "unit_name": "Medak Cybercrime Unit"
+    }
+  }
+]

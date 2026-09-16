@@ -1,0 +1,2624 @@
+[
+  {
+    "atm_id": "ATM-RANGA-REDDY-47029",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 30,
+        "total_amount": 721000,
+        "avg_amount": 24033.33
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889205",
+          "timestamp": "2026-09-15T07:02:52+05:30",
+          "amount": 19000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889216",
+          "timestamp": "2026-09-14T00:39:12+05:30",
+          "amount": 23000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889208",
+          "timestamp": "2026-09-11T16:09:12+05:30",
+          "amount": 8500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889203",
+          "timestamp": "2026-09-08T22:06:30+05:30",
+          "amount": 37500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889224",
+          "timestamp": "2026-09-08T21:37:05+05:30",
+          "amount": 33000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889212",
+          "timestamp": "2026-09-08T16:23:50+05:30",
+          "amount": 28000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889207",
+          "timestamp": "2026-09-07T11:57:36+05:30",
+          "amount": 10000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889223",
+          "timestamp": "2026-09-06T22:01:45+05:30",
+          "amount": 29000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889201",
+          "timestamp": "2026-09-05T09:45:24+05:30",
+          "amount": 31000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889217",
+          "timestamp": "2026-09-04T19:10:41+05:30",
+          "amount": 33500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889225",
+          "timestamp": "2026-09-03T22:12:58+05:30",
+          "amount": 25500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10481"
+        },
+        {
+          "withdrawal_id": "W-889214",
+          "timestamp": "2026-09-02T03:39:05+05:30",
+          "amount": 27500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889206",
+          "timestamp": "2026-09-02T02:58:25+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889210",
+          "timestamp": "2026-08-31T16:43:52+05:30",
+          "amount": 18000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889219",
+          "timestamp": "2026-08-30T23:08:27+05:30",
+          "amount": 17000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889229",
+          "timestamp": "2026-08-30T00:29:35+05:30",
+          "amount": 14500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10481"
+        },
+        {
+          "withdrawal_id": "W-889211",
+          "timestamp": "2026-08-29T20:54:20+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889221",
+          "timestamp": "2026-08-29T09:11:43+05:30",
+          "amount": 33000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10481"
+        },
+        {
+          "withdrawal_id": "W-889227",
+          "timestamp": "2026-08-29T00:23:22+05:30",
+          "amount": 38000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889220",
+          "timestamp": "2026-08-28T06:57:03+05:30",
+          "amount": 26000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889230",
+          "timestamp": "2026-08-28T02:23:54+05:30",
+          "amount": 19000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889209",
+          "timestamp": "2026-08-27T12:49:14+05:30",
+          "amount": 8500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10481"
+        },
+        {
+          "withdrawal_id": "W-889204",
+          "timestamp": "2026-08-27T05:07:26+05:30",
+          "amount": 16500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889228",
+          "timestamp": "2026-08-26T06:56:13+05:30",
+          "amount": 32000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889226",
+          "timestamp": "2026-08-24T21:26:26+05:30",
+          "amount": 29500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889202",
+          "timestamp": "2026-08-24T01:05:47+05:30",
+          "amount": 15500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889222",
+          "timestamp": "2026-08-22T00:47:30+05:30",
+          "amount": 39500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889218",
+          "timestamp": "2026-08-21T05:31:19+05:30",
+          "amount": 12000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10481"
+        },
+        {
+          "withdrawal_id": "W-889215",
+          "timestamp": "2026-08-20T12:05:14+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889213",
+          "timestamp": "2026-08-17T05:20:06+05:30",
+          "amount": 26000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10481"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-HYDERABAD-26112",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 32,
+        "total_amount": 760500,
+        "avg_amount": 23765.63
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889255",
+          "timestamp": "2026-09-14T12:06:55+05:30",
+          "amount": 37500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889245",
+          "timestamp": "2026-09-13T21:26:47+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889239",
+          "timestamp": "2026-09-13T06:26:51+05:30",
+          "amount": 30000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889253",
+          "timestamp": "2026-09-13T04:12:02+05:30",
+          "amount": 33500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889256",
+          "timestamp": "2026-09-12T10:50:00+05:30",
+          "amount": 15500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889250",
+          "timestamp": "2026-09-12T05:02:32+05:30",
+          "amount": 36000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889247",
+          "timestamp": "2026-09-11T10:08:23+05:30",
+          "amount": 9000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889249",
+          "timestamp": "2026-09-11T01:00:00+05:30",
+          "amount": 14500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889260",
+          "timestamp": "2026-09-10T12:38:20+05:30",
+          "amount": 17000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889257",
+          "timestamp": "2026-09-09T20:59:02+05:30",
+          "amount": 23000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889248",
+          "timestamp": "2026-09-09T05:20:17+05:30",
+          "amount": 13000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10482"
+        },
+        {
+          "withdrawal_id": "W-889243",
+          "timestamp": "2026-09-06T05:45:50+05:30",
+          "amount": 21500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889261",
+          "timestamp": "2026-09-06T02:01:54+05:30",
+          "amount": 17000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889244",
+          "timestamp": "2026-08-31T06:00:33+05:30",
+          "amount": 20000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889241",
+          "timestamp": "2026-08-31T02:23:03+05:30",
+          "amount": 32000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10482"
+        },
+        {
+          "withdrawal_id": "W-889251",
+          "timestamp": "2026-08-30T08:39:15+05:30",
+          "amount": 13500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889259",
+          "timestamp": "2026-08-28T21:28:49+05:30",
+          "amount": 23000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889234",
+          "timestamp": "2026-08-27T16:47:03+05:30",
+          "amount": 18000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889233",
+          "timestamp": "2026-08-27T11:18:03+05:30",
+          "amount": 10000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889237",
+          "timestamp": "2026-08-27T10:08:40+05:30",
+          "amount": 32000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10482"
+        },
+        {
+          "withdrawal_id": "W-889242",
+          "timestamp": "2026-08-24T18:50:38+05:30",
+          "amount": 5500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889236",
+          "timestamp": "2026-08-23T10:42:55+05:30",
+          "amount": 34500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889258",
+          "timestamp": "2026-08-21T19:10:30+05:30",
+          "amount": 31500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889231",
+          "timestamp": "2026-08-21T08:44:40+05:30",
+          "amount": 37500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889252",
+          "timestamp": "2026-08-21T08:39:27+05:30",
+          "amount": 6500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889240",
+          "timestamp": "2026-08-21T07:00:16+05:30",
+          "amount": 23500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889232",
+          "timestamp": "2026-08-21T04:54:10+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889235",
+          "timestamp": "2026-08-19T07:54:56+05:30",
+          "amount": 27000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10482"
+        },
+        {
+          "withdrawal_id": "W-889238",
+          "timestamp": "2026-08-18T03:26:45+05:30",
+          "amount": 32000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889246",
+          "timestamp": "2026-08-17T22:34:00+05:30",
+          "amount": 24000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889254",
+          "timestamp": "2026-08-17T21:12:15+05:30",
+          "amount": 21000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889262",
+          "timestamp": "2026-08-17T08:34:21+05:30",
+          "amount": 38000,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-MEDCHAL-MALKAJGIRI-N9252",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 24,
+        "total_amount": 563000,
+        "avg_amount": 23458.33
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889265",
+          "timestamp": "2026-09-15T08:01:59+05:30",
+          "amount": 23500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10483"
+        },
+        {
+          "withdrawal_id": "W-889271",
+          "timestamp": "2026-09-15T00:18:39+05:30",
+          "amount": 39500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10483"
+        },
+        {
+          "withdrawal_id": "W-889273",
+          "timestamp": "2026-09-14T10:53:46+05:30",
+          "amount": 10500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889281",
+          "timestamp": "2026-09-11T23:09:01+05:30",
+          "amount": 32500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889268",
+          "timestamp": "2026-09-11T12:56:31+05:30",
+          "amount": 24500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889285",
+          "timestamp": "2026-09-11T08:30:43+05:30",
+          "amount": 32500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10483"
+        },
+        {
+          "withdrawal_id": "W-889279",
+          "timestamp": "2026-09-10T02:19:11+05:30",
+          "amount": 31000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889269",
+          "timestamp": "2026-09-09T21:58:12+05:30",
+          "amount": 14000,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889266",
+          "timestamp": "2026-09-05T12:37:11+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889276",
+          "timestamp": "2026-09-04T09:40:06+05:30",
+          "amount": 8000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889274",
+          "timestamp": "2026-09-02T11:25:06+05:30",
+          "amount": 23500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10483"
+        },
+        {
+          "withdrawal_id": "W-889267",
+          "timestamp": "2026-09-01T01:52:10+05:30",
+          "amount": 30500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889275",
+          "timestamp": "2026-08-31T09:06:22+05:30",
+          "amount": 20000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889277",
+          "timestamp": "2026-08-31T05:51:43+05:30",
+          "amount": 29500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889280",
+          "timestamp": "2026-08-29T00:51:53+05:30",
+          "amount": 7500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889278",
+          "timestamp": "2026-08-26T22:40:34+05:30",
+          "amount": 34000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889263",
+          "timestamp": "2026-08-26T21:03:38+05:30",
+          "amount": 10500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889283",
+          "timestamp": "2026-08-26T19:06:37+05:30",
+          "amount": 33000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889270",
+          "timestamp": "2026-08-26T06:25:11+05:30",
+          "amount": 23500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889272",
+          "timestamp": "2026-08-25T23:56:45+05:30",
+          "amount": 26500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889284",
+          "timestamp": "2026-08-23T17:29:41+05:30",
+          "amount": 29000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889264",
+          "timestamp": "2026-08-18T15:27:23+05:30",
+          "amount": 20000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889286",
+          "timestamp": "2026-08-17T13:24:56+05:30",
+          "amount": 33000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889282",
+          "timestamp": "2026-08-17T03:38:46+05:30",
+          "amount": 14000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10483"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-SANGAREDDY-WF671",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 22,
+        "total_amount": 547000,
+        "avg_amount": 24863.64
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889287",
+          "timestamp": "2026-09-16T11:35:18+05:30",
+          "amount": 30500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889308",
+          "timestamp": "2026-09-14T11:34:01+05:30",
+          "amount": 27000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889295",
+          "timestamp": "2026-09-14T03:37:21+05:30",
+          "amount": 9000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889294",
+          "timestamp": "2026-09-12T01:07:46+05:30",
+          "amount": 19500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889306",
+          "timestamp": "2026-09-10T18:01:20+05:30",
+          "amount": 19500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889289",
+          "timestamp": "2026-09-09T01:44:31+05:30",
+          "amount": 27000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889292",
+          "timestamp": "2026-09-08T05:34:22+05:30",
+          "amount": 25500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889305",
+          "timestamp": "2026-09-03T17:53:40+05:30",
+          "amount": 35000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889298",
+          "timestamp": "2026-09-01T18:23:34+05:30",
+          "amount": 15000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889301",
+          "timestamp": "2026-08-30T20:14:06+05:30",
+          "amount": 28500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889297",
+          "timestamp": "2026-08-29T07:35:38+05:30",
+          "amount": 25500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889296",
+          "timestamp": "2026-08-29T06:02:59+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889293",
+          "timestamp": "2026-08-28T17:37:29+05:30",
+          "amount": 33500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889302",
+          "timestamp": "2026-08-26T11:05:32+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889303",
+          "timestamp": "2026-08-26T06:07:38+05:30",
+          "amount": 11500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889290",
+          "timestamp": "2026-08-26T01:56:51+05:30",
+          "amount": 12500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889304",
+          "timestamp": "2026-08-23T18:21:17+05:30",
+          "amount": 38000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889307",
+          "timestamp": "2026-08-21T05:07:35+05:30",
+          "amount": 9000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889300",
+          "timestamp": "2026-08-20T18:27:23+05:30",
+          "amount": 18000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889291",
+          "timestamp": "2026-08-19T23:43:58+05:30",
+          "amount": 25500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889299",
+          "timestamp": "2026-08-19T11:02:56+05:30",
+          "amount": 26000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10484"
+        },
+        {
+          "withdrawal_id": "W-889288",
+          "timestamp": "2026-08-18T12:13:45+05:30",
+          "amount": 35000,
+          "status": "FLAGGED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-JOGULAMBA-GADWAL-WG741",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 33,
+        "total_amount": 819500,
+        "avg_amount": 24833.33
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889329",
+          "timestamp": "2026-09-14T09:42:45+05:30",
+          "amount": 37000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10485"
+        },
+        {
+          "withdrawal_id": "W-889323",
+          "timestamp": "2026-09-12T19:42:24+05:30",
+          "amount": 35500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889316",
+          "timestamp": "2026-09-11T09:14:40+05:30",
+          "amount": 10000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889330",
+          "timestamp": "2026-09-10T07:08:14+05:30",
+          "amount": 30500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889337",
+          "timestamp": "2026-09-08T02:15:18+05:30",
+          "amount": 34000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889322",
+          "timestamp": "2026-09-07T19:00:01+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889313",
+          "timestamp": "2026-09-06T11:29:58+05:30",
+          "amount": 13500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889320",
+          "timestamp": "2026-09-05T19:51:41+05:30",
+          "amount": 25500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889332",
+          "timestamp": "2026-09-04T22:51:54+05:30",
+          "amount": 39000,
+          "status": "FLAGGED",
+          "related_case_id": "C-10485"
+        },
+        {
+          "withdrawal_id": "W-889326",
+          "timestamp": "2026-09-04T08:21:58+05:30",
+          "amount": 6000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889334",
+          "timestamp": "2026-09-02T10:08:05+05:30",
+          "amount": 23000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889314",
+          "timestamp": "2026-09-02T01:50:09+05:30",
+          "amount": 32000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889317",
+          "timestamp": "2026-08-31T22:17:57+05:30",
+          "amount": 19000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889318",
+          "timestamp": "2026-08-31T20:40:43+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889315",
+          "timestamp": "2026-08-30T00:52:34+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889309",
+          "timestamp": "2026-08-28T19:14:49+05:30",
+          "amount": 33500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889319",
+          "timestamp": "2026-08-26T15:26:59+05:30",
+          "amount": 13000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889312",
+          "timestamp": "2026-08-26T12:00:07+05:30",
+          "amount": 17000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10485"
+        },
+        {
+          "withdrawal_id": "W-889324",
+          "timestamp": "2026-08-25T05:52:50+05:30",
+          "amount": 31000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10485"
+        },
+        {
+          "withdrawal_id": "W-889335",
+          "timestamp": "2026-08-24T10:37:42+05:30",
+          "amount": 37000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10485"
+        },
+        {
+          "withdrawal_id": "W-889333",
+          "timestamp": "2026-08-24T04:48:08+05:30",
+          "amount": 37500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889340",
+          "timestamp": "2026-08-24T02:50:47+05:30",
+          "amount": 40000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889325",
+          "timestamp": "2026-08-24T01:48:53+05:30",
+          "amount": 5000,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889310",
+          "timestamp": "2026-08-23T01:15:10+05:30",
+          "amount": 21000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889327",
+          "timestamp": "2026-08-22T03:27:07+05:30",
+          "amount": 33000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889321",
+          "timestamp": "2026-08-22T02:57:37+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889328",
+          "timestamp": "2026-08-21T22:50:59+05:30",
+          "amount": 8500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889331",
+          "timestamp": "2026-08-21T19:30:08+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889339",
+          "timestamp": "2026-08-21T16:27:11+05:30",
+          "amount": 12000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10485"
+        },
+        {
+          "withdrawal_id": "W-889336",
+          "timestamp": "2026-08-21T08:22:25+05:30",
+          "amount": 35500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889311",
+          "timestamp": "2026-08-20T19:28:23+05:30",
+          "amount": 7500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889341",
+          "timestamp": "2026-08-20T01:07:35+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889338",
+          "timestamp": "2026-08-16T15:42:24+05:30",
+          "amount": 8000,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-WANAPARTHY-87014",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 38,
+        "total_amount": 879000,
+        "avg_amount": 23131.58
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889357",
+          "timestamp": "2026-09-15T17:20:49+05:30",
+          "amount": 24500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889367",
+          "timestamp": "2026-09-15T03:50:39+05:30",
+          "amount": 10500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889370",
+          "timestamp": "2026-09-15T02:28:33+05:30",
+          "amount": 35500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10486"
+        },
+        {
+          "withdrawal_id": "W-889373",
+          "timestamp": "2026-09-14T09:38:18+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889356",
+          "timestamp": "2026-09-14T04:15:30+05:30",
+          "amount": 29500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889349",
+          "timestamp": "2026-09-14T00:53:25+05:30",
+          "amount": 38000,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889350",
+          "timestamp": "2026-09-13T17:32:17+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889379",
+          "timestamp": "2026-09-11T17:36:08+05:30",
+          "amount": 6000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889353",
+          "timestamp": "2026-09-11T07:23:23+05:30",
+          "amount": 17500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889362",
+          "timestamp": "2026-09-09T18:13:22+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889369",
+          "timestamp": "2026-09-09T06:48:52+05:30",
+          "amount": 6500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889345",
+          "timestamp": "2026-09-08T13:28:25+05:30",
+          "amount": 16000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889368",
+          "timestamp": "2026-09-07T06:03:41+05:30",
+          "amount": 15500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889348",
+          "timestamp": "2026-09-05T23:29:38+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889378",
+          "timestamp": "2026-09-05T02:57:31+05:30",
+          "amount": 5500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889355",
+          "timestamp": "2026-09-04T13:19:53+05:30",
+          "amount": 25500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889342",
+          "timestamp": "2026-08-31T05:06:57+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889361",
+          "timestamp": "2026-08-31T02:35:51+05:30",
+          "amount": 11500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10486"
+        },
+        {
+          "withdrawal_id": "W-889364",
+          "timestamp": "2026-08-30T07:25:43+05:30",
+          "amount": 16000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889374",
+          "timestamp": "2026-08-29T22:59:51+05:30",
+          "amount": 17000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889346",
+          "timestamp": "2026-08-29T20:34:09+05:30",
+          "amount": 35500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889344",
+          "timestamp": "2026-08-29T06:27:26+05:30",
+          "amount": 6000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889358",
+          "timestamp": "2026-08-28T23:25:52+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889375",
+          "timestamp": "2026-08-27T21:41:53+05:30",
+          "amount": 9500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889372",
+          "timestamp": "2026-08-27T20:16:17+05:30",
+          "amount": 31000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889371",
+          "timestamp": "2026-08-27T19:02:56+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889363",
+          "timestamp": "2026-08-26T23:56:13+05:30",
+          "amount": 12000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889366",
+          "timestamp": "2026-08-26T04:59:29+05:30",
+          "amount": 32000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889360",
+          "timestamp": "2026-08-25T20:51:17+05:30",
+          "amount": 18000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10486"
+        },
+        {
+          "withdrawal_id": "W-889359",
+          "timestamp": "2026-08-25T09:03:22+05:30",
+          "amount": 33500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889351",
+          "timestamp": "2026-08-20T19:03:02+05:30",
+          "amount": 26000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889377",
+          "timestamp": "2026-08-20T15:30:56+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889347",
+          "timestamp": "2026-08-19T22:41:55+05:30",
+          "amount": 20000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889352",
+          "timestamp": "2026-08-19T19:46:14+05:30",
+          "amount": 16500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889343",
+          "timestamp": "2026-08-18T16:12:12+05:30",
+          "amount": 35000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889365",
+          "timestamp": "2026-08-18T07:09:51+05:30",
+          "amount": 28500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889354",
+          "timestamp": "2026-08-17T20:59:35+05:30",
+          "amount": 33000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889376",
+          "timestamp": "2026-08-17T18:45:34+05:30",
+          "amount": 31500,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-NALGONDA-75079",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 31,
+        "total_amount": 606500,
+        "avg_amount": 19564.52
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889384",
+          "timestamp": "2026-09-15T13:12:52+05:30",
+          "amount": 11500,
+          "status": "FLAGGED",
+          "related_case_id": "C-10487"
+        },
+        {
+          "withdrawal_id": "W-889385",
+          "timestamp": "2026-09-14T18:33:34+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889387",
+          "timestamp": "2026-09-13T02:51:58+05:30",
+          "amount": 27000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10487"
+        },
+        {
+          "withdrawal_id": "W-889380",
+          "timestamp": "2026-09-10T11:50:08+05:30",
+          "amount": 12500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10487"
+        },
+        {
+          "withdrawal_id": "W-889391",
+          "timestamp": "2026-09-10T06:38:52+05:30",
+          "amount": 27500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889408",
+          "timestamp": "2026-09-09T17:12:03+05:30",
+          "amount": 14000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889410",
+          "timestamp": "2026-09-07T19:47:52+05:30",
+          "amount": 8000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889409",
+          "timestamp": "2026-09-07T10:14:05+05:30",
+          "amount": 15000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10487"
+        },
+        {
+          "withdrawal_id": "W-889403",
+          "timestamp": "2026-09-07T09:50:47+05:30",
+          "amount": 14000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889395",
+          "timestamp": "2026-09-06T00:13:24+05:30",
+          "amount": 40000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889404",
+          "timestamp": "2026-09-04T07:28:12+05:30",
+          "amount": 5500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889394",
+          "timestamp": "2026-09-03T05:22:19+05:30",
+          "amount": 6500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889383",
+          "timestamp": "2026-09-02T22:45:10+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889381",
+          "timestamp": "2026-09-02T19:28:29+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889389",
+          "timestamp": "2026-08-31T11:08:46+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889392",
+          "timestamp": "2026-08-29T03:35:36+05:30",
+          "amount": 15500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889401",
+          "timestamp": "2026-08-29T01:35:03+05:30",
+          "amount": 15000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889398",
+          "timestamp": "2026-08-25T21:03:40+05:30",
+          "amount": 8000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889382",
+          "timestamp": "2026-08-25T17:43:44+05:30",
+          "amount": 7000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889400",
+          "timestamp": "2026-08-25T11:08:25+05:30",
+          "amount": 29000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889407",
+          "timestamp": "2026-08-25T03:34:08+05:30",
+          "amount": 16500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889402",
+          "timestamp": "2026-08-24T19:50:19+05:30",
+          "amount": 12000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889393",
+          "timestamp": "2026-08-24T10:34:14+05:30",
+          "amount": 22500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10487"
+        },
+        {
+          "withdrawal_id": "W-889386",
+          "timestamp": "2026-08-23T10:11:46+05:30",
+          "amount": 16500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889388",
+          "timestamp": "2026-08-23T03:31:58+05:30",
+          "amount": 5500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889397",
+          "timestamp": "2026-08-19T08:08:02+05:30",
+          "amount": 35000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10487"
+        },
+        {
+          "withdrawal_id": "W-889406",
+          "timestamp": "2026-08-19T02:53:05+05:30",
+          "amount": 11500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889396",
+          "timestamp": "2026-08-18T21:37:45+05:30",
+          "amount": 35500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889390",
+          "timestamp": "2026-08-18T17:56:28+05:30",
+          "amount": 28000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889405",
+          "timestamp": "2026-08-18T07:43:30+05:30",
+          "amount": 36500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889399",
+          "timestamp": "2026-08-18T02:06:21+05:30",
+          "amount": 9000,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-SURYAPET-HYD83",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 40,
+        "total_amount": 996000,
+        "avg_amount": 24900
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889429",
+          "timestamp": "2026-09-15T10:21:48+05:30",
+          "amount": 32500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10488"
+        },
+        {
+          "withdrawal_id": "W-889438",
+          "timestamp": "2026-09-14T23:11:25+05:30",
+          "amount": 36500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889437",
+          "timestamp": "2026-09-14T17:50:04+05:30",
+          "amount": 9000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889418",
+          "timestamp": "2026-09-14T12:32:33+05:30",
+          "amount": 16000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10488"
+        },
+        {
+          "withdrawal_id": "W-889427",
+          "timestamp": "2026-09-11T05:01:05+05:30",
+          "amount": 8500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889447",
+          "timestamp": "2026-09-11T01:37:00+05:30",
+          "amount": 8000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889442",
+          "timestamp": "2026-09-10T17:45:28+05:30",
+          "amount": 17000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889412",
+          "timestamp": "2026-09-10T09:18:50+05:30",
+          "amount": 24500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889430",
+          "timestamp": "2026-09-09T10:25:47+05:30",
+          "amount": 26000,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889428",
+          "timestamp": "2026-09-09T06:57:34+05:30",
+          "amount": 10000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889411",
+          "timestamp": "2026-09-08T17:28:21+05:30",
+          "amount": 39500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889449",
+          "timestamp": "2026-09-06T10:12:22+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889434",
+          "timestamp": "2026-09-05T08:01:52+05:30",
+          "amount": 31500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889440",
+          "timestamp": "2026-09-05T03:14:21+05:30",
+          "amount": 16000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889450",
+          "timestamp": "2026-09-04T05:29:03+05:30",
+          "amount": 36000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889419",
+          "timestamp": "2026-09-02T17:31:31+05:30",
+          "amount": 40000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889423",
+          "timestamp": "2026-09-02T01:28:02+05:30",
+          "amount": 33500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889416",
+          "timestamp": "2026-09-01T21:26:30+05:30",
+          "amount": 39500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889436",
+          "timestamp": "2026-09-01T07:23:09+05:30",
+          "amount": 16000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889448",
+          "timestamp": "2026-09-01T01:51:31+05:30",
+          "amount": 18000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889446",
+          "timestamp": "2026-08-31T17:59:38+05:30",
+          "amount": 24500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889441",
+          "timestamp": "2026-08-30T23:07:54+05:30",
+          "amount": 28500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889421",
+          "timestamp": "2026-08-28T23:04:02+05:30",
+          "amount": 40000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889433",
+          "timestamp": "2026-08-28T18:59:59+05:30",
+          "amount": 25000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889425",
+          "timestamp": "2026-08-28T13:13:41+05:30",
+          "amount": 34000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889414",
+          "timestamp": "2026-08-27T18:15:32+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889445",
+          "timestamp": "2026-08-27T16:33:56+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889443",
+          "timestamp": "2026-08-25T21:19:51+05:30",
+          "amount": 17000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889426",
+          "timestamp": "2026-08-25T19:21:52+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889439",
+          "timestamp": "2026-08-22T00:58:58+05:30",
+          "amount": 32500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889435",
+          "timestamp": "2026-08-21T19:34:35+05:30",
+          "amount": 34500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889444",
+          "timestamp": "2026-08-21T03:21:40+05:30",
+          "amount": 14500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889420",
+          "timestamp": "2026-08-20T21:23:29+05:30",
+          "amount": 36000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889424",
+          "timestamp": "2026-08-20T05:28:54+05:30",
+          "amount": 29500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889415",
+          "timestamp": "2026-08-20T02:30:40+05:30",
+          "amount": 13000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889431",
+          "timestamp": "2026-08-19T16:13:40+05:30",
+          "amount": 18500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889432",
+          "timestamp": "2026-08-19T09:20:28+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889422",
+          "timestamp": "2026-08-19T03:08:19+05:30",
+          "amount": 7500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889413",
+          "timestamp": "2026-08-19T01:04:56+05:30",
+          "amount": 11000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889417",
+          "timestamp": "2026-08-18T08:22:42+05:30",
+          "amount": 18500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10488"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-KHAMMAM-19402",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 44,
+        "total_amount": 1024000,
+        "avg_amount": 23272.73
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889455",
+          "timestamp": "2026-09-16T06:34:57+05:30",
+          "amount": 18000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889489",
+          "timestamp": "2026-09-16T01:32:49+05:30",
+          "amount": 8000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889484",
+          "timestamp": "2026-09-15T06:17:16+05:30",
+          "amount": 31500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889466",
+          "timestamp": "2026-09-14T07:10:17+05:30",
+          "amount": 30000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889493",
+          "timestamp": "2026-09-14T03:20:50+05:30",
+          "amount": 6500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889494",
+          "timestamp": "2026-09-13T05:01:42+05:30",
+          "amount": 21000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10489"
+        },
+        {
+          "withdrawal_id": "W-889456",
+          "timestamp": "2026-09-13T00:33:29+05:30",
+          "amount": 34000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889479",
+          "timestamp": "2026-09-10T18:17:42+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889467",
+          "timestamp": "2026-09-10T13:12:40+05:30",
+          "amount": 22000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889454",
+          "timestamp": "2026-09-09T02:08:27+05:30",
+          "amount": 36000,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889482",
+          "timestamp": "2026-09-07T11:01:15+05:30",
+          "amount": 11000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889472",
+          "timestamp": "2026-09-07T08:51:28+05:30",
+          "amount": 5500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889492",
+          "timestamp": "2026-09-06T13:00:00+05:30",
+          "amount": 20000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889474",
+          "timestamp": "2026-09-05T23:33:34+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889490",
+          "timestamp": "2026-09-05T22:46:24+05:30",
+          "amount": 16500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10489"
+        },
+        {
+          "withdrawal_id": "W-889485",
+          "timestamp": "2026-09-04T23:20:52+05:30",
+          "amount": 5000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889475",
+          "timestamp": "2026-09-03T12:23:58+05:30",
+          "amount": 32500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889491",
+          "timestamp": "2026-09-03T01:35:54+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889459",
+          "timestamp": "2026-09-02T18:11:48+05:30",
+          "amount": 30000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889452",
+          "timestamp": "2026-09-02T05:15:48+05:30",
+          "amount": 30000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889468",
+          "timestamp": "2026-09-01T00:34:00+05:30",
+          "amount": 27000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889486",
+          "timestamp": "2026-08-31T18:23:54+05:30",
+          "amount": 18500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889481",
+          "timestamp": "2026-08-30T11:28:33+05:30",
+          "amount": 39500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889453",
+          "timestamp": "2026-08-28T05:20:07+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889469",
+          "timestamp": "2026-08-27T18:01:45+05:30",
+          "amount": 34000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889460",
+          "timestamp": "2026-08-27T07:51:47+05:30",
+          "amount": 27000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889464",
+          "timestamp": "2026-08-27T02:12:50+05:30",
+          "amount": 10000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889471",
+          "timestamp": "2026-08-27T02:12:45+05:30",
+          "amount": 31000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889457",
+          "timestamp": "2026-08-26T13:26:53+05:30",
+          "amount": 25000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10489"
+        },
+        {
+          "withdrawal_id": "W-889473",
+          "timestamp": "2026-08-25T17:19:29+05:30",
+          "amount": 32000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889470",
+          "timestamp": "2026-08-25T06:07:13+05:30",
+          "amount": 6500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889478",
+          "timestamp": "2026-08-24T17:11:41+05:30",
+          "amount": 15500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889477",
+          "timestamp": "2026-08-24T15:59:49+05:30",
+          "amount": 18000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889480",
+          "timestamp": "2026-08-24T08:14:14+05:30",
+          "amount": 18000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889476",
+          "timestamp": "2026-08-22T19:16:17+05:30",
+          "amount": 10000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889487",
+          "timestamp": "2026-08-21T16:48:54+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889463",
+          "timestamp": "2026-08-21T05:05:48+05:30",
+          "amount": 28000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889462",
+          "timestamp": "2026-08-20T15:29:33+05:30",
+          "amount": 23000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889465",
+          "timestamp": "2026-08-20T07:53:35+05:30",
+          "amount": 22000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10489"
+        },
+        {
+          "withdrawal_id": "W-889488",
+          "timestamp": "2026-08-19T23:45:28+05:30",
+          "amount": 14000,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889458",
+          "timestamp": "2026-08-19T21:56:03+05:30",
+          "amount": 13500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889461",
+          "timestamp": "2026-08-19T17:57:58+05:30",
+          "amount": 31500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889451",
+          "timestamp": "2026-08-19T01:30:45+05:30",
+          "amount": 40000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889483",
+          "timestamp": "2026-08-18T19:19:54+05:30",
+          "amount": 39500,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-VIKARABAD-72001",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 44,
+        "total_amount": 988500,
+        "avg_amount": 22465.91
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889538",
+          "timestamp": "2026-09-16T09:45:23+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889500",
+          "timestamp": "2026-09-14T19:23:37+05:30",
+          "amount": 37000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10490"
+        },
+        {
+          "withdrawal_id": "W-889505",
+          "timestamp": "2026-09-13T05:11:47+05:30",
+          "amount": 16000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889506",
+          "timestamp": "2026-09-13T03:21:21+05:30",
+          "amount": 33500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889535",
+          "timestamp": "2026-09-11T18:17:56+05:30",
+          "amount": 31000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10490"
+        },
+        {
+          "withdrawal_id": "W-889525",
+          "timestamp": "2026-09-11T17:09:39+05:30",
+          "amount": 36000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889509",
+          "timestamp": "2026-09-09T03:54:10+05:30",
+          "amount": 36000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889513",
+          "timestamp": "2026-09-08T07:39:00+05:30",
+          "amount": 16500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889504",
+          "timestamp": "2026-09-06T07:01:30+05:30",
+          "amount": 28000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889520",
+          "timestamp": "2026-09-05T07:58:09+05:30",
+          "amount": 25000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889517",
+          "timestamp": "2026-09-05T02:22:45+05:30",
+          "amount": 13500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889536",
+          "timestamp": "2026-09-03T08:10:24+05:30",
+          "amount": 29000,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889522",
+          "timestamp": "2026-09-02T13:29:55+05:30",
+          "amount": 11500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889533",
+          "timestamp": "2026-09-02T06:48:48+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889519",
+          "timestamp": "2026-09-02T02:21:39+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889515",
+          "timestamp": "2026-09-01T12:28:46+05:30",
+          "amount": 26000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889511",
+          "timestamp": "2026-09-01T10:24:58+05:30",
+          "amount": 5000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889526",
+          "timestamp": "2026-08-31T16:26:56+05:30",
+          "amount": 23000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889518",
+          "timestamp": "2026-08-30T08:04:54+05:30",
+          "amount": 22500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889530",
+          "timestamp": "2026-08-30T03:53:39+05:30",
+          "amount": 32500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889501",
+          "timestamp": "2026-08-29T04:05:47+05:30",
+          "amount": 29500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889532",
+          "timestamp": "2026-08-28T20:26:17+05:30",
+          "amount": 17500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889534",
+          "timestamp": "2026-08-28T13:07:33+05:30",
+          "amount": 27000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10490"
+        },
+        {
+          "withdrawal_id": "W-889495",
+          "timestamp": "2026-08-28T00:44:30+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889531",
+          "timestamp": "2026-08-27T23:56:40+05:30",
+          "amount": 6500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889497",
+          "timestamp": "2026-08-26T22:51:38+05:30",
+          "amount": 20000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889502",
+          "timestamp": "2026-08-26T18:24:46+05:30",
+          "amount": 22500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889524",
+          "timestamp": "2026-08-26T16:48:30+05:30",
+          "amount": 8500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889528",
+          "timestamp": "2026-08-25T20:20:52+05:30",
+          "amount": 34500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889510",
+          "timestamp": "2026-08-23T20:52:56+05:30",
+          "amount": 34000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889496",
+          "timestamp": "2026-08-23T18:46:52+05:30",
+          "amount": 7000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889498",
+          "timestamp": "2026-08-23T12:38:32+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889523",
+          "timestamp": "2026-08-22T09:35:50+05:30",
+          "amount": 36500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889521",
+          "timestamp": "2026-08-22T07:42:11+05:30",
+          "amount": 21000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889512",
+          "timestamp": "2026-08-21T12:01:39+05:30",
+          "amount": 6000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889503",
+          "timestamp": "2026-08-21T05:19:31+05:30",
+          "amount": 26500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10490"
+        },
+        {
+          "withdrawal_id": "W-889499",
+          "timestamp": "2026-08-20T21:47:38+05:30",
+          "amount": 32500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889514",
+          "timestamp": "2026-08-20T15:38:43+05:30",
+          "amount": 28500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889516",
+          "timestamp": "2026-08-20T04:44:31+05:30",
+          "amount": 14500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10490"
+        },
+        {
+          "withdrawal_id": "W-889508",
+          "timestamp": "2026-08-20T00:30:39+05:30",
+          "amount": 19500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889507",
+          "timestamp": "2026-08-19T06:24:30+05:30",
+          "amount": 15000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889529",
+          "timestamp": "2026-08-19T04:08:42+05:30",
+          "amount": 9000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889537",
+          "timestamp": "2026-08-18T04:38:42+05:30",
+          "amount": 31500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10490"
+        },
+        {
+          "withdrawal_id": "W-889527",
+          "timestamp": "2026-08-17T00:46:11+05:30",
+          "amount": 32000,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-BHADRADRI-KOTHAGUDEM-66623",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 32,
+        "total_amount": 630500,
+        "avg_amount": 19703.13
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889543",
+          "timestamp": "2026-09-15T06:29:48+05:30",
+          "amount": 20000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889568",
+          "timestamp": "2026-09-13T09:19:37+05:30",
+          "amount": 7500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10491"
+        },
+        {
+          "withdrawal_id": "W-889566",
+          "timestamp": "2026-09-12T05:58:59+05:30",
+          "amount": 21500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889541",
+          "timestamp": "2026-09-12T03:58:28+05:30",
+          "amount": 12000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889558",
+          "timestamp": "2026-09-11T11:09:46+05:30",
+          "amount": 22500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889542",
+          "timestamp": "2026-09-11T10:54:15+05:30",
+          "amount": 7000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889540",
+          "timestamp": "2026-09-10T11:13:06+05:30",
+          "amount": 7000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889556",
+          "timestamp": "2026-09-10T06:21:31+05:30",
+          "amount": 21500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889544",
+          "timestamp": "2026-09-10T00:38:29+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889560",
+          "timestamp": "2026-09-08T20:55:16+05:30",
+          "amount": 18000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10491"
+        },
+        {
+          "withdrawal_id": "W-889545",
+          "timestamp": "2026-09-08T12:34:14+05:30",
+          "amount": 15000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889559",
+          "timestamp": "2026-09-07T06:54:57+05:30",
+          "amount": 33000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10491"
+        },
+        {
+          "withdrawal_id": "W-889569",
+          "timestamp": "2026-09-06T09:00:14+05:30",
+          "amount": 17500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10491"
+        },
+        {
+          "withdrawal_id": "W-889552",
+          "timestamp": "2026-09-05T10:54:00+05:30",
+          "amount": 21000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889570",
+          "timestamp": "2026-09-03T23:39:17+05:30",
+          "amount": 31000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889567",
+          "timestamp": "2026-09-03T07:23:18+05:30",
+          "amount": 5000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889546",
+          "timestamp": "2026-09-01T22:29:48+05:30",
+          "amount": 15000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889550",
+          "timestamp": "2026-08-31T20:53:37+05:30",
+          "amount": 15500,
+          "status": "FLAGGED"
+        },
+        {
+          "withdrawal_id": "W-889553",
+          "timestamp": "2026-08-29T19:18:34+05:30",
+          "amount": 26000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889565",
+          "timestamp": "2026-08-29T10:47:36+05:30",
+          "amount": 34500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889557",
+          "timestamp": "2026-08-29T08:02:06+05:30",
+          "amount": 30500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10491"
+        },
+        {
+          "withdrawal_id": "W-889564",
+          "timestamp": "2026-08-28T21:18:20+05:30",
+          "amount": 5500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889561",
+          "timestamp": "2026-08-28T15:20:51+05:30",
+          "amount": 27500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889539",
+          "timestamp": "2026-08-28T13:10:34+05:30",
+          "amount": 36000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889554",
+          "timestamp": "2026-08-27T20:15:15+05:30",
+          "amount": 17000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889563",
+          "timestamp": "2026-08-24T02:15:03+05:30",
+          "amount": 24000,
+          "status": "COMPLETED",
+          "related_case_id": "C-10491"
+        },
+        {
+          "withdrawal_id": "W-889555",
+          "timestamp": "2026-08-22T05:46:45+05:30",
+          "amount": 11000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889547",
+          "timestamp": "2026-08-21T05:02:42+05:30",
+          "amount": 9500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889562",
+          "timestamp": "2026-08-19T06:10:52+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889551",
+          "timestamp": "2026-08-19T02:37:11+05:30",
+          "amount": 22500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10491"
+        },
+        {
+          "withdrawal_id": "W-889549",
+          "timestamp": "2026-08-18T00:56:30+05:30",
+          "amount": 24500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889548",
+          "timestamp": "2026-08-17T19:15:56+05:30",
+          "amount": 6500,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  },
+  {
+    "atm_id": "ATM-MEDAK-WG757",
+    "withdrawal_history": {
+      "period": {
+        "from": "2026-08-17T13:32:18+05:30",
+        "to": "2026-09-16T13:32:18+05:30"
+      },
+      "summary": {
+        "withdrawal_count": 25,
+        "total_amount": 610000,
+        "avg_amount": 24400
+      },
+      "records": [
+        {
+          "withdrawal_id": "W-889573",
+          "timestamp": "2026-09-15T12:17:22+05:30",
+          "amount": 33000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889595",
+          "timestamp": "2026-09-14T20:24:22+05:30",
+          "amount": 30500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889589",
+          "timestamp": "2026-09-14T18:14:23+05:30",
+          "amount": 11500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889578",
+          "timestamp": "2026-09-13T04:17:01+05:30",
+          "amount": 22500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889593",
+          "timestamp": "2026-09-12T16:00:18+05:30",
+          "amount": 26500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889580",
+          "timestamp": "2026-09-11T20:18:21+05:30",
+          "amount": 33500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889576",
+          "timestamp": "2026-09-08T23:46:11+05:30",
+          "amount": 29500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889587",
+          "timestamp": "2026-09-07T04:24:10+05:30",
+          "amount": 35500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889592",
+          "timestamp": "2026-09-06T17:30:06+05:30",
+          "amount": 27500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889571",
+          "timestamp": "2026-09-05T22:18:08+05:30",
+          "amount": 5500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889577",
+          "timestamp": "2026-09-05T17:41:51+05:30",
+          "amount": 17500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889581",
+          "timestamp": "2026-09-05T09:26:44+05:30",
+          "amount": 29500,
+          "status": "COMPLETED",
+          "related_case_id": "C-10492"
+        },
+        {
+          "withdrawal_id": "W-889586",
+          "timestamp": "2026-09-03T03:52:31+05:30",
+          "amount": 11000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889590",
+          "timestamp": "2026-09-01T20:07:56+05:30",
+          "amount": 39500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889575",
+          "timestamp": "2026-09-01T18:51:23+05:30",
+          "amount": 9500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889591",
+          "timestamp": "2026-08-31T01:55:03+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889585",
+          "timestamp": "2026-08-29T07:06:12+05:30",
+          "amount": 6000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889584",
+          "timestamp": "2026-08-27T19:51:01+05:30",
+          "amount": 27000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889574",
+          "timestamp": "2026-08-27T19:46:49+05:30",
+          "amount": 38500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889572",
+          "timestamp": "2026-08-27T04:10:50+05:30",
+          "amount": 8500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889583",
+          "timestamp": "2026-08-26T20:28:44+05:30",
+          "amount": 12500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889579",
+          "timestamp": "2026-08-26T11:18:44+05:30",
+          "amount": 39000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889588",
+          "timestamp": "2026-08-25T19:55:29+05:30",
+          "amount": 37000,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889594",
+          "timestamp": "2026-08-20T13:00:41+05:30",
+          "amount": 10500,
+          "status": "COMPLETED"
+        },
+        {
+          "withdrawal_id": "W-889582",
+          "timestamp": "2026-08-19T23:05:26+05:30",
+          "amount": 30000,
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  }
+]

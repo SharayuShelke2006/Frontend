@@ -1,0 +1,638 @@
+[
+  {
+    "prediction_id": "PRED-90021",
+    "case_id": "C-10481",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:23:50+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.93,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-RANGA-REDDY-47029",
+      "district_id": "D-RANGA-REDDY",
+      "district_name": "Ranga Reddy",
+      "area_id": "A-WARD-HASTHINAPURAM",
+      "area_name": "Ward 16 Hasthinapuram",
+      "lat": 17.328095,
+      "lon": 78.549698,
+      "withdrawal_window": {
+        "start": "2026-09-16T14:00:18+05:30",
+        "end": "2026-09-16T16:00:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 7,
+      "converging_path_count": 4,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T12:04:18+05:30",
+        "amount": 57000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 4
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "HIGH"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "HIGH"
+        }
+      ]
+    },
+    "freshness_seconds": 508
+  },
+  {
+    "prediction_id": "PRED-90022",
+    "case_id": "C-10482",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:31:08+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.93,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-HYDERABAD-26112",
+      "district_id": "D-HYDERABAD",
+      "district_name": "Hyderabad",
+      "area_id": "A-WARD-SAROORNAGAR",
+      "area_name": "Ward 19 Saroornagar",
+      "lat": 17.3678,
+      "lon": 78.54006,
+      "withdrawal_window": {
+        "start": "2026-09-16T13:46:18+05:30",
+        "end": "2026-09-16T15:46:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 8,
+      "converging_path_count": 4,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T10:31:18+05:30",
+        "amount": 90000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 4
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "HIGH"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "HIGH"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "HIGH"
+        }
+      ]
+    },
+    "freshness_seconds": 70
+  },
+  {
+    "prediction_id": "PRED-90023",
+    "case_id": "C-10483",
+    "status": "RESOLVED",
+    "as_of": "2026-09-16T13:21:27+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.93,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-MEDCHAL-MALKAJGIRI-N9252",
+      "district_id": "D-MEDCHAL-MALKAJGIRI",
+      "district_name": "Medchal Malkajgiri",
+      "area_id": "A-WARD-VIVEKANANDA-NAGAR-COLONY",
+      "area_name": "Ward 122 Vivekananda Nagar Colony",
+      "lat": 17.491219,
+      "lon": 78.407874,
+      "withdrawal_window": {
+        "start": "2026-09-16T14:12:18+05:30",
+        "end": "2026-09-16T16:12:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 3,
+      "converging_path_count": 2,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T11:01:18+05:30",
+        "amount": 82000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 2
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "HIGH"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "HIGH"
+        }
+      ]
+    },
+    "freshness_seconds": 651
+  },
+  {
+    "prediction_id": "PRED-90024",
+    "case_id": "C-10484",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:19:59+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.87,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-SANGAREDDY-WF671",
+      "district_id": "D-SANGAREDDY",
+      "district_name": "Sangareddy",
+      "area_id": "A-WARD-RAMACHANDRAPURAM",
+      "area_name": "Ward 112 Ramachandrapuram",
+      "lat": 17.503772,
+      "lon": 78.310544,
+      "withdrawal_window": {
+        "start": "2026-09-16T13:42:18+05:30",
+        "end": "2026-09-16T15:42:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 6,
+      "converging_path_count": 4,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T11:27:18+05:30",
+        "amount": 41000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 4
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "HIGH"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "HIGH"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "HIGH"
+        }
+      ]
+    },
+    "freshness_seconds": 739
+  },
+  {
+    "prediction_id": "PRED-90025",
+    "case_id": "C-10485",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:22:32+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-JOGULAMBA-GADWAL-WG741",
+      "district_id": "D-JOGULAMBA-GADWAL",
+      "district_name": "Jogulamba Gadwal",
+      "area_id": null,
+      "area_name": null,
+      "lat": 15.891927,
+      "lon": 77.823408,
+      "withdrawal_window": {
+        "start": "2026-09-16T14:19:18+05:30",
+        "end": "2026-09-16T16:19:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 6,
+      "converging_path_count": 5,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T08:54:18+05:30",
+        "amount": 85000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 5
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "HIGH"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 586
+  },
+  {
+    "prediction_id": "PRED-90026",
+    "case_id": "C-10486",
+    "status": "RESOLVED",
+    "as_of": "2026-09-16T13:28:19+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-WANAPARTHY-87014",
+      "district_id": "D-WANAPARTHY",
+      "district_name": "Wanaparthy",
+      "area_id": null,
+      "area_name": null,
+      "lat": 16.350526,
+      "lon": 78.055769,
+      "withdrawal_window": {
+        "start": "2026-09-16T13:19:18+05:30",
+        "end": "2026-09-16T15:19:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 8,
+      "converging_path_count": 4,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T10:10:18+05:30",
+        "amount": 153000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 4
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 239
+  },
+  {
+    "prediction_id": "PRED-90027",
+    "case_id": "C-10487",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:30:08+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-NALGONDA-75079",
+      "district_id": "D-NALGONDA",
+      "district_name": "Nalgonda",
+      "area_id": null,
+      "area_name": null,
+      "lat": 17.053939,
+      "lon": 79.285829,
+      "withdrawal_window": {
+        "start": "2026-09-16T14:29:18+05:30",
+        "end": "2026-09-16T16:29:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 7,
+      "converging_path_count": 3,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T10:39:18+05:30",
+        "amount": 123000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 3
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "HIGH"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 130
+  },
+  {
+    "prediction_id": "PRED-90028",
+    "case_id": "C-10488",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:18:33+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-SURYAPET-HYD83",
+      "district_id": "D-SURYAPET",
+      "district_name": "Suryapet",
+      "area_id": null,
+      "area_name": null,
+      "lat": 17.146233,
+      "lon": 79.622177,
+      "withdrawal_window": {
+        "start": "2026-09-16T14:01:18+05:30",
+        "end": "2026-09-16T16:01:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 6,
+      "converging_path_count": 3,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T09:28:18+05:30",
+        "amount": 133000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 3
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "HIGH"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 825
+  },
+  {
+    "prediction_id": "PRED-90029",
+    "case_id": "C-10489",
+    "status": "RESOLVED",
+    "as_of": "2026-09-16T13:18:53+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-KHAMMAM-19402",
+      "district_id": "D-KHAMMAM",
+      "district_name": "Khammam",
+      "area_id": null,
+      "area_name": null,
+      "lat": 17.212119,
+      "lon": 80.83046,
+      "withdrawal_window": {
+        "start": "2026-09-16T14:41:18+05:30",
+        "end": "2026-09-16T16:41:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 8,
+      "converging_path_count": 6,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T09:45:18+05:30",
+        "amount": 148000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 6
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "HIGH"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 805
+  },
+  {
+    "prediction_id": "PRED-90030",
+    "case_id": "C-10490",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:30:35+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-VIKARABAD-72001",
+      "district_id": "D-VIKARABAD",
+      "district_name": "Vikarabad",
+      "area_id": null,
+      "area_name": null,
+      "lat": 17.538342,
+      "lon": 77.772544,
+      "withdrawal_window": {
+        "start": "2026-09-16T13:12:18+05:30",
+        "end": "2026-09-16T15:12:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 8,
+      "converging_path_count": 6,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T09:55:18+05:30",
+        "amount": 86000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 6
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "HIGH"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "HIGH"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 103
+  },
+  {
+    "prediction_id": "PRED-90031",
+    "case_id": "C-10491",
+    "status": "ACTIVE",
+    "as_of": "2026-09-16T13:31:01+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-BHADRADRI-KOTHAGUDEM-66623",
+      "district_id": "D-BHADRADRI-KOTHAGUDEM",
+      "district_name": "Bhadradri Kothagudem",
+      "area_id": null,
+      "area_name": null,
+      "lat": 17.830775,
+      "lon": 80.83002,
+      "withdrawal_window": {
+        "start": "2026-09-16T14:19:18+05:30",
+        "end": "2026-09-16T16:19:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 4,
+      "converging_path_count": 2,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T11:24:18+05:30",
+        "amount": 26000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 2
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 77
+  },
+  {
+    "prediction_id": "PRED-90032",
+    "case_id": "C-10492",
+    "status": "RESOLVED",
+    "as_of": "2026-09-16T13:25:38+05:30",
+    "generated_at": "2026-09-16T13:32:18+05:30",
+    "risk": {
+      "score": 0.85,
+      "level": "CRITICAL",
+      "rank": 1
+    },
+    "predicted_cashout": {
+      "location_type": "ATM",
+      "atm_id": "ATM-MEDAK-WG757",
+      "district_id": "D-MEDAK",
+      "district_name": "Medak",
+      "area_id": null,
+      "area_name": null,
+      "lat": 17.934796,
+      "lon": 78.449083,
+      "withdrawal_window": {
+        "start": "2026-09-16T13:38:18+05:30",
+        "end": "2026-09-16T15:38:18+05:30"
+      }
+    },
+    "supporting_intelligence": {
+      "supporting_path_count": 6,
+      "converging_path_count": 4,
+      "last_observed_transaction": {
+        "timestamp": "2026-09-16T10:20:18+05:30",
+        "amount": 70000
+      },
+      "explanation_factors": [
+        {
+          "label": "Multiple predicted paths converge",
+          "value": 4
+        },
+        {
+          "label": "Recent transaction activity",
+          "value": "HIGH"
+        },
+        {
+          "label": "Historical cash-out similarity",
+          "value": "MEDIUM"
+        },
+        {
+          "label": "ATM density in area",
+          "value": "MEDIUM"
+        }
+      ]
+    },
+    "freshness_seconds": 400
+  }
+]

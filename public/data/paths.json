@@ -1,0 +1,626 @@
+[
+  {
+    "prediction_id": "PRED-90021",
+    "path_id": "PATH-01",
+    "path_probability": 0.62,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-001",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-019",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-044",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-RANGA-REDDY-47029",
+        "label": "Predicted ATM",
+        "lat": 17.328095,
+        "lon": 78.549698
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-001",
+        "to": "MASKED-A-019",
+        "timestamp": "2026-09-16T11:14:18+05:30",
+        "amount": 90000
+      },
+      {
+        "from": "MASKED-A-019",
+        "to": "MASKED-A-044",
+        "timestamp": "2026-09-16T11:33:18+05:30",
+        "amount": 78000
+      },
+      {
+        "from": "MASKED-A-044",
+        "to": "ATM-RANGA-REDDY-47029",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90022",
+    "path_id": "PATH-02",
+    "path_probability": 0.85,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-002",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-020",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-045",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-HYDERABAD-26112",
+        "label": "Predicted ATM",
+        "lat": 17.3678,
+        "lon": 78.54006
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-002",
+        "to": "MASKED-A-020",
+        "timestamp": "2026-09-16T09:41:18+05:30",
+        "amount": 167000
+      },
+      {
+        "from": "MASKED-A-020",
+        "to": "MASKED-A-045",
+        "timestamp": "2026-09-16T10:00:18+05:30",
+        "amount": 131000
+      },
+      {
+        "from": "MASKED-A-045",
+        "to": "ATM-HYDERABAD-26112",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90023",
+    "path_id": "PATH-03",
+    "path_probability": 0.82,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-003",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-021",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-046",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-MEDCHAL-MALKAJGIRI-N9252",
+        "label": "Predicted ATM",
+        "lat": 17.491219,
+        "lon": 78.407874
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-003",
+        "to": "MASKED-A-021",
+        "timestamp": "2026-09-16T10:11:18+05:30",
+        "amount": 100000
+      },
+      {
+        "from": "MASKED-A-021",
+        "to": "MASKED-A-046",
+        "timestamp": "2026-09-16T10:30:18+05:30",
+        "amount": 77000
+      },
+      {
+        "from": "MASKED-A-046",
+        "to": "ATM-MEDCHAL-MALKAJGIRI-N9252",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90024",
+    "path_id": "PATH-04",
+    "path_probability": 0.86,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-004",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-022",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-047",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-SANGAREDDY-WF671",
+        "label": "Predicted ATM",
+        "lat": 17.503772,
+        "lon": 78.310544
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-004",
+        "to": "MASKED-A-022",
+        "timestamp": "2026-09-16T10:37:18+05:30",
+        "amount": 52000
+      },
+      {
+        "from": "MASKED-A-022",
+        "to": "MASKED-A-047",
+        "timestamp": "2026-09-16T10:56:18+05:30",
+        "amount": 44000
+      },
+      {
+        "from": "MASKED-A-047",
+        "to": "ATM-SANGAREDDY-WF671",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90025",
+    "path_id": "PATH-05",
+    "path_probability": 0.73,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-005",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-023",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-048",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-JOGULAMBA-GADWAL-WG741",
+        "label": "Predicted ATM",
+        "lat": 15.891927,
+        "lon": 77.823408
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-005",
+        "to": "MASKED-A-023",
+        "timestamp": "2026-09-16T08:04:18+05:30",
+        "amount": 108000
+      },
+      {
+        "from": "MASKED-A-023",
+        "to": "MASKED-A-048",
+        "timestamp": "2026-09-16T08:23:18+05:30",
+        "amount": 103000
+      },
+      {
+        "from": "MASKED-A-048",
+        "to": "ATM-JOGULAMBA-GADWAL-WG741",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90026",
+    "path_id": "PATH-06",
+    "path_probability": 0.63,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-006",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-024",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-049",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-WANAPARTHY-87014",
+        "label": "Predicted ATM",
+        "lat": 16.350526,
+        "lon": 78.055769
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-006",
+        "to": "MASKED-A-024",
+        "timestamp": "2026-09-16T09:20:18+05:30",
+        "amount": 185000
+      },
+      {
+        "from": "MASKED-A-024",
+        "to": "MASKED-A-049",
+        "timestamp": "2026-09-16T09:39:18+05:30",
+        "amount": 152000
+      },
+      {
+        "from": "MASKED-A-049",
+        "to": "ATM-WANAPARTHY-87014",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90027",
+    "path_id": "PATH-07",
+    "path_probability": 0.8,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-007",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-025",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-050",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-NALGONDA-75079",
+        "label": "Predicted ATM",
+        "lat": 17.053939,
+        "lon": 79.285829
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-007",
+        "to": "MASKED-A-025",
+        "timestamp": "2026-09-16T09:49:18+05:30",
+        "amount": 142000
+      },
+      {
+        "from": "MASKED-A-025",
+        "to": "MASKED-A-050",
+        "timestamp": "2026-09-16T10:08:18+05:30",
+        "amount": 114000
+      },
+      {
+        "from": "MASKED-A-050",
+        "to": "ATM-NALGONDA-75079",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90028",
+    "path_id": "PATH-08",
+    "path_probability": 0.67,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-008",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-026",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-051",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-SURYAPET-HYD83",
+        "label": "Predicted ATM",
+        "lat": 17.146233,
+        "lon": 79.622177
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-008",
+        "to": "MASKED-A-026",
+        "timestamp": "2026-09-16T08:38:18+05:30",
+        "amount": 153000
+      },
+      {
+        "from": "MASKED-A-026",
+        "to": "MASKED-A-051",
+        "timestamp": "2026-09-16T08:57:18+05:30",
+        "amount": 115000
+      },
+      {
+        "from": "MASKED-A-051",
+        "to": "ATM-SURYAPET-HYD83",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90029",
+    "path_id": "PATH-09",
+    "path_probability": 0.73,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-009",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-027",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-052",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-KHAMMAM-19402",
+        "label": "Predicted ATM",
+        "lat": 17.212119,
+        "lon": 80.83046
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-009",
+        "to": "MASKED-A-027",
+        "timestamp": "2026-09-16T08:55:18+05:30",
+        "amount": 147000
+      },
+      {
+        "from": "MASKED-A-027",
+        "to": "MASKED-A-052",
+        "timestamp": "2026-09-16T09:14:18+05:30",
+        "amount": 126000
+      },
+      {
+        "from": "MASKED-A-052",
+        "to": "ATM-KHAMMAM-19402",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90030",
+    "path_id": "PATH-10",
+    "path_probability": 0.69,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-010",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-028",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-053",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-VIKARABAD-72001",
+        "label": "Predicted ATM",
+        "lat": 17.538342,
+        "lon": 77.772544
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-010",
+        "to": "MASKED-A-028",
+        "timestamp": "2026-09-16T09:05:18+05:30",
+        "amount": 127000
+      },
+      {
+        "from": "MASKED-A-028",
+        "to": "MASKED-A-053",
+        "timestamp": "2026-09-16T09:24:18+05:30",
+        "amount": 113000
+      },
+      {
+        "from": "MASKED-A-053",
+        "to": "ATM-VIKARABAD-72001",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90031",
+    "path_id": "PATH-11",
+    "path_probability": 0.61,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-011",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-029",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-054",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-BHADRADRI-KOTHAGUDEM-66623",
+        "label": "Predicted ATM",
+        "lat": 17.830775,
+        "lon": 80.83002
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-011",
+        "to": "MASKED-A-029",
+        "timestamp": "2026-09-16T10:34:18+05:30",
+        "amount": 39000
+      },
+      {
+        "from": "MASKED-A-029",
+        "to": "MASKED-A-054",
+        "timestamp": "2026-09-16T10:53:18+05:30",
+        "amount": 33000
+      },
+      {
+        "from": "MASKED-A-054",
+        "to": "ATM-BHADRADRI-KOTHAGUDEM-66623",
+        "predicted": true
+      }
+    ]
+  },
+  {
+    "prediction_id": "PRED-90032",
+    "path_id": "PATH-12",
+    "path_probability": 0.8,
+    "nodes": [
+      {
+        "sequence": 1,
+        "node_type": "VICTIM_ACCOUNT",
+        "node_id": "MASKED-V-012",
+        "label": "Victim Account"
+      },
+      {
+        "sequence": 2,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-030",
+        "label": "Intermediate Account A"
+      },
+      {
+        "sequence": 3,
+        "node_type": "ACCOUNT",
+        "node_id": "MASKED-A-055",
+        "label": "Intermediate Account B"
+      },
+      {
+        "sequence": 4,
+        "node_type": "ATM",
+        "node_id": "ATM-MEDAK-WG757",
+        "label": "Predicted ATM",
+        "lat": 17.934796,
+        "lon": 78.449083
+      }
+    ],
+    "edges": [
+      {
+        "from": "MASKED-V-012",
+        "to": "MASKED-A-030",
+        "timestamp": "2026-09-16T09:30:18+05:30",
+        "amount": 71000
+      },
+      {
+        "from": "MASKED-A-030",
+        "to": "MASKED-A-055",
+        "timestamp": "2026-09-16T09:49:18+05:30",
+        "amount": 57000
+      },
+      {
+        "from": "MASKED-A-055",
+        "to": "ATM-MEDAK-WG757",
+        "predicted": true
+      }
+    ]
+  }
+]
