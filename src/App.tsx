@@ -3,7 +3,8 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import Header from '@/components/layout/Header';
 import Sidebar from '@/components/layout/Sidebar';
-import RoleSelect from '@/pages/RoleSelect';
+import ToastHost from '@/components/layout/ToastHost';
+import RoleRoute, { ROLE_HOME } from '@/components/layout/RoleRoute';
 import LeaDashboard from '@/pages/LeaDashboard';
 import I4cCommandCenter from '@/pages/I4cCommandCenter';
 import BankQueue from '@/pages/BankQueue';
@@ -15,11 +16,18 @@ import AlertQueue from '@/pages/AlertQueue';
 import AlertDetail from '@/pages/AlertDetail';
 import CaseList from '@/pages/CaseList';
 import CaseDetail from '@/pages/CaseDetail';
-import CitizenComplaint from '@/pages/CitizenComplaint';
 import Notifications from '@/pages/Notifications';
 import AuditTimeline from '@/pages/AuditTimeline';
+import CitizenHome from '@/pages/citizen/CitizenHome';
+import CitizenComplaint from '@/pages/citizen/CitizenComplaint';
+import CitizenTrack from '@/pages/citizen/CitizenTrack';
+import RoleSelect from '@/pages/RoleSelect';
+
+const OPS_ROLES = ['LEA', 'I4C', 'BANK'] as const;
 
 function Shell() {
+  const role = useStore((s) => s.role);
+
   return (
     <div className="flex h-screen flex-col">
       <Header />
@@ -27,35 +35,152 @@ function Shell() {
         <Sidebar />
         <main className="min-h-0 flex-1 overflow-y-auto bg-slate-50">
           <Routes>
-            <Route path="/" element={<RoleGate />} />
-            <Route path="/lea" element={<LeaDashboard />} />
-            <Route path="/i4c" element={<I4cCommandCenter />} />
-            <Route path="/bank" element={<BankQueue />} />
-            <Route path="/complaint" element={<CitizenComplaint />} />
-            <Route path="/gis" element={<GisOverview />} />
-            <Route path="/gis/districts/:districtId" element={<DistrictDrilldown />} />
-            <Route path="/atms/:atmId" element={<AtmDetail />} />
-            <Route path="/predictions/:predictionId" element={<PredictionDetail />} />
-            <Route path="/alerts" element={<AlertQueue />} />
-            <Route path="/alerts/:alertId" element={<AlertDetail />} />
-            <Route path="/cases" element={<CaseList />} />
-            <Route path="/cases/:caseId" element={<CaseDetail />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/audit" element={<AuditTimeline />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/" element={<Navigate to={ROLE_HOME[role]} replace />} />
+            <Route
+              path="/lea"
+              element={
+                <RoleRoute roles={['LEA']}>
+                  <LeaDashboard />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/i4c"
+              element={
+                <RoleRoute roles={['I4C']}>
+                  <I4cCommandCenter />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/bank"
+              element={
+                <RoleRoute roles={['BANK']}>
+                  <BankQueue />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/gis"
+              element={
+                <RoleRoute roles={['LEA', 'I4C']}>
+                  <GisOverview />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/gis/districts/:districtId"
+              element={
+                <RoleRoute roles={['LEA', 'I4C']}>
+                  <DistrictDrilldown />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/atms/:atmId"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <AtmDetail />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/predictions/:predictionId"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <PredictionDetail />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/alerts"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <AlertQueue />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/alerts/:alertId"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <AlertDetail />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/cases"
+              element={
+                <RoleRoute roles={['LEA', 'I4C']}>
+                  <CaseList />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/cases/:caseId"
+              element={
+                <RoleRoute roles={['LEA', 'I4C']}>
+                  <CaseDetail />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/notifications"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <Notifications />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/audit"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <AuditTimeline />
+                </RoleRoute>
+              }
+            />
+            <Route path="*" element={<Navigate to={ROLE_HOME[role]} replace />} />
           </Routes>
         </main>
       </div>
+      <ToastHost />
     </div>
   );
 }
 
-function RoleGate() {
-  const role = useStore((s) => s.role);
-  if (role === 'LEA') return <Navigate to="/lea" replace />;
-  if (role === 'I4C') return <Navigate to="/i4c" replace />;
-  if (role === 'BANK') return <Navigate to="/bank" replace />;
-  return <Navigate to="/complaint" replace />;
+function CitizenShell() {
+  return (
+    <>
+      <Routes>
+        <Route
+          path=""
+          element={
+            <RoleRoute roles={['CITIZEN']}>
+              <CitizenHome />
+            </RoleRoute>
+          }
+        />
+        <Route
+          path="complaint"
+          element={
+            <RoleRoute roles={['CITIZEN']}>
+              <CitizenComplaint />
+            </RoleRoute>
+          }
+        />
+        <Route
+          path="track"
+          element={
+            <RoleRoute roles={['CITIZEN']}>
+              <CitizenTrack />
+            </RoleRoute>
+          }
+        />
+      </Routes>
+      <ToastHost />
+    </>
+  );
 }
 
 export default function App() {
@@ -93,6 +218,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<RoleSelect />} />
+        <Route path="/citizen/*" element={<CitizenShell />} />
         <Route path="/*" element={<Shell />} />
       </Routes>
     </BrowserRouter>

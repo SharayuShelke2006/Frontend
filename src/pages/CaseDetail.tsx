@@ -2,6 +2,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useCaseBundle } from '@/lib/selectors';
 import { formatCurrency, formatIstTime } from '@/lib/selectors';
 import RiskBadge from '@/components/shared/RiskBadge';
+import StatusStepper from '@/components/shared/StatusStepper';
+
+const CASE_STATUS_STEPS = [
+  'RECEIVED',
+  'UNDER_INVESTIGATION',
+  'FINANCIAL_INTELLIGENCE_PROCESSING',
+  'ACTION_INITIATED',
+  'RESOLVED',
+];
 
 export default function CaseDetail() {
   const { caseId } = useParams();
@@ -44,15 +53,10 @@ export default function CaseDetail() {
           </dl>
           <div className="mt-4 border-t border-slate-100 pt-3">
             <h3 className="mb-1 text-[11px] font-semibold uppercase text-slate-400">Case Status Timeline</h3>
-            <div className="flex flex-wrap gap-1 text-[11px] text-slate-500">
-              {['RECEIVED', 'UNDER_INVESTIGATION', 'FINANCIAL_INTELLIGENCE_PROCESSING', 'ACTION_INITIATED', 'RESOLVED'].map(
-                (s) => (
-                  <span key={s} className={`badge ${s === c.status ? 'badge-critical' : 'badge-low'}`}>
-                    {s.replaceAll('_', ' ')}
-                  </span>
-                ),
-              )}
-            </div>
+            <StatusStepper
+              steps={CASE_STATUS_STEPS.map((s) => s.replaceAll('_', ' '))}
+              currentIndex={Math.max(0, CASE_STATUS_STEPS.indexOf(c.status))}
+            />
           </div>
         </section>
       </div>

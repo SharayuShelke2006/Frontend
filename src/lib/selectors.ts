@@ -1,18 +1,21 @@
 import { useStore } from '@/state/store';
 import type { RiskLevel } from '@/types/contract';
 
+// Fixed status palette (validated: adjacent-pair CVD ΔE and normal-vision ΔE
+// both clear the floor at every step — LOW/HIGH are the closest pair at 11.5,
+// still above the 10 minimum). Never reused for categorical series.
 export const RISK_COLORS: Record<RiskLevel, string> = {
-  LOW: '#2f8fd8',
-  MEDIUM: '#f5a623',
-  HIGH: '#e0662f',
-  CRITICAL: '#c0392b',
+  LOW: '#0ca30c',
+  MEDIUM: '#fab219',
+  HIGH: '#ec835a',
+  CRITICAL: '#d03b3b',
 };
 
 export const RISK_FILL_OPACITY: Record<RiskLevel, number> = {
-  LOW: 0.18,
-  MEDIUM: 0.32,
+  LOW: 0.22,
+  MEDIUM: 0.34,
   HIGH: 0.46,
-  CRITICAL: 0.62,
+  CRITICAL: 0.6,
 };
 
 export function useAlertBundle(alertId: string | undefined) {

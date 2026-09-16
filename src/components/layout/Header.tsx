@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import type { Role } from '@/types/contract';
 import { formatIstTime } from '@/lib/selectors';
+import { ROLE_HOME } from './RoleRoute';
 
 const ROLE_LABELS: Record<Role, string> = {
   CITIZEN: 'Citizen / Victim',
@@ -16,6 +17,12 @@ export default function Header() {
   const lastUpdated = useStore((s) => s.lastUpdated);
   const notifications = useStore((s) => s.notifications);
   const unread = notifications.filter((n) => !n.read && n.recipient_role === role).length;
+  const navigate = useNavigate();
+
+  function handleRoleChange(next: Role) {
+    setRole(next);
+    navigate(ROLE_HOME[next]);
+  }
 
   return (
     <header className="flex h-16 shrink-0 items-center justify-between border-b border-slate-200 bg-navy-950 px-6 text-white">
@@ -53,7 +60,7 @@ export default function Header() {
           <span className="text-[11px] uppercase tracking-wide text-slate-400">Role</span>
           <select
             value={role}
-            onChange={(e) => setRole(e.target.value as Role)}
+            onChange={(e) => handleRoleChange(e.target.value as Role)}
             className="bg-transparent text-sm font-medium text-white outline-none"
           >
             {(Object.keys(ROLE_LABELS) as Role[]).map((r) => (

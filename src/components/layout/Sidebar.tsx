@@ -12,11 +12,10 @@ const NAV_ITEMS: NavItem[] = [
   { to: '/lea', label: 'LEA Dashboard', roles: ['LEA'] },
   { to: '/i4c', label: 'I4C Command Center', roles: ['I4C'] },
   { to: '/bank', label: 'Bank/FI Response Queue', roles: ['BANK'] },
-  { to: '/complaint', label: 'File a Complaint', roles: ['CITIZEN'] },
   { to: '/gis', label: 'Telangana GIS', roles: ['LEA', 'I4C'] },
   { to: '/alerts', label: 'Alerts', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/cases', label: 'Cases', roles: ['LEA', 'I4C'] },
-  { to: '/notifications', label: 'Notifications', roles: ['LEA', 'I4C', 'BANK', 'CITIZEN'] },
+  { to: '/notifications', label: 'Notifications', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/audit', label: 'Audit Timeline', roles: ['LEA', 'I4C', 'BANK'] },
 ];
 

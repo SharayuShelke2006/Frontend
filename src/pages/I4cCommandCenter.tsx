@@ -4,6 +4,7 @@ import { useStore } from '@/state/store';
 import KpiCard from '@/components/shared/KpiCard';
 import RiskBadge from '@/components/shared/RiskBadge';
 import TelanganaMap from '@/components/map/TelanganaMap';
+import AnalyticsSection from '@/components/analytics/AnalyticsSection';
 import { formatIstTime } from '@/lib/selectors';
 
 export default function I4cCommandCenter() {
@@ -135,6 +136,8 @@ export default function I4cCommandCenter() {
           </button>
         </div>
       </div>
+
+      <AnalyticsSection />
     </div>
   );
 }

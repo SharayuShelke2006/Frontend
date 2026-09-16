@@ -135,7 +135,7 @@ export default function AlertDetail() {
           ) : (
             <p className="text-sm text-slate-400">No linked case.</p>
           )}
-          {caseObj && (
+          {caseObj && (role === 'LEA' || role === 'I4C') && (
             <button
               onClick={() => navigate(`/cases/${caseObj.case_id}`)}
               className="mt-3 rounded border border-slate-300 px-3 py-1 text-xs font-medium hover:bg-slate-50"
