@@ -6,8 +6,8 @@
     "as_of": "2026-09-16T13:23:50+05:30",
     "generated_at": "2026-09-16T13:32:18+05:30",
     "risk": {
-      "score": 0.93,
-      "level": "CRITICAL",
+      "score": 0.74,
+      "level": "HIGH",
       "rank": 1
     },
     "predicted_cashout": {
@@ -56,11 +56,11 @@
     "prediction_id": "PRED-90022",
     "case_id": "C-10482",
     "status": "ACTIVE",
-    "as_of": "2026-09-16T13:31:08+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-10T13:31:08+05:30",
+    "generated_at": "2026-09-10T13:32:18+05:30",
     "risk": {
-      "score": 0.93,
-      "level": "CRITICAL",
+      "score": 0.52,
+      "level": "MEDIUM",
       "rank": 1
     },
     "predicted_cashout": {
@@ -109,10 +109,10 @@
     "prediction_id": "PRED-90023",
     "case_id": "C-10483",
     "status": "RESOLVED",
-    "as_of": "2026-09-16T13:21:27+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-06T13:21:27+05:30",
+    "generated_at": "2026-09-06T13:32:18+05:30",
     "risk": {
-      "score": 0.93,
+      "score": 0.91,
       "level": "CRITICAL",
       "rank": 1
     },
@@ -162,11 +162,11 @@
     "prediction_id": "PRED-90024",
     "case_id": "C-10484",
     "status": "ACTIVE",
-    "as_of": "2026-09-16T13:19:59+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-18T13:19:59+05:30",
+    "generated_at": "2026-09-18T13:32:18+05:30",
     "risk": {
-      "score": 0.87,
-      "level": "CRITICAL",
+      "score": 0.28,
+      "level": "LOW",
       "rank": 1
     },
     "predicted_cashout": {
@@ -215,11 +215,11 @@
     "prediction_id": "PRED-90025",
     "case_id": "C-10485",
     "status": "ACTIVE",
-    "as_of": "2026-09-16T13:22:32+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-12T13:22:32+05:30",
+    "generated_at": "2026-09-12T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
-      "level": "CRITICAL",
+      "score": 0.71,
+      "level": "HIGH",
       "rank": 1
     },
     "predicted_cashout": {
@@ -268,11 +268,11 @@
     "prediction_id": "PRED-90026",
     "case_id": "C-10486",
     "status": "RESOLVED",
-    "as_of": "2026-09-16T13:28:19+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-07T13:28:19+05:30",
+    "generated_at": "2026-09-07T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
-      "level": "CRITICAL",
+      "score": 0.48,
+      "level": "MEDIUM",
       "rank": 1
     },
     "predicted_cashout": {
@@ -321,11 +321,11 @@
     "prediction_id": "PRED-90027",
     "case_id": "C-10487",
     "status": "ACTIVE",
-    "as_of": "2026-09-16T13:30:08+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-18T13:30:08+05:30",
+    "generated_at": "2026-09-18T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
-      "level": "CRITICAL",
+      "score": 0.33,
+      "level": "LOW",
       "rank": 1
     },
     "predicted_cashout": {
@@ -374,11 +374,11 @@
     "prediction_id": "PRED-90028",
     "case_id": "C-10488",
     "status": "ACTIVE",
-    "as_of": "2026-09-16T13:18:33+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-14T13:18:33+05:30",
+    "generated_at": "2026-09-14T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
-      "level": "CRITICAL",
+      "score": 0.77,
+      "level": "HIGH",
       "rank": 1
     },
     "predicted_cashout": {
@@ -427,10 +427,10 @@
     "prediction_id": "PRED-90029",
     "case_id": "C-10489",
     "status": "RESOLVED",
-    "as_of": "2026-09-16T13:18:53+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-09T13:18:53+05:30",
+    "generated_at": "2026-09-09T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
+      "score": 0.89,
       "level": "CRITICAL",
       "rank": 1
     },
@@ -480,11 +480,11 @@
     "prediction_id": "PRED-90030",
     "case_id": "C-10490",
     "status": "ACTIVE",
-    "as_of": "2026-09-16T13:30:35+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-17T13:30:35+05:30",
+    "generated_at": "2026-09-17T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
-      "level": "CRITICAL",
+      "score": 0.31,
+      "level": "LOW",
       "rank": 1
     },
     "predicted_cashout": {
@@ -533,11 +533,11 @@
     "prediction_id": "PRED-90031",
     "case_id": "C-10491",
     "status": "ACTIVE",
-    "as_of": "2026-09-16T13:31:01+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-15T13:31:01+05:30",
+    "generated_at": "2026-09-15T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
-      "level": "CRITICAL",
+      "score": 0.55,
+      "level": "MEDIUM",
       "rank": 1
     },
     "predicted_cashout": {
@@ -586,11 +586,11 @@
     "prediction_id": "PRED-90032",
     "case_id": "C-10492",
     "status": "RESOLVED",
-    "as_of": "2026-09-16T13:25:38+05:30",
-    "generated_at": "2026-09-16T13:32:18+05:30",
+    "as_of": "2026-09-11T13:25:38+05:30",
+    "generated_at": "2026-09-11T13:32:18+05:30",
     "risk": {
-      "score": 0.85,
-      "level": "CRITICAL",
+      "score": 0.68,
+      "level": "HIGH",
       "rank": 1
     },
     "predicted_cashout": {

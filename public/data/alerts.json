@@ -2,7 +2,7 @@
   {
     "alert_id": "AL-20481",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "HIGH",
     "status": "ACTION_INITIATED",
     "created_at": "2026-09-16T13:23:50+05:30",
     "expires_at": "2026-09-16T16:00:18+05:30",
@@ -38,10 +38,10 @@
   {
     "alert_id": "AL-20482",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "MEDIUM",
     "status": "ACKNOWLEDGED",
-    "created_at": "2026-09-16T13:31:08+05:30",
-    "expires_at": "2026-09-16T15:46:18+05:30",
+    "created_at": "2026-09-10T13:31:08+05:30",
+    "expires_at": "2026-09-10T15:46:18+05:30",
     "case_id": "C-10482",
     "prediction_id": "PRED-90022",
     "target": {
@@ -50,8 +50,8 @@
       "area": "Ward 19 Saroornagar"
     },
     "predicted_window": {
-      "start": "2026-09-16T13:46:18+05:30",
-      "end": "2026-09-16T15:46:18+05:30"
+      "start": "2026-09-10T13:46:18+05:30",
+      "end": "2026-09-10T15:46:18+05:30"
     },
     "recipients": [
       {
@@ -76,8 +76,8 @@
     "alert_type": "PREDICTED_CASHOUT",
     "severity": "CRITICAL",
     "status": "ASSIGNED",
-    "created_at": "2026-09-16T13:21:27+05:30",
-    "expires_at": "2026-09-16T16:12:18+05:30",
+    "created_at": "2026-09-06T13:21:27+05:30",
+    "expires_at": "2026-09-06T16:12:18+05:30",
     "case_id": "C-10483",
     "prediction_id": "PRED-90023",
     "target": {
@@ -86,8 +86,8 @@
       "area": "Ward 122 Vivekananda Nagar Colony"
     },
     "predicted_window": {
-      "start": "2026-09-16T14:12:18+05:30",
-      "end": "2026-09-16T16:12:18+05:30"
+      "start": "2026-09-06T14:12:18+05:30",
+      "end": "2026-09-06T16:12:18+05:30"
     },
     "recipients": [
       {
@@ -110,10 +110,10 @@
   {
     "alert_id": "AL-20484",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "LOW",
     "status": "DELIVERED",
-    "created_at": "2026-09-16T13:19:59+05:30",
-    "expires_at": "2026-09-16T15:42:18+05:30",
+    "created_at": "2026-09-18T13:19:59+05:30",
+    "expires_at": "2026-09-18T15:42:18+05:30",
     "case_id": "C-10484",
     "prediction_id": "PRED-90024",
     "target": {
@@ -122,8 +122,8 @@
       "area": "Ward 112 Ramachandrapuram"
     },
     "predicted_window": {
-      "start": "2026-09-16T13:42:18+05:30",
-      "end": "2026-09-16T15:42:18+05:30"
+      "start": "2026-09-18T13:42:18+05:30",
+      "end": "2026-09-18T15:42:18+05:30"
     },
     "recipients": [
       {
@@ -146,10 +146,10 @@
   {
     "alert_id": "AL-20485",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "HIGH",
     "status": "GENERATED",
-    "created_at": "2026-09-16T13:22:32+05:30",
-    "expires_at": "2026-09-16T16:19:18+05:30",
+    "created_at": "2026-09-12T13:22:32+05:30",
+    "expires_at": "2026-09-12T16:19:18+05:30",
     "case_id": "C-10485",
     "prediction_id": "PRED-90025",
     "target": {
@@ -158,8 +158,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T14:19:18+05:30",
-      "end": "2026-09-16T16:19:18+05:30"
+      "start": "2026-09-12T14:19:18+05:30",
+      "end": "2026-09-12T16:19:18+05:30"
     },
     "recipients": [
       {
@@ -182,10 +182,10 @@
   {
     "alert_id": "AL-20486",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "MEDIUM",
     "status": "RESOLVED",
-    "created_at": "2026-09-16T13:28:19+05:30",
-    "expires_at": "2026-09-16T15:19:18+05:30",
+    "created_at": "2026-09-07T13:28:19+05:30",
+    "expires_at": "2026-09-07T15:19:18+05:30",
     "case_id": "C-10486",
     "prediction_id": "PRED-90026",
     "target": {
@@ -194,8 +194,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T13:19:18+05:30",
-      "end": "2026-09-16T15:19:18+05:30"
+      "start": "2026-09-07T13:19:18+05:30",
+      "end": "2026-09-07T15:19:18+05:30"
     },
     "recipients": [
       {
@@ -218,10 +218,10 @@
   {
     "alert_id": "AL-20487",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "LOW",
     "status": "DELIVERED",
-    "created_at": "2026-09-16T13:30:08+05:30",
-    "expires_at": "2026-09-16T16:29:18+05:30",
+    "created_at": "2026-09-18T13:30:08+05:30",
+    "expires_at": "2026-09-18T16:29:18+05:30",
     "case_id": "C-10487",
     "prediction_id": "PRED-90027",
     "target": {
@@ -230,8 +230,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T14:29:18+05:30",
-      "end": "2026-09-16T16:29:18+05:30"
+      "start": "2026-09-18T14:29:18+05:30",
+      "end": "2026-09-18T16:29:18+05:30"
     },
     "recipients": [
       {
@@ -254,10 +254,10 @@
   {
     "alert_id": "AL-20488",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "HIGH",
     "status": "ACKNOWLEDGED",
-    "created_at": "2026-09-16T13:18:33+05:30",
-    "expires_at": "2026-09-16T16:01:18+05:30",
+    "created_at": "2026-09-14T13:18:33+05:30",
+    "expires_at": "2026-09-14T16:01:18+05:30",
     "case_id": "C-10488",
     "prediction_id": "PRED-90028",
     "target": {
@@ -266,8 +266,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T14:01:18+05:30",
-      "end": "2026-09-16T16:01:18+05:30"
+      "start": "2026-09-14T14:01:18+05:30",
+      "end": "2026-09-14T16:01:18+05:30"
     },
     "recipients": [
       {
@@ -292,8 +292,8 @@
     "alert_type": "PREDICTED_CASHOUT",
     "severity": "CRITICAL",
     "status": "ACTION_INITIATED",
-    "created_at": "2026-09-16T13:18:53+05:30",
-    "expires_at": "2026-09-16T16:41:18+05:30",
+    "created_at": "2026-09-09T13:18:53+05:30",
+    "expires_at": "2026-09-09T16:41:18+05:30",
     "case_id": "C-10489",
     "prediction_id": "PRED-90029",
     "target": {
@@ -302,8 +302,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T14:41:18+05:30",
-      "end": "2026-09-16T16:41:18+05:30"
+      "start": "2026-09-09T14:41:18+05:30",
+      "end": "2026-09-09T16:41:18+05:30"
     },
     "recipients": [
       {
@@ -326,10 +326,10 @@
   {
     "alert_id": "AL-20490",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "LOW",
     "status": "DELIVERED",
-    "created_at": "2026-09-16T13:30:35+05:30",
-    "expires_at": "2026-09-16T15:12:18+05:30",
+    "created_at": "2026-09-17T13:30:35+05:30",
+    "expires_at": "2026-09-17T15:12:18+05:30",
     "case_id": "C-10490",
     "prediction_id": "PRED-90030",
     "target": {
@@ -338,8 +338,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T13:12:18+05:30",
-      "end": "2026-09-16T15:12:18+05:30"
+      "start": "2026-09-17T13:12:18+05:30",
+      "end": "2026-09-17T15:12:18+05:30"
     },
     "recipients": [
       {
@@ -362,10 +362,10 @@
   {
     "alert_id": "AL-20491",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "MEDIUM",
     "status": "EXPIRED",
-    "created_at": "2026-09-16T13:31:01+05:30",
-    "expires_at": "2026-09-16T16:19:18+05:30",
+    "created_at": "2026-09-15T13:31:01+05:30",
+    "expires_at": "2026-09-15T16:19:18+05:30",
     "case_id": "C-10491",
     "prediction_id": "PRED-90031",
     "target": {
@@ -374,8 +374,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T14:19:18+05:30",
-      "end": "2026-09-16T16:19:18+05:30"
+      "start": "2026-09-15T14:19:18+05:30",
+      "end": "2026-09-15T16:19:18+05:30"
     },
     "recipients": [
       {
@@ -398,10 +398,10 @@
   {
     "alert_id": "AL-20492",
     "alert_type": "PREDICTED_CASHOUT",
-    "severity": "CRITICAL",
+    "severity": "HIGH",
     "status": "DELIVERED",
-    "created_at": "2026-09-16T13:25:38+05:30",
-    "expires_at": "2026-09-16T15:38:18+05:30",
+    "created_at": "2026-09-11T13:25:38+05:30",
+    "expires_at": "2026-09-11T15:38:18+05:30",
     "case_id": "C-10492",
     "prediction_id": "PRED-90032",
     "target": {
@@ -410,8 +410,8 @@
       "area": null
     },
     "predicted_window": {
-      "start": "2026-09-16T13:38:18+05:30",
-      "end": "2026-09-16T15:38:18+05:30"
+      "start": "2026-09-11T13:38:18+05:30",
+      "end": "2026-09-11T15:38:18+05:30"
     },
     "recipients": [
       {
