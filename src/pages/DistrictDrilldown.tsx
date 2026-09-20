@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import DistrictMap from '@/components/map/DistrictMap';
 import RiskBadge from '@/components/shared/RiskBadge';
 import type { Atm } from '@/types/contract';
+import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 
 export default function DistrictDrilldown() {
   const { districtId } = useParams();
-  const navigate = useNavigate();
+  const { open } = useIntelligenceDrawer();
   const districtsGeojson = useStore((s) => s.districtsGeojson);
   const areasGeojson = useStore((s) => s.areasGeojson);
   const atms = useStore((s) => s.atms);
@@ -52,7 +53,7 @@ export default function DistrictDrilldown() {
   const props = districtFeature.properties;
 
   function handleSelectAtm(atm: Atm) {
-    navigate(`/atms/${atm.atm_id}`);
+    open({ type: 'atm', id: atm.atm_id });
   }
 
   return (
@@ -117,7 +118,7 @@ export default function DistrictDrilldown() {
           {topAtms.map((atm) => (
             <button
               key={atm.atm_id}
-              onClick={() => navigate(`/atms/${atm.atm_id}`)}
+              onClick={() => open({ type: 'atm', id: atm.atm_id })}
               className="flex w-full flex-col gap-0.5 border-b border-slate-100 px-4 py-2 text-left hover:bg-slate-50"
             >
               <div className="flex items-center justify-between">

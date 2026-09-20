@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import { formatCurrency, formatIstTime } from '@/lib/selectors';
+import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 
 export default function CaseList() {
-  const navigate = useNavigate();
+  const { open } = useIntelligenceDrawer();
   const cases = useStore((s) => s.cases);
   const predictionsByCase = useStore((s) => s.predictionsByCase);
 
@@ -17,7 +17,7 @@ export default function CaseList() {
           return (
             <button
               key={c.case_id}
-              onClick={() => navigate(`/cases/${c.case_id}`)}
+              onClick={() => open({ type: 'case', id: c.case_id })}
               className="flex w-full items-center gap-4 px-4 py-3 text-left hover:bg-slate-50"
             >
               <div className="min-w-0 flex-1">

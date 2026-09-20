@@ -13,6 +13,7 @@ const NAV_ITEMS: NavItem[] = [
   { to: '/i4c', label: 'I4C Command Center', roles: ['I4C'] },
   { to: '/bank', label: 'Bank/FI Response Queue', roles: ['BANK'] },
   { to: '/gis', label: 'Telangana GIS', roles: ['LEA', 'I4C'] },
+  { to: '/predictions', label: 'Predictions', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/alerts', label: 'Alerts', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/cases', label: 'Cases', roles: ['LEA', 'I4C'] },
   { to: '/notifications', label: 'Notifications', roles: ['LEA', 'I4C', 'BANK'] },
@@ -30,7 +31,7 @@ export default function Sidebar() {
           key={item.to}
           to={item.to}
           className={({ isActive }) =>
-            `rounded px-3 py-2 text-sm font-medium transition-colors ${
+            `motion-nav-item rounded px-3 py-2 text-sm font-medium transition-colors ${
               isActive
                 ? 'bg-accent-600/10 text-accent-600'
                 : 'text-slate-600 hover:bg-slate-100 hover:text-navy-900'

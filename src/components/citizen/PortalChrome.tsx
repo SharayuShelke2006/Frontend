@@ -75,15 +75,15 @@ export default function PortalChrome({ children }: { children: ReactNode }) {
       </div>
 
       {/* Nav */}
-      <nav className="bg-accent-600">
+      <nav className="motion-citizen-navbar bg-accent-600">
         <div className="mx-auto flex max-w-6xl items-center gap-1 px-4 text-sm font-medium text-white">
-          <Link to="/citizen" className="px-3 py-2.5 hover:bg-white/10">
+          <Link to="/citizen" className="motion-nav-link px-3 py-2.5 hover:bg-white/10">
             Home
           </Link>
-          <Link to="/citizen/complaint" className="px-3 py-2.5 hover:bg-white/10">
+          <Link to="/citizen/complaint" className="motion-nav-link px-3 py-2.5 hover:bg-white/10">
             Register a Complaint
           </Link>
-          <Link to="/citizen/track" className="px-3 py-2.5 hover:bg-white/10">
+          <Link to="/citizen/track" className="motion-nav-link px-3 py-2.5 hover:bg-white/10">
             Track your Complaint
           </Link>
           <span className="cursor-not-allowed px-3 py-2.5 text-white/50">Learning Corner</span>

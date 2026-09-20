@@ -578,6 +578,7 @@ export const useStore = create<NirikshakState>((set, get) => ({
       lastUpdated: ts,
     }));
     persistOverlay(get());
+    get().showToast(`Alert acknowledged by ${recipientType === 'LEA' ? 'LEA' : 'Bank/FI'}: ${alertId}`);
   },
 
   assignAlert: (alertId, unitLabel) => {
@@ -600,6 +601,7 @@ export const useStore = create<NirikshakState>((set, get) => ({
       lastUpdated: ts,
     }));
     persistOverlay(get());
+    get().showToast(`Investigation assigned to ${unitLabel}`);
   },
 
   recordAction: (alertId, actionType, notes) => {
@@ -637,6 +639,7 @@ export const useStore = create<NirikshakState>((set, get) => ({
       lastUpdated: ts,
     }));
     persistOverlay(get());
+    get().showToast(`Action recorded for alert ${alertId}`);
   },
 
   recordOutcome: (alertId, outcomeType, feedbackLabel, notes) => {
@@ -674,6 +677,7 @@ export const useStore = create<NirikshakState>((set, get) => ({
       lastUpdated: ts,
     }));
     persistOverlay(get());
+    get().showToast(`Outcome recorded: ${feedbackLabel.replaceAll('_', ' ')}`);
   },
 
   markNotificationRead: (notificationId) => {

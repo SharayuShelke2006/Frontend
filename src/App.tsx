@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import Header from '@/components/layout/Header';
 import Sidebar from '@/components/layout/Sidebar';
 import ToastHost from '@/components/layout/ToastHost';
+import { IntelligenceDrawerProvider } from '@/components/shared/IntelligenceDrawer';
 import RoleRoute, { ROLE_HOME } from '@/components/layout/RoleRoute';
 import LeaDashboard from '@/pages/LeaDashboard';
 import I4cCommandCenter from '@/pages/I4cCommandCenter';
@@ -12,6 +13,7 @@ import GisOverview from '@/pages/GisOverview';
 import DistrictDrilldown from '@/pages/DistrictDrilldown';
 import AtmDetail from '@/pages/AtmDetail';
 import PredictionDetail from '@/pages/PredictionDetail';
+import PredictionQueue from '@/pages/PredictionQueue';
 import AlertQueue from '@/pages/AlertQueue';
 import AlertDetail from '@/pages/AlertDetail';
 import CaseList from '@/pages/CaseList';
@@ -27,13 +29,26 @@ const OPS_ROLES = ['LEA', 'I4C', 'BANK'] as const;
 
 function Shell() {
   const role = useStore((s) => s.role);
+  const mainRef = useRef<HTMLElement>(null);
+  const [mainScrolled, setMainScrolled] = useState(false);
+
+  useEffect(() => {
+    const main = mainRef.current;
+    if (!main) return;
+
+    const handleScroll = () => setMainScrolled(main.scrollTop > 8);
+    handleScroll();
+    main.addEventListener('scroll', handleScroll, { passive: true });
+    return () => main.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="flex h-screen flex-col">
-      <Header />
-      <div className="flex min-h-0 flex-1">
-        <Sidebar />
-        <main className="min-h-0 flex-1 overflow-y-auto bg-slate-50">
+    <IntelligenceDrawerProvider>
+      <div className="flex h-screen flex-col">
+        <Header scrolled={mainScrolled} />
+        <div className="flex min-h-0 flex-1">
+          <Sidebar />
+          <main ref={mainRef} className="min-h-0 flex-1 overflow-y-auto bg-slate-50">
           <Routes>
             <Route path="/" element={<Navigate to={ROLE_HOME[role]} replace />} />
             <Route
@@ -93,6 +108,14 @@ function Shell() {
               }
             />
             <Route
+              path="/predictions"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <PredictionQueue />
+                </RoleRoute>
+              }
+            />
+            <Route
               path="/alerts"
               element={
                 <RoleRoute roles={[...OPS_ROLES]}>
@@ -142,10 +165,11 @@ function Shell() {
             />
             <Route path="*" element={<Navigate to={ROLE_HOME[role]} replace />} />
           </Routes>
-        </main>
+          </main>
+        </div>
+        <ToastHost />
       </div>
-      <ToastHost />
-    </div>
+    </IntelligenceDrawerProvider>
   );
 }
 

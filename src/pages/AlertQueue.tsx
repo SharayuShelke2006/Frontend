@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import RiskBadge from '@/components/shared/RiskBadge';
+import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 import { formatIstTime } from '@/lib/selectors';
 import type { AlertStatus, RiskLevel } from '@/types/contract';
 
@@ -18,7 +18,7 @@ const STATUS_OPTIONS: AlertStatus[] = [
 const RISK_LEVELS: RiskLevel[] = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'];
 
 export default function AlertQueue() {
-  const navigate = useNavigate();
+  const { open } = useIntelligenceDrawer();
   const alerts = useStore((s) => s.alerts);
   const role = useStore((s) => s.role);
   const [statusFilter, setStatusFilter] = useState<AlertStatus | ''>('');
@@ -90,7 +90,7 @@ export default function AlertQueue() {
         {filtered.map((a) => (
           <button
             key={a.alert_id}
-            onClick={() => navigate(`/alerts/${a.alert_id}`)}
+            onClick={() => open({ type: 'alert', id: a.alert_id })}
             className="flex w-full items-center gap-4 px-4 py-3 text-left hover:bg-slate-50"
           >
             <RiskBadge level={a.severity} />

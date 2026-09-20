@@ -6,9 +6,11 @@ import RiskBadge from '@/components/shared/RiskBadge';
 import TelanganaMap from '@/components/map/TelanganaMap';
 import AnalyticsSection from '@/components/analytics/AnalyticsSection';
 import { formatIstTime } from '@/lib/selectors';
+import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 
 export default function LeaDashboard() {
   const navigate = useNavigate();
+  const { open } = useIntelligenceDrawer();
   const cases = useStore((s) => s.cases);
   const predictions = useStore((s) => s.predictions);
   const alerts = useStore((s) => s.alerts);
@@ -48,7 +50,7 @@ export default function LeaDashboard() {
             {recentAlerts.map((a) => (
               <button
                 key={a.alert_id}
-                onClick={() => navigate(`/alerts/${a.alert_id}`)}
+                onClick={() => open({ type: 'alert', id: a.alert_id })}
                 className="flex w-full flex-col gap-1 px-4 py-2 text-left hover:bg-slate-50"
               >
                 <div className="flex items-center justify-between">
@@ -78,7 +80,7 @@ export default function LeaDashboard() {
             {pendingActions.slice(0, 8).map((a) => (
               <button
                 key={a.alert_id}
-                onClick={() => navigate(`/alerts/${a.alert_id}`)}
+                onClick={() => open({ type: 'alert', id: a.alert_id })}
                 className="flex w-full items-center justify-between px-4 py-2 text-left hover:bg-slate-50"
               >
                 <span className="text-sm text-navy-900">
