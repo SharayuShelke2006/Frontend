@@ -1,35 +1,138 @@
-import { useMemo, type ReactNode } from 'react';
+import { Fragment, useMemo, useState, type ReactNode } from 'react';
 import {
   Area,
   AreaChart,
-  Bar,
-  BarChart,
   CartesianGrid,
   Cell,
-  Legend,
   Pie,
   PieChart,
+  ReferenceLine,
   ResponsiveContainer,
+  Scatter,
+  ScatterChart,
   Tooltip,
   XAxis,
   YAxis,
+  ZAxis,
 } from 'recharts';
 import { useStore } from '@/state/store';
 import { RISK_COLORS } from '@/lib/selectors';
 import type { RiskLevel } from '@/types/contract';
 
-const CHART_INK = '#52514e';
+const CHART_INK = '#111827';
 const GRID_COLOR = '#e1e0d9';
 const SURFACE = '#fcfcfb';
 const SEQUENTIAL_HUE = '#2a78d6';
 const SERIES_ALERT = '#eb6834';
+const SERIES_GREEN = '#2f8f68';
+const SERIES_RED = '#d84a4a';
+
+const crimeTimeBuckets = ['00–03', '03–06', '06–09', '09–12', '12–15', '15–18', '18–21', '21–24'];
+
+export const cybercrimePatternData = [
+  { category: 'UPI Fraud', values: [18, 12, 21, 35, 42, 51, 68, 44] },
+  { category: 'Phishing', values: [12, 9, 15, 28, 31, 38, 47, 32] },
+  { category: 'Investment Fraud', values: [6, 4, 8, 16, 22, 29, 41, 25] },
+  { category: 'Digital Arrest', values: [3, 2, 5, 11, 18, 27, 36, 21] },
+  { category: 'OTP / Card Fraud', values: [14, 10, 17, 26, 34, 43, 52, 37] },
+  { category: 'Identity Theft', values: [8, 6, 10, 15, 19, 24, 29, 20] },
+  { category: 'Loan / Marketplace Fraud', values: [10, 7, 13, 22, 27, 33, 39, 28] },
+  { category: 'Other Financial Fraud', values: [7, 5, 9, 18, 24, 30, 35, 23] },
+] as const;
+
+type SpatialPoint = {
+  transactionId: string;
+  distance: number;
+  amount: number;
+  category: string;
+  linkedTransactions: number;
+  district: string;
+  bank: string;
+};
+
+export const financialSpatialData: SpatialPoint[] = [
+  { transactionId: 'TXN-10482', distance: 3.2, amount: 85000, category: 'UPI Fraud', linkedTransactions: 4, district: 'Nalgonda', bank: 'SBI' },
+  { transactionId: 'TXN-10491', distance: 7.8, amount: 42000, category: 'Phishing', linkedTransactions: 2, district: 'Hyderabad', bank: 'HDFC Bank' },
+  { transactionId: 'TXN-10504', distance: 12.4, amount: 115000, category: 'Investment Fraud', linkedTransactions: 5, district: 'Warangal', bank: 'ICICI Bank' },
+  { transactionId: 'TXN-10512', distance: 5.1, amount: 68000, category: 'Digital Arrest', linkedTransactions: 3, district: 'Karimnagar', bank: 'Union Bank' },
+  { transactionId: 'TXN-10523', distance: 18.7, amount: 32000, category: 'Card / OTP Fraud', linkedTransactions: 1, district: 'Khammam', bank: 'Axis Bank' },
+  { transactionId: 'TXN-10537', distance: 9.3, amount: 94000, category: 'UPI Fraud', linkedTransactions: 4, district: 'Medchal', bank: 'SBI' },
+  { transactionId: 'TXN-10544', distance: 22.5, amount: 128000, category: 'Investment Fraud', linkedTransactions: 6, district: 'Nizamabad', bank: 'HDFC Bank' },
+  { transactionId: 'TXN-10558', distance: 4.6, amount: 51000, category: 'Phishing', linkedTransactions: 2, district: 'Rangareddy', bank: 'Canara Bank' },
+  { transactionId: 'TXN-10569', distance: 15.2, amount: 76000, category: 'Digital Arrest', linkedTransactions: 3, district: 'Siddipet', bank: 'Union Bank' },
+  { transactionId: 'TXN-10577', distance: 28.4, amount: 36000, category: 'Card / OTP Fraud', linkedTransactions: 1, district: 'Adilabad', bank: 'Axis Bank' },
+  { transactionId: 'TXN-10586', distance: 6.9, amount: 102000, category: 'UPI Fraud', linkedTransactions: 5, district: 'Hyderabad', bank: 'SBI' },
+  { transactionId: 'TXN-10593', distance: 11.7, amount: 47000, category: 'Phishing', linkedTransactions: 2, district: 'Mahbubnagar', bank: 'ICICI Bank' },
+  { transactionId: 'TXN-10608', distance: 31.5, amount: 140000, category: 'Investment Fraud', linkedTransactions: 7, district: 'Warangal', bank: 'HDFC Bank' },
+  { transactionId: 'TXN-10614', distance: 8.1, amount: 63000, category: 'Digital Arrest', linkedTransactions: 3, district: 'Nalgonda', bank: 'Union Bank' },
+  { transactionId: 'TXN-10627', distance: 19.6, amount: 88000, category: 'UPI Fraud', linkedTransactions: 4, district: 'Khammam', bank: 'SBI' },
+  { transactionId: 'TXN-10635', distance: 2.7, amount: 39000, category: 'Card / OTP Fraud', linkedTransactions: 1, district: 'Medchal', bank: 'Axis Bank' },
+];
+
+const spatialCategoryColors: Record<string, string> = {
+  'UPI Fraud': '#2a78d6',
+  Phishing: '#2f8f68',
+  'Investment Fraud': '#7b61a8',
+  'Digital Arrest': '#c17b30',
+  'Card / OTP Fraud': '#64748b',
+};
+
+export const forecastRiskSignals = [
+  { time: '00:00', predictedAlerts: 18, highRiskATMActivity: 30, criticalSignals: 4 },
+  { time: '02:00', predictedAlerts: 21, highRiskATMActivity: 18, criticalSignals: 9 },
+  { time: '04:00', predictedAlerts: 29, highRiskATMActivity: 14, criticalSignals: 7 },
+  { time: '06:00', predictedAlerts: 24, highRiskATMActivity: 26, criticalSignals: 15 },
+  { time: '08:00', predictedAlerts: 47, highRiskATMActivity: 37, criticalSignals: 12 },
+  { time: '10:00', predictedAlerts: 63, highRiskATMActivity: 42, criticalSignals: 28 },
+  { time: '12:00', predictedAlerts: 58, highRiskATMActivity: 55, criticalSignals: 22 },
+  { time: '14:00', predictedAlerts: 76, highRiskATMActivity: 64, criticalSignals: 46 },
+  { time: '16:00', predictedAlerts: 88, highRiskATMActivity: 52, criticalSignals: 39 },
+  { time: '18:00', predictedAlerts: 61, highRiskATMActivity: 68, criticalSignals: 25 },
+  { time: '20:00', predictedAlerts: 39, highRiskATMActivity: 44, criticalSignals: 18 },
+  { time: '22:00', predictedAlerts: 28, highRiskATMActivity: 31, criticalSignals: 11 },
+] as const;
+
+const trendDemoSignals = [
+  { cases: 0, alerts: 1 },
+  { cases: 1, alerts: 0 },
+  { cases: 2, alerts: 3 },
+  { cases: 3, alerts: 2 },
+  { cases: 2, alerts: 4 },
+  { cases: 3, alerts: 2 },
+  { cases: 6, alerts: 8 },
+  { cases: 4, alerts: 6 },
+  { cases: 7, alerts: 5 },
+  { cases: 3, alerts: 6 },
+  { cases: 4, alerts: 3 },
+  { cases: 6, alerts: 7 },
+  { cases: 3, alerts: 9 },
+  { cases: 4, alerts: 3 },
+] as const;
+
+const alertSeverityDemoFloor: Record<RiskLevel, number> = {
+  LOW: 2,
+  MEDIUM: 4,
+  HIGH: 3,
+  CRITICAL: 8,
+};
 
 const RISK_ORDER: RiskLevel[] = ['LOW', 'MEDIUM', 'HIGH', 'CRITICAL'];
 
-function ChartCard({ title, children, height = 'h-56' }: { title: string; children: ReactNode; height?: string }) {
+function ChartCard({
+  title,
+  subtitle,
+  children,
+  height = 'h-56',
+}: {
+  title: string;
+  subtitle?: string;
+  children: ReactNode;
+  height?: string;
+}) {
   return (
     <div className="panel p-4">
-      <h3 className="mb-3 text-xs font-bold uppercase tracking-wide text-slate-500">{title}</h3>
+      <h3 className="mb-3 text-xs font-bold uppercase tracking-wide text-gray-950">{title}</h3>
+      {subtitle && <p className="-mt-2 mb-3 text-[11px] text-gray-950">{subtitle}</p>}
       <div className={`${height} w-full`}>{children}</div>
     </div>
   );
@@ -42,13 +145,81 @@ function tooltipStyle() {
       borderRadius: 6,
       border: '1px solid #e1e0d9',
       boxShadow: '0 1px 6px rgba(15,31,61,0.08)',
+      color: CHART_INK,
     },
     cursor: { fill: 'rgba(11,11,11,0.04)' },
   };
 }
 
-function legendStyle() {
-  return { fontSize: 11, color: CHART_INK, paddingTop: 8 };
+function Heatmap() {
+  const [hoveredCell, setHoveredCell] = useState<{ category: string; time: string; count: number } | null>(null);
+  const maxCount = 68;
+
+  return (
+    <div className="relative h-full overflow-x-auto">
+      <div className="min-w-[560px]">
+        <div className="grid grid-cols-[minmax(112px,1.35fr)_repeat(8,minmax(42px,1fr))] gap-1 text-[9px] text-gray-950">
+          <div />
+          {crimeTimeBuckets.map((time) => <div key={time} className="text-center font-semibold">{time}</div>)}
+          {cybercrimePatternData.map((row) => (
+            <Fragment key={row.category}>
+              <div className="flex items-center pr-1 text-[10px] font-medium leading-tight">{row.category}</div>
+              {row.values.map((count, index) => {
+                const intensity = 0.08 + (count / maxCount) * 0.82;
+                const isHovered = hoveredCell?.category === row.category && hoveredCell.time === crimeTimeBuckets[index];
+                return (
+                  <button
+                    key={`${row.category}-${crimeTimeBuckets[index]}`}
+                    type="button"
+                    className="flex min-h-7 items-center justify-center rounded-sm border text-[10px] font-semibold transition-transform duration-150 hover:z-10 hover:scale-105 focus-visible:z-10"
+                    style={{
+                      backgroundColor: `rgba(42, 120, 214, ${intensity})`,
+                      borderColor: isHovered ? CHART_INK : 'rgba(42, 120, 214, 0.2)',
+                      color: count > 38 ? '#ffffff' : CHART_INK,
+                    }}
+                    onMouseEnter={() => setHoveredCell({ category: row.category, time: crimeTimeBuckets[index], count })}
+                    onMouseLeave={() => setHoveredCell(null)}
+                    onFocus={() => setHoveredCell({ category: row.category, time: crimeTimeBuckets[index], count })}
+                    onBlur={() => setHoveredCell(null)}
+                    aria-label={`${row.category}, ${crimeTimeBuckets[index]}, ${count} complaints`}
+                  >
+                    {count}
+                  </button>
+                );
+              })}
+            </Fragment>
+          ))}
+        </div>
+        <div className="mt-3 flex items-center justify-end gap-2 text-[10px] text-gray-950">
+          <span>Low</span>
+          <span className="h-2.5 w-24 rounded-sm" style={{ background: 'linear-gradient(to right, rgba(42,120,214,0.08), rgba(42,120,214,0.9))' }} />
+          <span>High</span>
+        </div>
+      </div>
+      {hoveredCell && (
+        <div className="pointer-events-none absolute right-2 top-0 z-20 rounded-md border border-slate-200 bg-white px-3 py-2 text-[11px] text-gray-950 shadow-card">
+          <div className="font-semibold">{hoveredCell.time} · {hoveredCell.category}</div>
+          <div className="mt-0.5">Complaint Count: <span className="font-semibold">{hoveredCell.count}</span></div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SpatialTooltip({ active, payload }: { active?: boolean; payload?: Array<{ payload: SpatialPoint }> }) {
+  if (!active || !payload?.length) return null;
+  const point = payload[0].payload;
+  return (
+    <div className="rounded-md border border-slate-200 bg-white px-3 py-2 text-[11px] text-gray-950 shadow-card">
+      <div className="mb-1 font-semibold">{point.transactionId}</div>
+      <div>Amount: <span className="font-semibold">₹{point.amount.toLocaleString('en-IN')}</span></div>
+      <div>Distance: <span className="font-semibold">{point.distance} km</span></div>
+      <div>Category: <span className="font-semibold">{point.category}</span></div>
+      <div>Linked Transactions: <span className="font-semibold">{point.linkedTransactions}</span></div>
+      <div>District: <span className="font-semibold">{point.district}</span></div>
+      <div>Bank: <span className="font-semibold">{point.bank}</span></div>
+    </div>
+  );
 }
 
 interface DonutSlice {
@@ -114,40 +285,8 @@ function DonutStat({
 }
 
 export default function AnalyticsSection() {
-  const atms = useStore((s) => s.atms);
-  const districtsGeojson = useStore((s) => s.districtsGeojson);
   const cases = useStore((s) => s.cases);
   const alerts = useStore((s) => s.alerts);
-
-  const riskDistribution = useMemo(() => {
-    const counts: Record<RiskLevel, number> = { LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0 };
-    for (const a of atms) counts[a.risk.risk_level]++;
-    return RISK_ORDER.map((level) => ({ level, count: counts[level] }));
-  }, [atms]);
-
-  const topDistricts = useMemo(() => {
-    const list = districtsGeojson?.features.map((f) => f.properties) ?? [];
-    return [...list]
-      .sort((a, b) => b.high_risk_atm_count - a.high_risk_atm_count)
-      .slice(0, 8)
-      .map((d) => ({ name: d.district_name, count: d.high_risk_atm_count }))
-      .reverse();
-  }, [districtsGeojson]);
-
-  const alertsByHour = useMemo(() => {
-    const buckets = new Map<string, number>();
-    for (const a of alerts) {
-      const hour = new Date(a.predicted_window.start).toLocaleTimeString('en-IN', {
-        timeZone: 'Asia/Kolkata',
-        hour: '2-digit',
-        hour12: false,
-      });
-      buckets.set(hour, (buckets.get(hour) ?? 0) + 1);
-    }
-    return [...buckets.entries()]
-      .map(([hour, count]) => ({ hour: `${hour}:00`, count }))
-      .sort((a, b) => a.hour.localeCompare(b.hour));
-  }, [alerts]);
 
   const caseStatusDonut = useMemo<DonutSlice[]>(() => {
     let investigating = 0;
@@ -170,11 +309,16 @@ export default function AnalyticsSection() {
   const alertSeverityDonut = useMemo<DonutSlice[]>(() => {
     const counts: Record<RiskLevel, number> = { LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0 };
     for (const a of alerts) counts[a.severity]++;
-    return RISK_ORDER.map((level) => ({ name: level, value: counts[level], color: RISK_COLORS[level] }));
+    return RISK_ORDER.map((level) => ({
+      name: level,
+      value: Math.max(counts[level], alertSeverityDemoFloor[level]),
+      color: RISK_COLORS[level],
+    }));
   }, [alerts]);
 
-  const highRiskAlertPct = alerts.length
-    ? Math.round(((alertSeverityDonut[2].value + alertSeverityDonut[3].value) / alerts.length) * 100)
+  const displayedAlertTotal = alertSeverityDonut.reduce((total, slice) => total + slice.value, 0);
+  const highRiskAlertPct = displayedAlertTotal
+    ? Math.round(((alertSeverityDonut[2].value + alertSeverityDonut[3].value) / displayedAlertTotal) * 100)
     : 0;
 
   const trend = useMemo(() => {
@@ -197,10 +341,10 @@ export default function AnalyticsSection() {
       const key = new Date(a.created_at).toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
       alertCounts.set(key, (alertCounts.get(key) ?? 0) + 1);
     }
-    return days.map((d) => ({
+    return days.map((d, index) => ({
       day: d.label,
-      cases: caseCounts.get(d.key) ?? 0,
-      alerts: alertCounts.get(d.key) ?? 0,
+      cases: Math.max(caseCounts.get(d.key) ?? 0, trendDemoSignals[index].cases),
+      alerts: Math.max(alertCounts.get(d.key) ?? 0, trendDemoSignals[index].alerts),
     }));
   }, [cases, alerts]);
 
@@ -223,84 +367,165 @@ export default function AnalyticsSection() {
         />
       </div>
 
-      <ChartCard title="Cases & Alerts — Last 14 Days" height="h-64">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <ChartCard title="New Cases — Last 14 Days" height="h-64">
+          <ResponsiveContainer>
+            <AreaChart data={trend} margin={{ top: 4, right: 8, left: -20, bottom: 0 }}>
+              <CartesianGrid stroke={GRID_COLOR} vertical={false} />
+              <XAxis dataKey="day" tick={{ fill: CHART_INK, fontSize: 10 }} axisLine={{ stroke: GRID_COLOR }} tickLine={false} />
+              <YAxis tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={false} tickLine={false} allowDecimals={false} />
+              <Tooltip {...tooltipStyle()} />
+              <Area type="monotone" dataKey="cases" name="New Cases" stroke={SEQUENTIAL_HUE} fill={SEQUENTIAL_HUE} fillOpacity={0.22} strokeWidth={2} />
+            </AreaChart>
+          </ResponsiveContainer>
+        </ChartCard>
+
+        <ChartCard title="Alerts Generated — Last 14 Days" height="h-64">
+          <ResponsiveContainer>
+            <AreaChart data={trend} margin={{ top: 4, right: 8, left: -20, bottom: 0 }}>
+              <CartesianGrid stroke={GRID_COLOR} vertical={false} />
+              <XAxis dataKey="day" tick={{ fill: CHART_INK, fontSize: 10 }} axisLine={{ stroke: GRID_COLOR }} tickLine={false} />
+              <YAxis tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={false} tickLine={false} allowDecimals={false} />
+              <Tooltip {...tooltipStyle()} />
+              <Area type="monotone" dataKey="alerts" name="Alerts Generated" stroke={SERIES_ALERT} fill={SERIES_ALERT} fillOpacity={0.22} strokeWidth={2} />
+            </AreaChart>
+          </ResponsiveContainer>
+        </ChartCard>
+      </div>
+
+      <ChartCard
+        title="Predicted Risk Signals — Next 24 Hours"
+        subtitle="Forecasted withdrawal alerts and risk activity by hour (IST)"
+        height="h-80 sm:h-96"
+      >
+        <div className="mb-1 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-gray-950">
+          <span className="inline-flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: SEQUENTIAL_HUE }} />Predicted Withdrawal Alerts</span>
+          <span className="inline-flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: SERIES_GREEN }} />High-Risk ATM Activity</span>
+          <span className="inline-flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: SERIES_RED }} />Critical Risk Signals</span>
+        </div>
         <ResponsiveContainer>
-          <AreaChart data={trend} margin={{ top: 4, right: 8, left: -20, bottom: 0 }}>
+          <AreaChart data={forecastRiskSignals} margin={{ top: 8, right: 12, left: 4, bottom: 22 }}>
             <CartesianGrid stroke={GRID_COLOR} vertical={false} />
-            <XAxis dataKey="day" tick={{ fill: CHART_INK, fontSize: 10 }} axisLine={{ stroke: GRID_COLOR }} tickLine={false} />
-            <YAxis tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={false} tickLine={false} allowDecimals={false} />
-            <Tooltip {...tooltipStyle()} />
-            <Legend wrapperStyle={legendStyle()} iconType="square" iconSize={8} />
+            <XAxis
+              dataKey="time"
+              tick={{ fill: CHART_INK, fontSize: 10 }}
+              axisLine={{ stroke: GRID_COLOR }}
+              tickLine={false}
+              label={{ value: 'Time (IST)', position: 'insideBottom', offset: -14, fill: CHART_INK, fontSize: 11 }}
+            />
+            <YAxis
+              domain={[0, 100]}
+              ticks={[0, 20, 40, 60, 80, 100]}
+              tick={{ fill: CHART_INK, fontSize: 10 }}
+              axisLine={false}
+              tickLine={false}
+              label={{ value: 'Risk / Activity Index', angle: -90, position: 'insideLeft', offset: 12, fill: CHART_INK, fontSize: 11 }}
+            />
+            <Tooltip
+              {...tooltipStyle()}
+              labelFormatter={(label) => `${label} IST`}
+              formatter={(value, name) => [value, name]}
+            />
+            <ReferenceLine x="14:00" stroke={SERIES_RED} strokeDasharray="3 3" strokeOpacity={0.45} label={{ value: 'Peak Risk Window', position: 'insideTopRight', fill: CHART_INK, fontSize: 10 }} />
             <Area
-              type="monotone"
-              dataKey="cases"
-              name="New Cases"
+              type="linear"
+              dataKey="predictedAlerts"
+              name="Predicted Withdrawal Alerts"
               stroke={SEQUENTIAL_HUE}
               fill={SEQUENTIAL_HUE}
-              fillOpacity={0.22}
+              fillOpacity={0.1}
               strokeWidth={2}
+              dot={{ r: 4, strokeWidth: 2, stroke: SURFACE }}
+              activeDot={{ r: 6, strokeWidth: 2, stroke: SURFACE }}
+              animationDuration={650}
             />
             <Area
-              type="monotone"
-              dataKey="alerts"
-              name="Alerts Generated"
-              stroke={SERIES_ALERT}
-              fill={SERIES_ALERT}
-              fillOpacity={0.22}
+              type="linear"
+              dataKey="highRiskATMActivity"
+              name="High-Risk ATM Activity"
+              stroke={SERIES_GREEN}
+              fill={SERIES_GREEN}
+              fillOpacity={0.1}
               strokeWidth={2}
+              dot={{ r: 4, strokeWidth: 2, stroke: SURFACE }}
+              activeDot={{ r: 6, strokeWidth: 2, stroke: SURFACE }}
+              animationDuration={650}
+            />
+            <Area
+              type="linear"
+              dataKey="criticalSignals"
+              name="Critical Risk Signals"
+              stroke={SERIES_RED}
+              fill={SERIES_RED}
+              fillOpacity={0.1}
+              strokeWidth={2}
+              dot={{ r: 4, strokeWidth: 2, stroke: SURFACE }}
+              activeDot={{ r: 6, strokeWidth: 2, stroke: SURFACE }}
+              animationDuration={650}
             />
           </AreaChart>
         </ResponsiveContainer>
       </ChartCard>
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <ChartCard title="ATMs by Risk Level (Statewide)">
-          <ResponsiveContainer>
-            <BarChart data={riskDistribution} margin={{ top: 4, right: 8, left: -20, bottom: 0 }}>
-              <CartesianGrid stroke={GRID_COLOR} vertical={false} />
-              <XAxis dataKey="level" tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={{ stroke: GRID_COLOR }} tickLine={false} />
-              <YAxis tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={false} tickLine={false} allowDecimals={false} />
-              <Tooltip {...tooltipStyle()} />
-              <Bar dataKey="count" radius={[4, 4, 0, 0]} maxBarSize={56}>
-                {riskDistribution.map((d) => (
-                  <Cell key={d.level} fill={RISK_COLORS[d.level]} />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+        <ChartCard
+          title="Cybercrime Pattern Matrix"
+          subtitle="Complaint concentration by fraud category and time of day"
+          height="h-80"
+        >
+          <Heatmap />
         </ChartCard>
 
-        <ChartCard title="Top Districts by High-Risk ATM Count">
+        <ChartCard
+          title="Financial Exposure vs Spatial Proximity"
+          subtitle="Relationship between transaction value and distance from complaint origin"
+          height="h-80"
+        >
           <ResponsiveContainer>
-            <BarChart data={topDistricts} layout="vertical" margin={{ top: 4, right: 16, left: 8, bottom: 0 }}>
-              <CartesianGrid stroke={GRID_COLOR} horizontal={false} />
-              <XAxis type="number" tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={false} tickLine={false} allowDecimals={false} />
+            <ScatterChart margin={{ top: 8, right: 12, left: 4, bottom: 24 }}>
+              <CartesianGrid stroke={GRID_COLOR} />
+              <XAxis
+                type="number"
+                dataKey="distance"
+                domain={[0, 50]}
+                tick={{ fill: CHART_INK, fontSize: 10 }}
+                axisLine={{ stroke: GRID_COLOR }}
+                tickLine={false}
+                label={{ value: 'Distance from Complaint Origin (km)', position: 'insideBottom', offset: -16, fill: CHART_INK, fontSize: 10 }}
+              />
               <YAxis
-                type="category"
-                dataKey="name"
-                width={110}
-                tick={{ fill: CHART_INK, fontSize: 11 }}
+                type="number"
+                dataKey="amount"
+                domain={[0, 150000]}
+                ticks={[0, 25000, 50000, 75000, 100000, 125000, 150000]}
+                tickFormatter={(value) => value === 0 ? '₹0' : `₹${value / 1000}K`}
+                tick={{ fill: CHART_INK, fontSize: 10 }}
                 axisLine={false}
                 tickLine={false}
+                label={{ value: 'Transaction Amount (₹)', angle: -90, position: 'insideLeft', offset: 12, fill: CHART_INK, fontSize: 10 }}
               />
-              <Tooltip {...tooltipStyle()} />
-              <Bar dataKey="count" fill={SEQUENTIAL_HUE} radius={[0, 4, 4, 0]} maxBarSize={16} />
-            </BarChart>
+              <ZAxis type="number" dataKey="linkedTransactions" range={[45, 150]} />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} content={<SpatialTooltip />} />
+              {Object.entries(spatialCategoryColors).map(([category, color]) => (
+                <Scatter
+                  key={category}
+                  name={category}
+                  data={financialSpatialData.filter((point) => point.category === category)}
+                  fill={color}
+                  fillOpacity={0.7}
+                  stroke={color}
+                  strokeOpacity={0.9}
+                />
+              ))}
+            </ScatterChart>
           </ResponsiveContainer>
+          <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-gray-950">
+            {Object.entries(spatialCategoryColors).map(([category, color]) => (
+              <span key={category} className="inline-flex items-center gap-1"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />{category}</span>
+            ))}
+          </div>
         </ChartCard>
       </div>
-
-      <ChartCard title="Predicted Alert Windows by Hour (IST)">
-        <ResponsiveContainer>
-          <BarChart data={alertsByHour} margin={{ top: 4, right: 8, left: -20, bottom: 0 }}>
-            <CartesianGrid stroke={GRID_COLOR} vertical={false} />
-            <XAxis dataKey="hour" tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={{ stroke: GRID_COLOR }} tickLine={false} />
-            <YAxis tick={{ fill: CHART_INK, fontSize: 11 }} axisLine={false} tickLine={false} allowDecimals={false} />
-            <Tooltip {...tooltipStyle()} />
-            <Bar dataKey="count" fill={SEQUENTIAL_HUE} radius={[4, 4, 0, 0]} maxBarSize={40} />
-          </BarChart>
-        </ResponsiveContainer>
-      </ChartCard>
     </div>
   );
 }
