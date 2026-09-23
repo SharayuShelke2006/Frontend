@@ -10,9 +10,11 @@ interface Props {
   backTo?: string;
   backLabel?: string;
   extraHeader?: ReactNode;
+  belowMap?: ReactNode;
 }
 
-export default function DistrictDrilldown({ backTo = '/gis', backLabel = 'Telangana', extraHeader }: Props) {
+export default function DistrictDrilldown({ backTo = '/gis', backLabel = 'Telangana', extraHeader, belowMap }: Props) {
+  const hasExtra = Boolean(belowMap);
   const { districtId } = useParams();
   const { open } = useIntelligenceDrawer();
   const districtsGeojson = useStore((s) => s.districtsGeojson);
@@ -63,7 +65,7 @@ export default function DistrictDrilldown({ backTo = '/gis', backLabel = 'Telang
   }
 
   return (
-    <div className="flex h-full flex-col">
+    <div className={hasExtra ? 'flex flex-col' : 'flex h-full flex-col'}>
       <div className="flex flex-col gap-2 border-b border-slate-200 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <div className="text-[11px] text-slate-400">
@@ -84,8 +86,8 @@ export default function DistrictDrilldown({ backTo = '/gis', backLabel = 'Telang
           )}
         </div>
       </div>
-      <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
-        <div className="h-64 min-h-0 shrink-0 lg:h-auto lg:flex-1">
+      <div className={`flex min-h-0 flex-col lg:flex-row ${hasExtra ? '' : 'flex-1'}`}>
+        <div className={hasExtra ? 'h-64 w-full shrink-0 lg:h-[480px] lg:flex-1' : 'h-64 min-h-0 shrink-0 lg:h-auto lg:flex-1'}>
           <DistrictMap
             district={districtFeature}
             areas={districtAreas}
@@ -94,7 +96,11 @@ export default function DistrictDrilldown({ backTo = '/gis', backLabel = 'Telang
             onSelectAtm={handleSelectAtm}
           />
         </div>
-        <div className="w-full min-h-0 flex-1 overflow-y-auto border-t border-slate-200 bg-white lg:w-80 lg:flex-none lg:border-l lg:border-t-0">
+        <div
+          className={`w-full overflow-y-auto border-t border-slate-200 bg-white lg:w-80 lg:flex-none lg:border-l lg:border-t-0 ${
+            hasExtra ? 'h-64 lg:h-[480px]' : 'min-h-0 flex-1'
+          }`}
+        >
           {districtAreas.length > 0 && (
             <>
               <div className="border-b border-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -137,6 +143,7 @@ export default function DistrictDrilldown({ backTo = '/gis', backLabel = 'Telang
           ))}
         </div>
       </div>
+      {belowMap && <div className="p-4 sm:p-6">{belowMap}</div>}
     </div>
   );
 }

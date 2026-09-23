@@ -1,35 +1,31 @@
-// Real Telangana district police badge images, provided for 29 of the 33
-// districts. The remaining 4 (Hanumakonda, Jangoan, Mancherial, Peddapalli)
-// have no source image and fall back to a generic placeholder shield
-// (see GenericShieldIcon) wherever DISTRICT_BADGE_MAP has no entry.
+// Real Telangana district police badge images. Filenames as supplied; encoded
+// since several contain spaces. Only districts with a supplied image appear
+// here — everything else falls back to a generic placeholder shield (see
+// GenericShieldIcon) wherever DISTRICT_BADGE_MAP has no entry.
+function badge(filename: string): string {
+  return `/district-badges/${encodeURIComponent(filename)}`;
+}
+
 export const DISTRICT_BADGE_MAP: Record<string, string> = {
-  'D-ADILABAD': '/district-badges/D-ADILABAD.png',
-  'D-BHADRADRI-KOTHAGUDEM': '/district-badges/D-BHADRADRI-KOTHAGUDEM.png',
-  'D-HYDERABAD': '/district-badges/D-HYDERABAD.png',
-  'D-JAGITIAL': '/district-badges/D-JAGITIAL.png',
-  'D-JAYASHANKAR': '/district-badges/D-JAYASHANKAR.png',
-  'D-JOGULAMBA-GADWAL': '/district-badges/D-JOGULAMBA-GADWAL.png',
-  'D-KAMAREDDY': '/district-badges/D-KAMAREDDY.png',
-  'D-KARIMNAGAR': '/district-badges/D-KARIMNAGAR.png',
-  'D-KHAMMAM': '/district-badges/D-KHAMMAM.png',
-  'D-KUMURAM-BHEEM-ASIFABAD': '/district-badges/D-KUMURAM-BHEEM-ASIFABAD.png',
-  'D-MAHABUBABAD': '/district-badges/D-MAHABUBABAD.png',
-  'D-MAHABUBNAGAR': '/district-badges/D-MAHABUBNAGAR.png',
-  'D-MEDAK': '/district-badges/D-MEDAK.png',
-  'D-MEDCHAL-MALKAJGIRI': '/district-badges/D-MEDCHAL-MALKAJGIRI.png',
-  'D-MULUGU': '/district-badges/D-MULUGU.png',
-  'D-NAGARKURNOOL': '/district-badges/D-NAGARKURNOOL.png',
-  'D-NALGONDA': '/district-badges/D-NALGONDA.png',
-  'D-NARAYANPET': '/district-badges/D-NARAYANPET.png',
-  'D-NIRMAL': '/district-badges/D-NIRMAL.png',
-  'D-NIZAMABAD': '/district-badges/D-NIZAMABAD.png',
-  'D-RAJANNA-SIRCILLA': '/district-badges/D-RAJANNA-SIRCILLA.png',
-  'D-RANGA-REDDY': '/district-badges/D-RANGA-REDDY.png',
-  'D-SANGAREDDY': '/district-badges/D-SANGAREDDY.png',
-  'D-SIDDIPET': '/district-badges/D-SIDDIPET.png',
-  'D-SURYAPET': '/district-badges/D-SURYAPET.png',
-  'D-VIKARABAD': '/district-badges/D-VIKARABAD.png',
-  'D-WANAPARTHY': '/district-badges/D-WANAPARTHY.png',
-  'D-WARANGAL': '/district-badges/D-WARANGAL.png',
-  'D-YADADRI-BHUVANAGIRI': '/district-badges/D-YADADRI-BHUVANAGIRI.png',
+  'D-ADILABAD': badge('Adilabad.png'),
+  'D-BHADRADRI-KOTHAGUDEM': badge('Bhadradri kothagudem.png'),
+  'D-JAGITIAL': badge('Jagtial.png'),
+  'D-JAYASHANKAR': badge('J.Bhupalpally.png'),
+  'D-JOGULAMBA-GADWAL': badge('J.gadwal.png'),
+  'D-KAMAREDDY': badge('Kamareddy.png'),
+  'D-KUMURAM-BHEEM-ASIFABAD': badge('KB.Asifabad.png'),
+  'D-MAHABUBABAD': badge('Mahabubabad.png'),
+  'D-MAHABUBNAGAR': badge('Mahabubnagar.png'),
+  'D-MEDAK': badge('Medak.png'),
+  'D-MULUGU': badge('Mulugu.png'),
+  'D-NAGARKURNOOL': badge('Nagarkurnool.png'),
+  'D-NALGONDA': badge('Nalgonda.png'),
+  'D-NARAYANPET': badge('Narayanpet.png'),
+  'D-NIRMAL': badge('Nirmal.png'),
+  'D-RAJANNA-SIRCILLA': badge('R.sircilla.png'),
+  'D-SANGAREDDY': badge('sangareddy.png'),
+  'D-SURYAPET': badge('Suryapet.png'),
+  'D-VIKARABAD': badge('Vikarabad.png'),
+  'D-WANAPARTHY': badge('Wanaparthy.png'),
+  'D-YADADRI-BHUVANAGIRI': badge('Yadadri Bhuvanagiri.png'),
 };

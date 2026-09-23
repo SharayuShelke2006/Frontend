@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useDistrictCases } from '@/lib/selectors';
 import { useStore } from '@/state/store';
 import DistrictDrilldown from './DistrictDrilldown';
+import AnalyticsSection from '@/components/analytics/AnalyticsSection';
 
 export default function CoordinatorDetail() {
   const { districtId } = useParams();
@@ -23,6 +24,7 @@ export default function CoordinatorDetail() {
           Coordinator: {coordinator.unit_name} · Unit ID {coordinator.unit_id}
         </p>
       }
+      belowMap={<AnalyticsSection districtId={districtId} />}
     />
   );
 }

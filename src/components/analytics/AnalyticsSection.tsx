@@ -13,7 +13,7 @@ import {
   ZAxis,
 } from 'recharts';
 import { useStore } from '@/state/store';
-import { RISK_COLORS } from '@/lib/selectors';
+import { RISK_COLORS, useDistrictAlerts, useDistrictCases } from '@/lib/selectors';
 import type { RiskLevel } from '@/types/contract';
 import {
   CHART_INK,
@@ -190,9 +190,14 @@ function SpatialTooltip({ active, payload }: { active?: boolean; payload?: Array
   );
 }
 
-export default function AnalyticsSection() {
-  const cases = useStore((s) => s.cases);
-  const alerts = useStore((s) => s.alerts);
+export default function AnalyticsSection({ districtId }: { districtId?: string } = {}) {
+  const allCases = useStore((s) => s.cases);
+  const allAlerts = useStore((s) => s.alerts);
+  const districtCases = useDistrictCases(districtId);
+  const districtAlerts = useDistrictAlerts(districtId);
+  const cases = districtId ? districtCases : allCases;
+  const alerts = districtId ? districtAlerts : allAlerts;
+  const isScoped = Boolean(districtId);
 
   const caseStatusDonut = useMemo<DonutSlice[]>(() => {
     let investigating = 0;
@@ -217,10 +222,10 @@ export default function AnalyticsSection() {
     for (const a of alerts) counts[a.severity]++;
     return RISK_ORDER.map((level) => ({
       name: level,
-      value: Math.max(counts[level], alertSeverityDemoFloor[level]),
+      value: isScoped ? counts[level] : Math.max(counts[level], alertSeverityDemoFloor[level]),
       color: RISK_COLORS[level],
     }));
-  }, [alerts]);
+  }, [alerts, isScoped]);
 
   const displayedAlertTotal = alertSeverityDonut.reduce((total, slice) => total + slice.value, 0);
   const highRiskAlertPct = displayedAlertTotal
@@ -249,10 +254,10 @@ export default function AnalyticsSection() {
     }
     return days.map((d, index) => ({
       day: d.label,
-      cases: Math.max(caseCounts.get(d.key) ?? 0, trendDemoSignals[index].cases),
-      alerts: Math.max(alertCounts.get(d.key) ?? 0, trendDemoSignals[index].alerts),
+      cases: isScoped ? caseCounts.get(d.key) ?? 0 : Math.max(caseCounts.get(d.key) ?? 0, trendDemoSignals[index].cases),
+      alerts: isScoped ? alertCounts.get(d.key) ?? 0 : Math.max(alertCounts.get(d.key) ?? 0, trendDemoSignals[index].alerts),
     }));
-  }, [cases, alerts]);
+  }, [cases, alerts, isScoped]);
 
   return (
     <div className="mt-4">
