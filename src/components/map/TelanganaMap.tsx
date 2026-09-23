@@ -5,6 +5,7 @@ import type { Layer, Path, StyleFunction } from 'leaflet';
 import { useStore } from '@/state/store';
 import { RISK_COLORS, RISK_FILL_OPACITY } from '@/lib/selectors';
 import type { DistrictFeatureProperties } from '@/lib/data';
+import type { Atm } from '@/types/contract';
 import AtmDotLayer from './AtmDotLayer';
 import MapLegend from './MapLegend';
 import ResizeFix from './ResizeFix';
@@ -13,13 +14,18 @@ const TELANGANA_CENTER: [number, number] = [17.95, 79.4];
 
 interface Props {
   riskFilter?: string | null;
+  atms?: Atm[];
+  interactiveAtms?: boolean;
+  onSelectAtm?: (atm: Atm) => void;
+  disableDistrictNav?: boolean;
 }
 
-export default function TelanganaMap({ riskFilter }: Props) {
+export default function TelanganaMap({ riskFilter, atms: atmsOverride, interactiveAtms, onSelectAtm, disableDistrictNav }: Props) {
   const navigate = useNavigate();
   const stateGeojson = useStore((s) => s.stateGeojson);
   const districtsGeojson = useStore((s) => s.districtsGeojson);
-  const atms = useStore((s) => s.atms);
+  const allAtms = useStore((s) => s.atms);
+  const atms = atmsOverride ?? allAtms;
 
   const districtStyle: StyleFunction<DistrictFeatureProperties> = (feature) => {
     const props = feature!.properties;
@@ -40,7 +46,7 @@ export default function TelanganaMap({ riskFilter }: Props) {
        <div>${p.atm_total} ATMs · ${p.high_risk_atm_count} high-risk</div>`,
       { sticky: true },
     );
-    layer.on('click', () => navigate(`/gis/districts/${p.district_id}`));
+    if (!disableDistrictNav) layer.on('click', () => navigate(`/gis/districts/${p.district_id}`));
     layer.on('mouseover', () => (layer as Path).setStyle({ weight: 3 }));
     layer.on('mouseout', () => (layer as Path).setStyle({ weight: p.district_highlight ? 2 : 1 }));
   }
@@ -64,7 +70,7 @@ export default function TelanganaMap({ riskFilter }: Props) {
         {districtsGeojson && (
           <GeoJSON key={districtsKey} data={districtsGeojson} style={districtStyle} onEachFeature={onEachDistrict} />
         )}
-        <AtmDotLayer atms={atms} interactive={false} />
+        <AtmDotLayer atms={atms} interactive={interactiveAtms ?? false} onSelect={onSelectAtm} />
         <ResizeFix />
       </MapContainer>
       <MapLegend />

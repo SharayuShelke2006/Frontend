@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import Header from '@/components/layout/Header';
 import Sidebar from '@/components/layout/Sidebar';
@@ -24,6 +24,10 @@ import CitizenHome from '@/pages/citizen/CitizenHome';
 import CitizenComplaint from '@/pages/citizen/CitizenComplaint';
 import CitizenTrack from '@/pages/citizen/CitizenTrack';
 import RoleSelect from '@/pages/RoleSelect';
+import BankDirectory from '@/pages/BankDirectory';
+import BankDetail from '@/pages/BankDetail';
+import CoordinatorDirectory from '@/pages/CoordinatorDirectory';
+import CoordinatorDetail from '@/pages/CoordinatorDetail';
 
 const OPS_ROLES = ['LEA', 'I4C', 'BANK'] as const;
 
@@ -31,6 +35,8 @@ function Shell() {
   const role = useStore((s) => s.role);
   const mainRef = useRef<HTMLElement>(null);
   const [mainScrolled, setMainScrolled] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const main = mainRef.current;
@@ -42,12 +48,16 @@ function Shell() {
     return () => main.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
+
   return (
     <IntelligenceDrawerProvider>
       <div className="flex h-screen flex-col">
-        <Header scrolled={mainScrolled} />
+        <Header scrolled={mainScrolled} onToggleSidebar={() => setSidebarOpen((v) => !v)} />
         <div className="flex min-h-0 flex-1">
-          <Sidebar />
+          <Sidebar mobileOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
           <main ref={mainRef} className="min-h-0 flex-1 overflow-y-auto bg-slate-50">
           <Routes>
             <Route path="/" element={<Navigate to={ROLE_HOME[role]} replace />} />
@@ -160,6 +170,38 @@ function Shell() {
               element={
                 <RoleRoute roles={[...OPS_ROLES]}>
                   <AuditTimeline />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/banks"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <BankDirectory />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/banks/:bankId"
+              element={
+                <RoleRoute roles={[...OPS_ROLES]}>
+                  <BankDetail />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/coordinators"
+              element={
+                <RoleRoute roles={['LEA', 'I4C']}>
+                  <CoordinatorDirectory />
+                </RoleRoute>
+              }
+            />
+            <Route
+              path="/coordinators/:districtId"
+              element={
+                <RoleRoute roles={['LEA', 'I4C']}>
+                  <CoordinatorDetail />
                 </RoleRoute>
               }
             />

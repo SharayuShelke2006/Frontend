@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import DistrictMap from '@/components/map/DistrictMap';
@@ -6,7 +6,13 @@ import RiskBadge from '@/components/shared/RiskBadge';
 import type { Atm } from '@/types/contract';
 import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 
-export default function DistrictDrilldown() {
+interface Props {
+  backTo?: string;
+  backLabel?: string;
+  extraHeader?: ReactNode;
+}
+
+export default function DistrictDrilldown({ backTo = '/gis', backLabel = 'Telangana', extraHeader }: Props) {
   const { districtId } = useParams();
   const { open } = useIntelligenceDrawer();
   const districtsGeojson = useStore((s) => s.districtsGeojson);
@@ -43,8 +49,8 @@ export default function DistrictDrilldown() {
     return (
       <div className="p-6">
         <p className="text-sm text-slate-500">District not found.</p>
-        <Link to="/gis" className="text-accent-600">
-          Back to Telangana overview
+        <Link to={backTo} className="text-accent-600">
+          Back to {backLabel}
         </Link>
       </div>
     );
@@ -58,17 +64,18 @@ export default function DistrictDrilldown() {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-3">
+      <div className="flex flex-col gap-2 border-b border-slate-200 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <div className="text-[11px] text-slate-400">
-            <Link to="/gis" className="hover:underline">
-              Telangana
+            <Link to={backTo} className="hover:underline">
+              {backLabel}
             </Link>{' '}
             / {props.district_name}
           </div>
           <h1 className="text-lg font-bold text-navy-900">{props.district_name} District</h1>
+          {extraHeader}
         </div>
-        <div className="flex items-center gap-4 text-sm">
+        <div className="flex flex-wrap items-center gap-2 text-sm sm:gap-4">
           <RiskBadge level={props.risk_level} score={props.risk_score} />
           <span className="text-slate-500">{props.atm_total} ATMs</span>
           <span className="text-slate-500">{props.high_risk_atm_count} high-risk</span>
@@ -77,8 +84,8 @@ export default function DistrictDrilldown() {
           )}
         </div>
       </div>
-      <div className="flex min-h-0 flex-1">
-        <div className="min-h-0 flex-1">
+      <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
+        <div className="h-64 min-h-0 shrink-0 lg:h-auto lg:flex-1">
           <DistrictMap
             district={districtFeature}
             areas={districtAreas}
@@ -87,7 +94,7 @@ export default function DistrictDrilldown() {
             onSelectAtm={handleSelectAtm}
           />
         </div>
-        <div className="w-80 shrink-0 overflow-y-auto border-l border-slate-200 bg-white">
+        <div className="w-full min-h-0 flex-1 overflow-y-auto border-t border-slate-200 bg-white lg:w-80 lg:flex-none lg:border-l lg:border-t-0">
           {districtAreas.length > 0 && (
             <>
               <div className="border-b border-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">

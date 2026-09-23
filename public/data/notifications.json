@@ -1,29 +1,5 @@
 [
   {
-    "notification_id": "NOTIF-0002",
-    "recipient_role": "I4C",
-    "recipient_id": "I4C-TG-01",
-    "created_at": "2026-09-10T13:37:08+05:30",
-    "read": true,
-    "category": "ACKNOWLEDGEMENT",
-    "title": "Alert acknowledged",
-    "body": "Hyderabad LEA unit acknowledged alert AL-20482.",
-    "related_alert_id": "AL-20482",
-    "related_case_id": "C-10482"
-  },
-  {
-    "notification_id": "NOTIF-0004",
-    "recipient_role": "I4C",
-    "recipient_id": "I4C-TG-01",
-    "created_at": "2026-09-07T13:34:19+05:30",
-    "read": true,
-    "category": "ACKNOWLEDGEMENT",
-    "title": "Alert acknowledged",
-    "body": "Wanaparthy LEA unit acknowledged alert AL-20486.",
-    "related_alert_id": "AL-20486",
-    "related_case_id": "C-10486"
-  },
-  {
     "notification_id": "NOTIF-0001",
     "recipient_role": "I4C",
     "recipient_id": "I4C-TG-01",
@@ -36,16 +12,28 @@
     "related_case_id": "C-10481"
   },
   {
-    "notification_id": "NOTIF-0003",
+    "notification_id": "NOTIF-0005",
     "recipient_role": "I4C",
     "recipient_id": "I4C-TG-01",
-    "created_at": "2026-09-06T13:27:27+05:30",
+    "created_at": "2026-09-14T13:24:33+05:30",
     "read": true,
     "category": "ACKNOWLEDGEMENT",
     "title": "Alert acknowledged",
-    "body": "Medchal Malkajgiri LEA unit acknowledged alert AL-20483.",
-    "related_alert_id": "AL-20483",
-    "related_case_id": "C-10483"
+    "body": "Suryapet LEA unit acknowledged alert AL-20488.",
+    "related_alert_id": "AL-20488",
+    "related_case_id": "C-10488"
+  },
+  {
+    "notification_id": "NOTIF-0002",
+    "recipient_role": "I4C",
+    "recipient_id": "I4C-TG-01",
+    "created_at": "2026-09-10T13:37:08+05:30",
+    "read": true,
+    "category": "ACKNOWLEDGEMENT",
+    "title": "Alert acknowledged",
+    "body": "Hyderabad LEA unit acknowledged alert AL-20482.",
+    "related_alert_id": "AL-20482",
+    "related_case_id": "C-10482"
   },
   {
     "notification_id": "NOTIF-0006",
@@ -60,15 +48,27 @@
     "related_case_id": "C-10489"
   },
   {
-    "notification_id": "NOTIF-0005",
+    "notification_id": "NOTIF-0004",
     "recipient_role": "I4C",
     "recipient_id": "I4C-TG-01",
-    "created_at": "2026-09-14T13:24:33+05:30",
+    "created_at": "2026-09-07T13:34:19+05:30",
     "read": true,
     "category": "ACKNOWLEDGEMENT",
     "title": "Alert acknowledged",
-    "body": "Suryapet LEA unit acknowledged alert AL-20488.",
-    "related_alert_id": "AL-20488",
-    "related_case_id": "C-10488"
+    "body": "Wanaparthy LEA unit acknowledged alert AL-20486.",
+    "related_alert_id": "AL-20486",
+    "related_case_id": "C-10486"
+  },
+  {
+    "notification_id": "NOTIF-0003",
+    "recipient_role": "I4C",
+    "recipient_id": "I4C-TG-01",
+    "created_at": "2026-09-06T13:27:27+05:30",
+    "read": true,
+    "category": "ACKNOWLEDGEMENT",
+    "title": "Alert acknowledged",
+    "body": "Medchal Malkajgiri LEA unit acknowledged alert AL-20483.",
+    "related_alert_id": "AL-20483",
+    "related_case_id": "C-10483"
   }
 ]

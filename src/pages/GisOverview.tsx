@@ -23,19 +23,19 @@ export default function GisOverview() {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-3">
+      <div className="flex flex-col gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <h1 className="text-lg font-bold text-navy-900">Telangana GIS Overview</h1>
           <p className="text-xs text-slate-500">
             Real district boundaries · click a district to drill down into area and ATM-level risk
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search district…"
-            className="rounded border border-slate-300 px-3 py-1.5 text-sm outline-none focus:border-accent-500"
+            className="min-w-0 flex-1 rounded border border-slate-300 px-3 py-1.5 text-sm outline-none focus:border-accent-500 sm:flex-none"
           />
           <select
             value={riskFilter ?? ''}
@@ -51,11 +51,11 @@ export default function GisOverview() {
           </select>
         </div>
       </div>
-      <div className="flex min-h-0 flex-1">
-        <div className="min-h-0 flex-1">
+      <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
+        <div className="h-64 min-h-0 shrink-0 lg:h-auto lg:flex-1">
           <TelanganaMap riskFilter={riskFilter} />
         </div>
-        <div className="w-80 shrink-0 overflow-y-auto border-l border-slate-200 bg-white">
+        <div className="w-full min-h-0 flex-1 overflow-y-auto border-t border-slate-200 bg-white lg:w-80 lg:flex-none lg:border-l lg:border-t-0">
           <div className="border-b border-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
             Districts ({districts.length})
           </div>

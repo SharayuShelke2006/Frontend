@@ -3,6 +3,7 @@ import { useStore } from '@/state/store';
 import type { Role } from '@/types/contract';
 import { formatIstTime } from '@/lib/selectors';
 import { ROLE_HOME } from './RoleRoute';
+import NirikshakLogo from '@/components/shared/NirikshakLogo';
 
 const ROLE_LABELS: Record<Role, string> = {
   CITIZEN: 'Citizen / Victim',
@@ -11,7 +12,12 @@ const ROLE_LABELS: Record<Role, string> = {
   I4C: 'I4C Coordinator',
 };
 
-export default function Header({ scrolled = false }: { scrolled?: boolean }) {
+interface Props {
+  scrolled?: boolean;
+  onToggleSidebar?: () => void;
+}
+
+export default function Header({ scrolled = false, onToggleSidebar }: Props) {
   const role = useStore((s) => s.role);
   const setRole = useStore((s) => s.setRole);
   const lastUpdated = useStore((s) => s.lastUpdated);
@@ -25,29 +31,37 @@ export default function Header({ scrolled = false }: { scrolled?: boolean }) {
   }
 
   return (
-    <header className={`motion-navbar sticky top-0 z-50 flex h-16 shrink-0 items-center justify-between border-b border-slate-200 bg-navy-950 px-6 text-white ${scrolled ? 'is-scrolled' : ''}`}>
-      <div className="flex items-center gap-3">
-        <Link to="/" className="motion-interactive flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded bg-accent-600 text-sm font-bold tracking-tight">
-            N
-          </div>
-          <div className="leading-tight">
-            <div className="text-[15px] font-bold tracking-wide">NIRIKSHAK</div>
-            <div className="text-[10px] uppercase tracking-wider text-slate-300">
+    <header className={`motion-navbar sticky top-0 z-50 flex h-16 shrink-0 items-center justify-between border-b border-slate-200 bg-navy-950 px-3 text-white sm:px-6 ${scrolled ? 'is-scrolled' : ''}`}>
+      <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+        {onToggleSidebar && (
+          <button
+            type="button"
+            onClick={onToggleSidebar}
+            className="motion-icon-button rounded p-2 hover:bg-white/10 lg:hidden"
+            aria-label="Toggle navigation"
+          >
+            <MenuIcon />
+          </button>
+        )}
+        <Link to="/" className="motion-interactive flex min-w-0 items-center gap-2">
+          <NirikshakLogo size={36} />
+          <div className="min-w-0 leading-tight">
+            <div className="truncate text-[15px] font-bold tracking-wide">NIRIKSHAK</div>
+            <div className="hidden truncate text-[10px] uppercase tracking-wider text-slate-300 sm:block">
               Predictive Cybercrime Intelligence
             </div>
           </div>
         </Link>
-        <span className="badge border border-emerald-400/40 bg-emerald-400/10 text-emerald-300">
+        <span className="badge hidden border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 md:inline-flex">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> System Online
         </span>
-        <span className="badge border border-amber-400/40 bg-amber-400/10 text-amber-300">
+        <span className="badge hidden border border-amber-400/40 bg-amber-400/10 text-amber-300 md:inline-flex">
           Demo / Simulated Data
         </span>
       </div>
 
-      <div className="flex items-center gap-4 text-sm">
-        <span className="text-slate-300">Last updated {formatIstTime(lastUpdated)} IST</span>
+      <div className="flex items-center gap-2 text-sm sm:gap-4">
+        <span className="hidden text-slate-300 sm:inline">Last updated {formatIstTime(lastUpdated)} IST</span>
         <Link to="/notifications" className="motion-icon-button relative rounded p-2 hover:bg-white/10" aria-label="Notifications">
           <BellIcon />
           {unread > 0 && (
@@ -57,7 +71,7 @@ export default function Header({ scrolled = false }: { scrolled?: boolean }) {
           )}
         </Link>
         <label className="flex items-center gap-2 rounded border border-white/15 bg-white/5 px-2 py-1">
-          <span className="text-[11px] uppercase tracking-wide text-slate-400">Role</span>
+          <span className="hidden text-[11px] uppercase tracking-wide text-slate-400 sm:inline">Role</span>
           <select
             value={role}
             onChange={(e) => handleRoleChange(e.target.value as Role)}
@@ -72,6 +86,14 @@ export default function Header({ scrolled = false }: { scrolled?: boolean }) {
         </label>
       </div>
     </header>
+  );
+}
+
+function MenuIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 

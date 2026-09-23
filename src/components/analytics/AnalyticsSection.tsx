@@ -1,11 +1,8 @@
-import { Fragment, useMemo, useState, type ReactNode } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import {
   Area,
   AreaChart,
   CartesianGrid,
-  Cell,
-  Pie,
-  PieChart,
   ReferenceLine,
   ResponsiveContainer,
   Scatter,
@@ -18,14 +15,20 @@ import {
 import { useStore } from '@/state/store';
 import { RISK_COLORS } from '@/lib/selectors';
 import type { RiskLevel } from '@/types/contract';
-
-const CHART_INK = '#111827';
-const GRID_COLOR = '#e1e0d9';
-const SURFACE = '#fcfcfb';
-const SEQUENTIAL_HUE = '#2a78d6';
-const SERIES_ALERT = '#eb6834';
-const SERIES_GREEN = '#2f8f68';
-const SERIES_RED = '#d84a4a';
+import {
+  CHART_INK,
+  ChartCard,
+  DonutStat,
+  GRID_COLOR,
+  RISK_ORDER,
+  SEQUENTIAL_HUE,
+  SERIES_ALERT,
+  SERIES_GREEN,
+  SERIES_RED,
+  SURFACE,
+  tooltipStyle,
+  type DonutSlice,
+} from './ChartPrimitives';
 
 const crimeTimeBuckets = ['00–03', '03–06', '06–09', '09–12', '12–15', '15–18', '18–21', '21–24'];
 
@@ -116,41 +119,6 @@ const alertSeverityDemoFloor: Record<RiskLevel, number> = {
   CRITICAL: 8,
 };
 
-const RISK_ORDER: RiskLevel[] = ['LOW', 'MEDIUM', 'HIGH', 'CRITICAL'];
-
-function ChartCard({
-  title,
-  subtitle,
-  children,
-  height = 'h-56',
-}: {
-  title: string;
-  subtitle?: string;
-  children: ReactNode;
-  height?: string;
-}) {
-  return (
-    <div className="panel p-4">
-      <h3 className="mb-3 text-xs font-bold uppercase tracking-wide text-gray-950">{title}</h3>
-      {subtitle && <p className="-mt-2 mb-3 text-[11px] text-gray-950">{subtitle}</p>}
-      <div className={`${height} w-full`}>{children}</div>
-    </div>
-  );
-}
-
-function tooltipStyle() {
-  return {
-    contentStyle: {
-      fontSize: 12,
-      borderRadius: 6,
-      border: '1px solid #e1e0d9',
-      boxShadow: '0 1px 6px rgba(15,31,61,0.08)',
-      color: CHART_INK,
-    },
-    cursor: { fill: 'rgba(11,11,11,0.04)' },
-  };
-}
-
 function Heatmap() {
   const [hoveredCell, setHoveredCell] = useState<{ category: string; time: string; count: number } | null>(null);
   const maxCount = 68;
@@ -218,68 +186,6 @@ function SpatialTooltip({ active, payload }: { active?: boolean; payload?: Array
       <div>Linked Transactions: <span className="font-semibold">{point.linkedTransactions}</span></div>
       <div>District: <span className="font-semibold">{point.district}</span></div>
       <div>Bank: <span className="font-semibold">{point.bank}</span></div>
-    </div>
-  );
-}
-
-interface DonutSlice {
-  name: string;
-  value: number;
-  color: string;
-}
-
-function DonutStat({
-  title,
-  data,
-  centerValue,
-  centerLabel,
-}: {
-  title: string;
-  data: DonutSlice[];
-  centerValue: string;
-  centerLabel: string;
-}) {
-  return (
-    <div className="panel p-4">
-      <h3 className="mb-3 text-xs font-bold uppercase tracking-wide text-slate-500">{title}</h3>
-      <div className="flex items-center gap-4">
-        <div className="relative h-40 w-40 shrink-0">
-          <ResponsiveContainer>
-            <PieChart>
-              <Pie
-                data={data}
-                dataKey="value"
-                nameKey="name"
-                innerRadius={52}
-                outerRadius={72}
-                paddingAngle={data.length > 1 ? 2 : 0}
-                stroke={SURFACE}
-                strokeWidth={2}
-              >
-                {data.map((d) => (
-                  <Cell key={d.name} fill={d.color} />
-                ))}
-              </Pie>
-              <Tooltip {...tooltipStyle()} />
-            </PieChart>
-          </ResponsiveContainer>
-          <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-xl font-bold text-navy-900">{centerValue}</span>
-            <span className="text-center text-[9px] leading-tight text-slate-400">{centerLabel}</span>
-          </div>
-        </div>
-        <ul className="flex-1 space-y-2 text-xs">
-          {data.map((d) => (
-            <li key={d.name} className="flex items-center justify-between gap-3">
-              <span className="flex items-center gap-1.5 text-slate-600">
-                <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: d.color }} />
-                {d.name}
-              </span>
-              <span className="font-semibold tabular-nums text-navy-900">{d.value}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 }

@@ -24,13 +24,13 @@ export default function BankQueue() {
   });
 
   return (
-    <div className="mx-auto max-w-5xl p-6">
+    <div className="mx-auto max-w-5xl p-4 sm:p-6">
       <h1 className="mb-1 text-lg font-bold text-navy-900">Bank / FI Response Queue</h1>
       <p className="mb-4 text-xs text-slate-500">
         Predicted cash-out alerts relevant to your institution's accounts and ATMs.
       </p>
 
-      <div className="mb-4 grid grid-cols-3 gap-3">
+      <div className="mb-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
         <KpiCard label="Incoming Alerts" value={bankAlerts.length} />
         <KpiCard label="Pending Acknowledgement" value={pending.length} tone="warning" />
         <KpiCard label="Acknowledged" value={bankAlerts.length - pending.length} tone="good" />

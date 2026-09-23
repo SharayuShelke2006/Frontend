@@ -1,5 +1,165 @@
 [
   {
+    "event_id": "AUD-502005",
+    "timestamp": "2026-09-18T13:30:08+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20487",
+    "summary": "Predicted cash-out alert generated for Nalgonda."
+  },
+  {
+    "event_id": "AUD-501999",
+    "timestamp": "2026-09-18T13:19:59+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20484",
+    "summary": "Predicted cash-out alert generated for Sangareddy / Ward 112 Ramachandrapuram."
+  },
+  {
+    "event_id": "AUD-502011",
+    "timestamp": "2026-09-17T13:30:35+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20490",
+    "summary": "Predicted cash-out alert generated for Vikarabad."
+  },
+  {
+    "event_id": "AUD-501993",
+    "timestamp": "2026-09-16T13:35:50+05:30",
+    "actor_role": "LEA",
+    "actor_display": "Officer 100",
+    "event_type": "ACTION_RECORDED",
+    "entity_type": "ACTION",
+    "entity_id": "ACT-7711",
+    "summary": "Field verification initiated by assigned officer."
+  },
+  {
+    "event_id": "AUD-501992",
+    "timestamp": "2026-09-16T13:29:50+05:30",
+    "actor_role": "LEA",
+    "actor_display": "Ranga Reddy Cybercrime Unit",
+    "event_type": "ALERT_ACKNOWLEDGED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20481",
+    "summary": "Alert acknowledged by assigned LEA unit."
+  },
+  {
+    "event_id": "AUD-501991",
+    "timestamp": "2026-09-16T13:23:50+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20481",
+    "summary": "Predicted cash-out alert generated for Ranga Reddy / Ward 16 Hasthinapuram."
+  },
+  {
+    "event_id": "AUD-502012",
+    "timestamp": "2026-09-15T13:31:01+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20491",
+    "summary": "Predicted cash-out alert generated for Bhadradri Kothagudem."
+  },
+  {
+    "event_id": "AUD-502007",
+    "timestamp": "2026-09-14T13:24:33+05:30",
+    "actor_role": "LEA",
+    "actor_display": "Suryapet Cybercrime Unit",
+    "event_type": "ALERT_ACKNOWLEDGED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20488",
+    "summary": "Alert acknowledged by assigned LEA unit."
+  },
+  {
+    "event_id": "AUD-502006",
+    "timestamp": "2026-09-14T13:18:33+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20488",
+    "summary": "Predicted cash-out alert generated for Suryapet."
+  },
+  {
+    "event_id": "AUD-502000",
+    "timestamp": "2026-09-12T13:22:32+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20485",
+    "summary": "Predicted cash-out alert generated for Jogulamba Gadwal."
+  },
+  {
+    "event_id": "AUD-502013",
+    "timestamp": "2026-09-11T13:25:38+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20492",
+    "summary": "Predicted cash-out alert generated for Medak."
+  },
+  {
+    "event_id": "AUD-501995",
+    "timestamp": "2026-09-10T13:37:08+05:30",
+    "actor_role": "LEA",
+    "actor_display": "Hyderabad Cybercrime Unit",
+    "event_type": "ALERT_ACKNOWLEDGED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20482",
+    "summary": "Alert acknowledged by assigned LEA unit."
+  },
+  {
+    "event_id": "AUD-501994",
+    "timestamp": "2026-09-10T13:31:08+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20482",
+    "summary": "Predicted cash-out alert generated for Hyderabad / Ward 19 Saroornagar."
+  },
+  {
+    "event_id": "AUD-502010",
+    "timestamp": "2026-09-09T13:30:53+05:30",
+    "actor_role": "LEA",
+    "actor_display": "Officer 108",
+    "event_type": "ACTION_RECORDED",
+    "entity_type": "ACTION",
+    "entity_id": "ACT-7714",
+    "summary": "Field verification initiated by assigned officer."
+  },
+  {
+    "event_id": "AUD-502009",
+    "timestamp": "2026-09-09T13:24:53+05:30",
+    "actor_role": "LEA",
+    "actor_display": "Khammam Cybercrime Unit",
+    "event_type": "ALERT_ACKNOWLEDGED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20489",
+    "summary": "Alert acknowledged by assigned LEA unit."
+  },
+  {
+    "event_id": "AUD-502008",
+    "timestamp": "2026-09-09T13:18:53+05:30",
+    "actor_role": "I4C",
+    "actor_display": "System",
+    "event_type": "ALERT_GENERATED",
+    "entity_type": "ALERT",
+    "entity_id": "AL-20489",
+    "summary": "Predicted cash-out alert generated for Khammam."
+  },
+  {
     "event_id": "AUD-502004",
     "timestamp": "2026-09-07T14:58:19+05:30",
     "actor_role": "LEA",
@@ -20,26 +180,6 @@
     "summary": "Field verification initiated by assigned officer."
   },
   {
-    "event_id": "AUD-501995",
-    "timestamp": "2026-09-10T13:37:08+05:30",
-    "actor_role": "LEA",
-    "actor_display": "Hyderabad Cybercrime Unit",
-    "event_type": "ALERT_ACKNOWLEDGED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20482",
-    "summary": "Alert acknowledged by assigned LEA unit."
-  },
-  {
-    "event_id": "AUD-501993",
-    "timestamp": "2026-09-16T13:35:50+05:30",
-    "actor_role": "LEA",
-    "actor_display": "Officer 100",
-    "event_type": "ACTION_RECORDED",
-    "entity_type": "ACTION",
-    "entity_id": "ACT-7711",
-    "summary": "Field verification initiated by assigned officer."
-  },
-  {
     "event_id": "AUD-502002",
     "timestamp": "2026-09-07T13:34:19+05:30",
     "actor_role": "LEA",
@@ -47,76 +187,6 @@
     "event_type": "ALERT_ACKNOWLEDGED",
     "entity_type": "ALERT",
     "entity_id": "AL-20486",
-    "summary": "Alert acknowledged by assigned LEA unit."
-  },
-  {
-    "event_id": "AUD-501998",
-    "timestamp": "2026-09-06T13:33:27+05:30",
-    "actor_role": "LEA",
-    "actor_display": "Officer 102",
-    "event_type": "ACTION_RECORDED",
-    "entity_type": "ACTION",
-    "entity_id": "ACT-7712",
-    "summary": "Field verification initiated by assigned officer."
-  },
-  {
-    "event_id": "AUD-501994",
-    "timestamp": "2026-09-10T13:31:08+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20482",
-    "summary": "Predicted cash-out alert generated for Hyderabad / Ward 19 Saroornagar."
-  },
-  {
-    "event_id": "AUD-502012",
-    "timestamp": "2026-09-15T13:31:01+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20491",
-    "summary": "Predicted cash-out alert generated for Bhadradri Kothagudem."
-  },
-  {
-    "event_id": "AUD-502010",
-    "timestamp": "2026-09-09T13:30:53+05:30",
-    "actor_role": "LEA",
-    "actor_display": "Officer 108",
-    "event_type": "ACTION_RECORDED",
-    "entity_type": "ACTION",
-    "entity_id": "ACT-7714",
-    "summary": "Field verification initiated by assigned officer."
-  },
-  {
-    "event_id": "AUD-502011",
-    "timestamp": "2026-09-17T13:30:35+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20490",
-    "summary": "Predicted cash-out alert generated for Vikarabad."
-  },
-  {
-    "event_id": "AUD-502005",
-    "timestamp": "2026-09-18T13:30:08+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20487",
-    "summary": "Predicted cash-out alert generated for Nalgonda."
-  },
-  {
-    "event_id": "AUD-501992",
-    "timestamp": "2026-09-16T13:29:50+05:30",
-    "actor_role": "LEA",
-    "actor_display": "Ranga Reddy Cybercrime Unit",
-    "event_type": "ALERT_ACKNOWLEDGED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20481",
     "summary": "Alert acknowledged by assigned LEA unit."
   },
   {
@@ -130,6 +200,16 @@
     "summary": "Predicted cash-out alert generated for Wanaparthy."
   },
   {
+    "event_id": "AUD-501998",
+    "timestamp": "2026-09-06T13:33:27+05:30",
+    "actor_role": "LEA",
+    "actor_display": "Officer 102",
+    "event_type": "ACTION_RECORDED",
+    "entity_type": "ACTION",
+    "entity_id": "ACT-7712",
+    "summary": "Field verification initiated by assigned officer."
+  },
+  {
     "event_id": "AUD-501997",
     "timestamp": "2026-09-06T13:27:27+05:30",
     "actor_role": "LEA",
@@ -140,56 +220,6 @@
     "summary": "Alert acknowledged by assigned LEA unit."
   },
   {
-    "event_id": "AUD-502013",
-    "timestamp": "2026-09-11T13:25:38+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20492",
-    "summary": "Predicted cash-out alert generated for Medak."
-  },
-  {
-    "event_id": "AUD-502009",
-    "timestamp": "2026-09-09T13:24:53+05:30",
-    "actor_role": "LEA",
-    "actor_display": "Khammam Cybercrime Unit",
-    "event_type": "ALERT_ACKNOWLEDGED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20489",
-    "summary": "Alert acknowledged by assigned LEA unit."
-  },
-  {
-    "event_id": "AUD-502007",
-    "timestamp": "2026-09-14T13:24:33+05:30",
-    "actor_role": "LEA",
-    "actor_display": "Suryapet Cybercrime Unit",
-    "event_type": "ALERT_ACKNOWLEDGED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20488",
-    "summary": "Alert acknowledged by assigned LEA unit."
-  },
-  {
-    "event_id": "AUD-501991",
-    "timestamp": "2026-09-16T13:23:50+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20481",
-    "summary": "Predicted cash-out alert generated for Ranga Reddy / Ward 16 Hasthinapuram."
-  },
-  {
-    "event_id": "AUD-502000",
-    "timestamp": "2026-09-12T13:22:32+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20485",
-    "summary": "Predicted cash-out alert generated for Jogulamba Gadwal."
-  },
-  {
     "event_id": "AUD-501996",
     "timestamp": "2026-09-06T13:21:27+05:30",
     "actor_role": "I4C",
@@ -198,35 +228,5 @@
     "entity_type": "ALERT",
     "entity_id": "AL-20483",
     "summary": "Predicted cash-out alert generated for Medchal Malkajgiri / Ward 122 Vivekananda Nagar Colony."
-  },
-  {
-    "event_id": "AUD-501999",
-    "timestamp": "2026-09-18T13:19:59+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20484",
-    "summary": "Predicted cash-out alert generated for Sangareddy / Ward 112 Ramachandrapuram."
-  },
-  {
-    "event_id": "AUD-502008",
-    "timestamp": "2026-09-09T13:18:53+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20489",
-    "summary": "Predicted cash-out alert generated for Khammam."
-  },
-  {
-    "event_id": "AUD-502006",
-    "timestamp": "2026-09-14T13:18:33+05:30",
-    "actor_role": "I4C",
-    "actor_display": "System",
-    "event_type": "ALERT_GENERATED",
-    "entity_type": "ALERT",
-    "entity_id": "AL-20488",
-    "summary": "Predicted cash-out alert generated for Suryapet."
   }
 ]

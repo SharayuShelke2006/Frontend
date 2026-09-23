@@ -65,6 +65,44 @@ export function useAreaAtms(areaId: string | undefined) {
   return useStore((s) => (areaId ? s.atms.filter((a) => a.area_id === areaId) : []));
 }
 
+export function useBankAtms(bankId: string | undefined) {
+  return useStore((s) => (bankId ? s.atmsByBankId.get(bankId) ?? [] : []));
+}
+
+export function useBankAlerts(bankId: string | undefined) {
+  return useStore((s) =>
+    bankId ? s.alerts.filter((a) => a.recipients.find((r) => r.type === 'BANK')?.id === bankId) : [],
+  );
+}
+
+export function useBankCases(bankId: string | undefined) {
+  return useStore((s) =>
+    bankId ? s.cases.filter((c) => s.bankNameToId.get(c.known_financial_context.bank_name) === bankId) : [],
+  );
+}
+
+export function useDistrictCases(districtId: string | undefined) {
+  return useStore((s) =>
+    districtId
+      ? s.cases.filter((c) =>
+          (s.predictionsByCase.get(c.case_id) ?? []).some((p) => p.predicted_cashout.district_id === districtId),
+        )
+      : [],
+  );
+}
+
+export function useDistrictAlerts(districtId: string | undefined) {
+  return useStore((s) =>
+    districtId ? s.alerts.filter((a) => s.atmsById.get(a.target.atm_id)?.district_id === districtId) : [],
+  );
+}
+
+export function useDistrictPredictions(districtId: string | undefined) {
+  return useStore((s) =>
+    districtId ? s.predictions.filter((p) => p.predicted_cashout.district_id === districtId) : [],
+  );
+}
+
 export function timeAgo(iso: string): string {
   const diffMs = Date.now() - new Date(iso).getTime();
   const mins = Math.round(diffMs / 60000);

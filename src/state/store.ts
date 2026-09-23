@@ -132,6 +132,8 @@ interface NirikshakState {
   areasGeojson: GeoJSON.FeatureCollection<GeoJSON.Geometry, AreaFeatureProperties> | null;
   atms: Atm[];
   atmsById: Map<string, Atm>;
+  atmsByBankId: Map<string, Atm[]>;
+  bankNameToId: Map<string, string>;
   cases: Case[];
   casesById: Map<string, Case>;
   predictions: Prediction[];
@@ -221,6 +223,8 @@ export const useStore = create<NirikshakState>((set, get) => ({
   areasGeojson: null,
   atms: [],
   atmsById: new Map(),
+  atmsByBankId: new Map(),
+  bankNameToId: new Map(),
   cases: [],
   casesById: new Map(),
   predictions: [],
@@ -294,6 +298,13 @@ export const useStore = create<NirikshakState>((set, get) => ({
         areasGeojson,
         atms,
         atmsById: new Map(atms.map((a) => [a.atm_id, a])),
+        atmsByBankId: atms.reduce((map, a) => {
+          const list = map.get(a.bank_id) ?? [];
+          list.push(a);
+          map.set(a.bank_id, list);
+          return map;
+        }, new Map<string, Atm[]>()),
+        bankNameToId: new Map(atms.map((a) => [a.bank_name, a.bank_id])),
         cases,
         predictions,
         paths,
