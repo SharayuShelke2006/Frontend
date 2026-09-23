@@ -16,7 +16,7 @@ export default function ToastHost() {
   if (!toast) return null;
 
   return (
-    <div className="fixed bottom-5 right-5 z-[2000] w-80 animate-[fadeIn_0.2s_ease-out]">
+    <div className="fixed bottom-5 right-5 z-[2000] w-80 motion-fade-up">
       <div className="panel flex items-start gap-3 border-l-4 border-l-accent-600 p-3 shadow-lg">
         <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-600 text-[11px] font-bold text-white">
           !

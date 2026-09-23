@@ -6,9 +6,11 @@ import RiskBadge from '@/components/shared/RiskBadge';
 import TelanganaMap from '@/components/map/TelanganaMap';
 import AnalyticsSection from '@/components/analytics/AnalyticsSection';
 import { formatIstTime } from '@/lib/selectors';
+import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 
 export default function I4cCommandCenter() {
   const navigate = useNavigate();
+  const { open } = useIntelligenceDrawer();
   const cases = useStore((s) => s.cases);
   const alerts = useStore((s) => s.alerts);
   const audit = useStore((s) => s.audit);
@@ -35,16 +37,16 @@ export default function I4cCommandCenter() {
         type: 'Case',
         id: c.case_id,
         label: `${c.case_id} · ${c.crime_category.replaceAll('_', ' ')}`,
-        go: () => navigate(`/cases/${c.case_id}`),
+        go: () => open({ type: 'case', id: c.case_id }),
       })),
       ...alerts.filter((a) => a.alert_id.toLowerCase().includes(q) || a.target.atm_id.toLowerCase().includes(q)).map((a) => ({
         type: 'Alert',
         id: a.alert_id,
         label: `${a.alert_id} · ${a.target.district}`,
-        go: () => navigate(`/alerts/${a.alert_id}`),
+        go: () => open({ type: 'alert', id: a.alert_id }),
       })),
     ].slice(0, 8);
-  }, [query, cases, alerts, navigate]);
+  }, [query, cases, alerts, open]);
 
   return (
     <div className="p-6">
@@ -96,7 +98,7 @@ export default function I4cCommandCenter() {
               return (
                 <button
                   key={a.alert_id}
-                  onClick={() => navigate(`/alerts/${a.alert_id}`)}
+                  onClick={() => open({ type: 'alert', id: a.alert_id })}
                   className="flex w-full flex-col gap-1 px-4 py-2 text-left hover:bg-slate-50"
                 >
                   <div className="flex items-center justify-between">

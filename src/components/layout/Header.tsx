@@ -11,7 +11,7 @@ const ROLE_LABELS: Record<Role, string> = {
   I4C: 'I4C Coordinator',
 };
 
-export default function Header() {
+export default function Header({ scrolled = false }: { scrolled?: boolean }) {
   const role = useStore((s) => s.role);
   const setRole = useStore((s) => s.setRole);
   const lastUpdated = useStore((s) => s.lastUpdated);
@@ -25,9 +25,9 @@ export default function Header() {
   }
 
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between border-b border-slate-200 bg-navy-950 px-6 text-white">
+    <header className={`motion-navbar sticky top-0 z-50 flex h-16 shrink-0 items-center justify-between border-b border-slate-200 bg-navy-950 px-6 text-white ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="flex items-center gap-3">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="motion-interactive flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded bg-accent-600 text-sm font-bold tracking-tight">
             N
           </div>
@@ -48,7 +48,7 @@ export default function Header() {
 
       <div className="flex items-center gap-4 text-sm">
         <span className="text-slate-300">Last updated {formatIstTime(lastUpdated)} IST</span>
-        <Link to="/notifications" className="relative rounded p-2 hover:bg-white/10" aria-label="Notifications">
+        <Link to="/notifications" className="motion-icon-button relative rounded p-2 hover:bg-white/10" aria-label="Notifications">
           <BellIcon />
           {unread > 0 && (
             <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold">
