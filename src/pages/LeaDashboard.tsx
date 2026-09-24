@@ -1,20 +1,35 @@
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import KpiCard from '@/components/shared/KpiCard';
 import RiskBadge from '@/components/shared/RiskBadge';
 import TelanganaMap from '@/components/map/TelanganaMap';
+import DistrictMap from '@/components/map/DistrictMap';
 import AnalyticsSection from '@/components/analytics/AnalyticsSection';
-import { formatIstTime } from '@/lib/selectors';
+import { formatIstTime, useDistrictAlerts, useDistrictCases, useDistrictPredictions } from '@/lib/selectors';
 import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 
-export default function LeaDashboard() {
+export default function LeaDashboard({ districtId }: { districtId?: string }) {
   const navigate = useNavigate();
   const { open } = useIntelligenceDrawer();
-  const cases = useStore((s) => s.cases);
-  const predictions = useStore((s) => s.predictions);
-  const alerts = useStore((s) => s.alerts);
-  const actions = useStore((s) => s.actions);
+  const allCases = useStore((s) => s.cases);
+  const allPredictions = useStore((s) => s.predictions);
+  const allAlerts = useStore((s) => s.alerts);
+  const allActions = useStore((s) => s.actions);
+  const districtsGeojson = useStore((s) => s.districtsGeojson);
+  const areasGeojson = useStore((s) => s.areasGeojson);
+  const atms = useStore((s) => s.atms);
+  const districtCases = useDistrictCases(districtId);
+  const districtPredictions = useDistrictPredictions(districtId);
+  const districtAlerts = useDistrictAlerts(districtId);
+  const cases = districtId ? districtCases : allCases;
+  const predictions = districtId ? districtPredictions : allPredictions;
+  const alerts = districtId ? districtAlerts : allAlerts;
+  const districtFeature = districtsGeojson?.features.find((f) => f.properties.district_id === districtId);
+  const districtAreas = areasGeojson?.features.filter((f) => f.properties.district_id === districtId) ?? [];
+  const districtAtms = districtId ? atms.filter((atm) => atm.district_id === districtId) : [];
+  const alertIds = new Set(alerts.map((alert) => alert.alert_id));
+  const actions = districtId ? allActions.filter((action) => alertIds.has(action.alert_id)) : allActions;
 
   const activeCases = cases.filter((c) => c.status !== 'RESOLVED' && c.status !== 'CLOSED');
   const highRiskPredictions = predictions.filter((p) => p.risk.level === 'HIGH' || p.risk.level === 'CRITICAL');
@@ -29,7 +44,15 @@ export default function LeaDashboard() {
 
   return (
     <div className="p-6">
-      <h1 className="mb-4 text-lg font-bold text-navy-900">LEA Investigation Dashboard</h1>
+      {districtId && districtFeature && (
+        <div className="mb-4">
+          <div className="text-[11px] text-slate-400">
+            <Link to="/lea-dashboard" className="hover:underline">Telangana</Link> / {districtFeature.properties.district_name}
+          </div>
+          <h1 className="text-lg font-bold text-navy-900">{districtFeature.properties.district_name} District Dashboard</h1>
+        </div>
+      )}
+      {!districtId && <h1 className="mb-4 text-lg font-bold text-navy-900">LEA Investigation Dashboard</h1>}
 
       <div className="mb-4 grid grid-cols-2 gap-3 md:grid-cols-4">
         <KpiCard label="Active Cases" value={activeCases.length} onClick={() => navigate('/cases')} />
@@ -40,7 +63,16 @@ export default function LeaDashboard() {
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         <div className="panel h-[420px] overflow-hidden lg:col-span-2">
-          <TelanganaMap />
+          {districtId && districtFeature ? (
+            <DistrictMap
+              district={districtFeature}
+              areas={districtAreas}
+              atms={districtAtms}
+              onSelectAtm={(atm) => open({ type: 'atm', id: atm.atm_id })}
+            />
+          ) : (
+            <TelanganaMap />
+          )}
         </div>
         <div className="panel flex flex-col">
           <div className="border-b border-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -97,7 +129,7 @@ export default function LeaDashboard() {
         </div>
       </div>
 
-      <AnalyticsSection />
+      <AnalyticsSection districtId={districtId} />
     </div>
   );
 }

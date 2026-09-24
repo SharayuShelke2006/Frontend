@@ -30,7 +30,7 @@ export default function BankDetail() {
     return (
       <div className="p-6">
         <p className="text-sm text-slate-500">Bank not found.</p>
-        <Link to="/banks" className="text-accent-600">
+        <Link to="/banks/directory" className="text-accent-600">
           Back to Bank Directory
         </Link>
       </div>
@@ -44,7 +44,7 @@ export default function BankDetail() {
           <BankBadge bankId={bankId} bankName={bankName} size="md" />
           <div>
             <div className="text-[11px] text-slate-400">
-              <Link to="/banks" className="hover:underline">
+              <Link to="/banks/directory" className="hover:underline">
                 Bank Analytics
               </Link>{' '}
               / {bankName}

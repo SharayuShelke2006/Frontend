@@ -6,7 +6,8 @@ import Sidebar from '@/components/layout/Sidebar';
 import ToastHost from '@/components/layout/ToastHost';
 import { IntelligenceDrawerProvider } from '@/components/shared/IntelligenceDrawer';
 import RoleRoute, { ROLE_HOME } from '@/components/layout/RoleRoute';
-import LeaDashboard from '@/pages/LeaDashboard';
+import LeaDashboardOverview from '@/pages/LeaDashboardOverview';
+import LeaDistrictDashboard from '@/pages/LeaDistrictDashboard';
 import I4cCommandCenter from '@/pages/I4cCommandCenter';
 import BankQueue from '@/pages/BankQueue';
 import GisOverview from '@/pages/GisOverview';
@@ -62,10 +63,19 @@ function Shell() {
           <Routes>
             <Route path="/" element={<Navigate to={ROLE_HOME[role]} replace />} />
             <Route
-              path="/lea"
+              path="/lea-dashboard"
               element={
                 <RoleRoute roles={['LEA']}>
-                  <LeaDashboard />
+                  <LeaDashboardOverview />
+                </RoleRoute>
+              }
+            />
+            <Route path="/lea" element={<Navigate to="/lea-dashboard" replace />} />
+            <Route
+              path="/lea-dashboard/district/:districtId"
+              element={
+                <RoleRoute roles={['LEA']}>
+                  <LeaDistrictDashboard />
                 </RoleRoute>
               }
             />
@@ -174,13 +184,14 @@ function Shell() {
               }
             />
             <Route
-              path="/banks"
+              path="/banks/directory"
               element={
                 <RoleRoute roles={[...OPS_ROLES]}>
                   <BankDirectory />
                 </RoleRoute>
               }
             />
+            <Route path="/banks" element={<Navigate to="/lea-dashboard" replace />} />
             <Route
               path="/banks/:bankId"
               element={

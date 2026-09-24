@@ -9,12 +9,11 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { to: '/lea', label: 'LEA Dashboard', roles: ['LEA'] },
+  { to: '/lea-dashboard', label: 'LEA Dashboard', roles: ['LEA'] },
   { to: '/i4c', label: 'I4C Command Center', roles: ['I4C'] },
   { to: '/bank', label: 'Bank/FI Response Queue', roles: ['BANK'] },
   { to: '/gis', label: 'Telangana GIS', roles: ['LEA', 'I4C'] },
-  { to: '/coordinators', label: 'District Coordinators', roles: ['LEA', 'I4C'] },
-  { to: '/banks', label: 'Bank Analytics', roles: ['LEA', 'I4C', 'BANK'] },
+  { to: '/banks/directory', label: 'Bank Analytics', roles: ['I4C', 'BANK'] },
   { to: '/predictions', label: 'Predictions', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/alerts', label: 'Alerts', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/cases', label: 'Cases', roles: ['LEA', 'I4C'] },

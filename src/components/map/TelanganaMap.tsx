@@ -18,9 +18,10 @@ interface Props {
   interactiveAtms?: boolean;
   onSelectAtm?: (atm: Atm) => void;
   disableDistrictNav?: boolean;
+  districtPath?: (districtId: string) => string;
 }
 
-export default function TelanganaMap({ riskFilter, atms: atmsOverride, interactiveAtms, onSelectAtm, disableDistrictNav }: Props) {
+export default function TelanganaMap({ riskFilter, atms: atmsOverride, interactiveAtms, onSelectAtm, disableDistrictNav, districtPath }: Props) {
   const navigate = useNavigate();
   const stateGeojson = useStore((s) => s.stateGeojson);
   const districtsGeojson = useStore((s) => s.districtsGeojson);
@@ -46,7 +47,7 @@ export default function TelanganaMap({ riskFilter, atms: atmsOverride, interacti
        <div>${p.atm_total} ATMs · ${p.high_risk_atm_count} high-risk</div>`,
       { sticky: true },
     );
-    if (!disableDistrictNav) layer.on('click', () => navigate(`/gis/districts/${p.district_id}`));
+    if (!disableDistrictNav) layer.on('click', () => navigate(districtPath?.(p.district_id) ?? `/gis/districts/${p.district_id}`));
     layer.on('mouseover', () => (layer as Path).setStyle({ weight: 3 }));
     layer.on('mouseout', () => (layer as Path).setStyle({ weight: p.district_highlight ? 2 : 1 }));
   }

@@ -119,9 +119,11 @@ const alertSeverityDemoFloor: Record<RiskLevel, number> = {
   CRITICAL: 8,
 };
 
-function Heatmap() {
+type PatternRow = { category: string; values: number[] };
+
+function Heatmap({ data }: { data: PatternRow[] }) {
   const [hoveredCell, setHoveredCell] = useState<{ category: string; time: string; count: number } | null>(null);
-  const maxCount = 68;
+  const maxCount = Math.max(...data.flatMap((row) => row.values));
 
   return (
     <div className="relative h-full overflow-x-auto">
@@ -129,7 +131,7 @@ function Heatmap() {
         <div className="grid grid-cols-[minmax(112px,1.35fr)_repeat(8,minmax(42px,1fr))] gap-1 text-[9px] text-gray-950">
           <div />
           {crimeTimeBuckets.map((time) => <div key={time} className="text-center font-semibold">{time}</div>)}
-          {cybercrimePatternData.map((row) => (
+          {data.map((row) => (
             <Fragment key={row.category}>
               <div className="flex items-center pr-1 text-[10px] font-medium leading-tight">{row.category}</div>
               {row.values.map((count, index) => {
@@ -195,9 +197,41 @@ export default function AnalyticsSection({ districtId }: { districtId?: string }
   const allAlerts = useStore((s) => s.alerts);
   const districtCases = useDistrictCases(districtId);
   const districtAlerts = useDistrictAlerts(districtId);
+  const district = useStore((s) => s.districtsGeojson?.features.find((feature) => feature.properties.district_id === districtId)?.properties);
   const cases = districtId ? districtCases : allCases;
   const alerts = districtId ? districtAlerts : allAlerts;
   const isScoped = Boolean(districtId);
+  const scopeFactor = district ? 0.65 + district.risk_score * 0.7 : 1;
+  const districtName = district?.district_name;
+
+  const scopedPatternData = useMemo(
+    () => cybercrimePatternData.map((row) => ({
+      ...row,
+      values: row.values.map((value) => Math.max(1, Math.round(value * scopeFactor))),
+    })),
+    [scopeFactor],
+  );
+
+  const scopedForecastData = useMemo(
+    () => forecastRiskSignals.map((signal, index) => ({
+      ...signal,
+      predictedAlerts: Math.min(100, Math.round(signal.predictedAlerts * scopeFactor)),
+      highRiskATMActivity: Math.min(100, Math.round(signal.highRiskATMActivity * scopeFactor)),
+      criticalSignals: Math.min(100, Math.round(signal.criticalSignals * scopeFactor * (index % 3 === 0 ? 1.08 : 1))),
+    })),
+    [scopeFactor],
+  );
+
+  const scopedSpatialData = useMemo(
+    () => financialSpatialData.map((point, index) => ({
+      ...point,
+      distance: Math.round(point.distance * (0.8 + scopeFactor / 3) * 10) / 10,
+      amount: Math.round(point.amount * scopeFactor),
+      district: districtName ?? point.district,
+      transactionId: districtId ? `${districtId}-${String(index + 1).padStart(2, '0')}` : point.transactionId,
+    })),
+    [districtId, districtName, scopeFactor],
+  );
 
   const caseStatusDonut = useMemo<DonutSlice[]>(() => {
     let investigating = 0;
@@ -315,7 +349,7 @@ export default function AnalyticsSection({ districtId }: { districtId?: string }
           <span className="inline-flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: SERIES_RED }} />Critical Risk Signals</span>
         </div>
         <ResponsiveContainer>
-          <AreaChart data={forecastRiskSignals} margin={{ top: 8, right: 12, left: 4, bottom: 22 }}>
+          <AreaChart data={scopedForecastData} margin={{ top: 8, right: 12, left: 4, bottom: 22 }}>
             <CartesianGrid stroke={GRID_COLOR} vertical={false} />
             <XAxis
               dataKey="time"
@@ -384,7 +418,7 @@ export default function AnalyticsSection({ districtId }: { districtId?: string }
           subtitle="Complaint concentration by fraud category and time of day"
           height="h-80"
         >
-          <Heatmap />
+          <Heatmap data={scopedPatternData} />
         </ChartCard>
 
         <ChartCard
@@ -421,7 +455,7 @@ export default function AnalyticsSection({ districtId }: { districtId?: string }
                 <Scatter
                   key={category}
                   name={category}
-                  data={financialSpatialData.filter((point) => point.category === category)}
+                  data={scopedSpatialData.filter((point) => point.category === category)}
                   fill={color}
                   fillOpacity={0.7}
                   stroke={color}
