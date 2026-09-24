@@ -26,7 +26,7 @@ const CATEGORIES = [
 ];
 
 const NOTICES = [
-  'NIRIKSHAK prototype launched for SIH 2026 (Problem Statement SIH26184).',
+  'NCRP prototype launched for SIH 2026 (Problem Statement SIH26184).',
   'All complaint, prediction and alert data on this portal is simulated for demonstration.',
   'For real cybercrime complaints, please visit the official NCRP portal: cybercrime.gov.in',
 ];
@@ -37,18 +37,18 @@ export default function CitizenHome() {
   return (
     <PortalChrome>
       {/* Hero */}
-      <div className="mb-6 overflow-hidden rounded-lg bg-gradient-to-r from-navy-950 via-navy-900 to-accent-700 px-8 py-10 text-white">
-        <p className="text-xs font-semibold uppercase tracking-widest text-accent-300">
+      <div className="citizen-hero mb-7 overflow-hidden px-6 py-8 sm:px-10 sm:py-11">
+        <p className="citizen-eyebrow text-xs font-semibold uppercase tracking-widest">
           Predictive Cybercrime Intelligence · Citizen Services
         </p>
-        <h1 className="mt-2 text-3xl font-bold">Report Cybercrime. Get Protected.</h1>
-        <p className="mt-2 max-w-xl text-sm text-slate-300">
+        <h1 className="citizen-hero-title mt-2 text-3xl font-bold">Report Cybercrime. Get Protected.</h1>
+        <p className="citizen-hero-copy mt-3 max-w-xl text-sm">
           File a complaint about financial fraud or other cyber offences. Your complaint feeds directly into an
           intelligence pipeline that helps law enforcement act before funds are withdrawn.
         </p>
         <button
           onClick={() => navigate('/citizen/complaint')}
-          className="mt-5 rounded bg-white px-5 py-2.5 text-sm font-semibold text-navy-900 hover:bg-slate-100"
+          className="citizen-primary-button mt-6 rounded px-5 py-2.5 text-sm font-semibold"
         >
           Register a Complaint →
         </button>
@@ -56,11 +56,11 @@ export default function CitizenHome() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
         <div>
-          <h2 className="mb-3 text-base font-bold text-navy-900">What would you like to report?</h2>
+          <h2 className="citizen-section-title mb-4 text-base font-bold">What would you like to report?</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {CATEGORIES.map((c) => (
-              <div key={c.key} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-card">
-                <div className={`flex h-24 items-center justify-center bg-gradient-to-br ${c.accent} text-white`}>
+              <div key={c.key} className="citizen-service-card overflow-hidden rounded-lg bg-white">
+                <div className={`citizen-service-icon citizen-service-icon--${c.key} flex h-24 items-center justify-center`}>
                   <CategoryIcon iconKey={c.key} />
                 </div>
                 <div className="p-4">
@@ -68,7 +68,7 @@ export default function CitizenHome() {
                   <p className="mt-1 text-xs text-slate-500">{c.desc}</p>
                   <button
                     onClick={() => navigate(`/citizen/complaint?category=${c.category}`)}
-                    className="mt-3 w-full rounded bg-accent-600 py-1.5 text-xs font-semibold text-white hover:bg-accent-500"
+                    className="citizen-primary-button mt-4 w-full rounded py-2 text-xs font-semibold"
                   >
                     Register a Complaint
                   </button>
@@ -77,20 +77,20 @@ export default function CitizenHome() {
             ))}
           </div>
 
-          <div className="mt-6 rounded-lg border border-slate-200 bg-white p-5">
+          <div className="citizen-track-panel mt-6 rounded-lg bg-white p-5">
             <h2 className="mb-2 text-sm font-bold text-navy-900">Already filed a complaint?</h2>
             <p className="mb-3 text-xs text-slate-500">Track its status using your Complaint ID.</p>
             <button
               onClick={() => navigate('/citizen/track')}
-              className="rounded border border-accent-600 px-4 py-2 text-xs font-semibold text-accent-600 hover:bg-accent-600/5"
+              className="citizen-secondary-button rounded px-4 py-2 text-xs font-semibold"
             >
               Track your Complaint →
             </button>
           </div>
         </div>
 
-        <aside className="h-fit rounded-lg border border-slate-200 bg-white">
-          <div className="border-b border-slate-100 bg-navy-950 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white">
+        <aside className="citizen-news-panel h-fit rounded-lg bg-white">
+          <div className="citizen-news-header px-4 py-3 text-xs font-bold uppercase tracking-wide">
             What's New
           </div>
           <ul className="divide-y divide-slate-100">

@@ -217,3 +217,165 @@ tbody tr:hover {
   background: #cbd5e1;
   border-radius: 4px;
 }
+
+/* Citizen portal styling stays scoped so operations surfaces keep their existing visual system. */
+.citizen-portal {
+  background: #f5f9fc;
+  color: #0b2a4a;
+}
+
+.citizen-utility-bar {
+  background: #eaf4fb;
+  border-bottom: 1px solid #d6e7f2;
+  color: #46657d;
+}
+
+.citizen-utility-link {
+  color: #1468a8;
+  transition: color 0.18s ease;
+}
+
+.citizen-utility-link:hover {
+  color: #0b2a4a;
+  text-decoration: underline;
+}
+
+.citizen-brand-header {
+  background: #ffffff;
+  border-bottom: 1px solid #dfeaf1;
+}
+
+.citizen-wordmark {
+  color: #0b2a4a;
+  letter-spacing: 0.03em;
+}
+
+.citizen-demo-badge {
+  border: 1px solid #b7d9ca;
+  border-radius: 5px;
+  background: #f1faf5;
+  color: #16704d;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.citizen-nav {
+  background: #1468a8;
+  box-shadow: 0 3px 12px rgb(11 42 74 / 0.14);
+}
+
+.citizen-nav-link,
+.citizen-nav-disabled {
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.citizen-nav-link:hover,
+.citizen-nav-link.is-active {
+  background: #0b568d;
+}
+
+.citizen-nav-link.is-active {
+  box-shadow: inset 0 -3px 0 #79c99c;
+}
+
+.citizen-nav-disabled {
+  color: rgb(255 255 255 / 0.58);
+}
+
+.citizen-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #cfe3ef;
+  border-radius: 12px;
+  background: linear-gradient(115deg, #ffffff 0%, #f3f9fd 64%, #e8f5ee 100%);
+  box-shadow: 0 16px 35px -25px rgb(11 42 74 / 0.38);
+}
+
+.citizen-eyebrow {
+  color: #138a5b;
+}
+
+.citizen-hero-title,
+.citizen-section-title {
+  color: #0b2a4a;
+}
+
+.citizen-hero-copy {
+  color: #526d81;
+  line-height: 1.7;
+}
+
+.citizen-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1468a8;
+  color: #ffffff;
+  box-shadow: 0 5px 12px -8px rgb(11 42 74 / 0.7);
+  transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.citizen-primary-button:hover {
+  background: #0b568d;
+  box-shadow: 0 8px 16px -9px rgb(11 42 74 / 0.8);
+  transform: translateY(-1px);
+}
+
+.citizen-service-card,
+.citizen-track-panel,
+.citizen-news-panel {
+  border: 1px solid #d9e6ee;
+  box-shadow: 0 10px 25px -22px rgb(11 42 74 / 0.7);
+}
+
+.citizen-service-card {
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.citizen-service-card:hover {
+  border-color: #8fc5de;
+  box-shadow: 0 16px 26px -19px rgb(11 42 74 / 0.5);
+  transform: translateY(-3px);
+}
+
+.citizen-service-icon {
+  color: #ffffff;
+}
+
+.citizen-service-icon--women-children {
+  background: #b85a6a;
+}
+
+.citizen-service-icon--financial-fraud {
+  background: #1468a8;
+}
+
+.citizen-service-icon--other {
+  background: #138a5b;
+}
+
+.citizen-secondary-button {
+  border: 1px solid #1468a8;
+  color: #1468a8;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.citizen-secondary-button:hover {
+  background: #eaf4fb;
+  color: #0b2a4a;
+}
+
+.citizen-news-header {
+  border-bottom: 1px solid #cfe3ef;
+  background: #eaf4fb;
+  color: #0b568d;
+}
+
+.citizen-portal .panel {
+  border-color: #d9e6ee;
+  box-shadow: 0 10px 25px -22px rgb(11 42 74 / 0.7);
+}
