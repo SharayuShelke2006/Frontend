@@ -108,7 +108,7 @@ function IntelligenceDrawer({ target, onClose }: { target: DrawerTarget | null; 
             </p>
             <h2 className="mt-1 text-lg font-bold text-navy-900">{title}</h2>
             <p className="mt-1 text-xs text-slate-500">
-              {isPureAtm ? 'AI-powered insights · Simulated data · Human decision support' : 'Demo / simulated data · human decision support'}
+              {isPureAtm ? 'AI-powered insights · Human decision support' : 'Human decision support'}
             </p>
           </div>
           <button onClick={onClose} className="rounded p-2 text-lg leading-none text-slate-400 hover:bg-slate-100 hover:text-navy-900" aria-label="Close detail panel">×</button>

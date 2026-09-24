@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { GeoJSON, MapContainer, Polygon, TileLayer, useMap } from 'react-leaflet';
 import * as turf from '@turf/turf';
 import type { Layer, StyleFunction } from 'leaflet';
@@ -6,6 +6,7 @@ import type { Atm } from '@/types/contract';
 import type { AreaFeatureProperties, DistrictFeatureProperties } from '@/lib/data';
 import { RISK_COLORS, RISK_FILL_OPACITY } from '@/lib/selectors';
 import ClusteredAtmLayer from './ClusteredAtmLayer';
+import AreaRiskHeatmap from './AreaRiskHeatmap';
 import MapLegend from './MapLegend';
 import ResizeFix from './ResizeFix';
 
@@ -34,6 +35,7 @@ function FitToDistrict({ geometry }: { geometry: GeoJSON.Geometry }) {
 }
 
 export default function DistrictMap({ district, areas, atms, onSelectArea, onSelectAtm }: Props) {
+  const [heatmapVisible, setHeatmapVisible] = useState(true);
   const areaCollection: GeoJSON.FeatureCollection<GeoJSON.Geometry, AreaFeatureProperties> = useMemo(
     () => ({ type: 'FeatureCollection', features: areas }),
     [areas],
@@ -65,6 +67,16 @@ export default function DistrictMap({ district, areas, atms, onSelectArea, onSel
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
         <FitToDistrict geometry={district.geometry} />
+        <AreaRiskHeatmap
+          areas={areas}
+          fallbackGeometry={district.geometry}
+          fallbackAreaId={district.properties.district_id}
+          fallbackAreaName={`${district.properties.district_name} District`}
+          districtRiskScore={district.properties.risk_score}
+          districtRiskLevel={district.properties.risk_level}
+          atms={atms}
+          visible={heatmapVisible}
+        />
         <Polygon
           positions={polygonToLatLngs(district.geometry)}
           pathOptions={{ color: '#0a1628', weight: 2.5, fillOpacity: 0 }}
@@ -73,6 +85,17 @@ export default function DistrictMap({ district, areas, atms, onSelectArea, onSel
         <ClusteredAtmLayer atms={atms} onSelect={onSelectAtm} />
         <ResizeFix />
       </MapContainer>
+      <div className="panel absolute right-4 top-4 z-[1000] px-3 py-2 text-xs">
+        <label className="flex items-center gap-2 font-medium text-slate-600">
+          <input
+            type="checkbox"
+            checked={heatmapVisible}
+            onChange={(event) => setHeatmapVisible(event.target.checked)}
+            className="accent-accent-600"
+          />
+          Area Risk Heatmap
+        </label>
+      </div>
       <MapLegend title={areas.length > 0 ? 'Area Risk' : 'District Risk'} />
     </div>
   );

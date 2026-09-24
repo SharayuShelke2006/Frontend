@@ -42,9 +42,6 @@ export default function RoleSelect() {
             </button>
           ))}
         </div>
-        <p className="mt-6 text-center text-[11px] uppercase tracking-wider text-slate-500">
-          Demo / Simulated Data — Secure Session Prototype
-        </p>
       </div>
     </div>
   );

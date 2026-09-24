@@ -1,26 +1,60 @@
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useStore } from '@/state/store';
 import KpiCard from '@/components/shared/KpiCard';
 import RiskBadge from '@/components/shared/RiskBadge';
 import TelanganaMap from '@/components/map/TelanganaMap';
+import DistrictMap from '@/components/map/DistrictMap';
 import AnalyticsSection from '@/components/analytics/AnalyticsSection';
-import { formatIstTime } from '@/lib/selectors';
+import {
+  formatIstTime,
+  useBankAlerts,
+  useBankCases,
+  useBankPredictions,
+  useDistrictAlerts,
+  useDistrictCases,
+  useDistrictPredictions,
+} from '@/lib/selectors';
 import { useIntelligenceDrawer } from '@/components/shared/IntelligenceDrawer';
 
-export default function LeaDashboard() {
+interface Props {
+  districtId?: string;
+  bankId?: string;
+}
+
+export default function LeaDashboard({ districtId, bankId }: Props) {
   const navigate = useNavigate();
   const { open } = useIntelligenceDrawer();
-  const cases = useStore((s) => s.cases);
-  const predictions = useStore((s) => s.predictions);
-  const alerts = useStore((s) => s.alerts);
-  const actions = useStore((s) => s.actions);
+  const allCases = useStore((s) => s.cases);
+  const allPredictions = useStore((s) => s.predictions);
+  const allAlerts = useStore((s) => s.alerts);
+  const allActions = useStore((s) => s.actions);
+  const districtsGeojson = useStore((s) => s.districtsGeojson);
+  const areasGeojson = useStore((s) => s.areasGeojson);
+  const atms = useStore((s) => s.atms);
+  const districtCases = useDistrictCases(districtId);
+  const districtPredictions = useDistrictPredictions(districtId);
+  const districtAlerts = useDistrictAlerts(districtId);
+  const bankCases = useBankCases(bankId);
+  const bankPredictions = useBankPredictions(bankId);
+  const bankAlerts = useBankAlerts(bankId);
+  const cases = bankId ? bankCases : districtId ? districtCases : allCases;
+  const predictions = bankId ? bankPredictions : districtId ? districtPredictions : allPredictions;
+  const alerts = bankId ? bankAlerts : districtId ? districtAlerts : allAlerts;
+  const districtFeature = districtsGeojson?.features.find((f) => f.properties.district_id === districtId);
+  const districtAreas = areasGeojson?.features.filter((f) => f.properties.district_id === districtId) ?? [];
+  const districtAtms = districtId ? atms.filter((atm) => atm.district_id === districtId) : [];
+  const bankAtms = bankId ? atms.filter((atm) => atm.bank_id === bankId) : [];
+  const alertIds = new Set(alerts.map((alert) => alert.alert_id));
+  const actions = districtId ? allActions.filter((action) => alertIds.has(action.alert_id)) : allActions;
+  const scopedActions = bankId ? allActions.filter((action) => alertIds.has(action.alert_id)) : actions;
+  const bankName = bankAtms[0]?.bank_name ?? bankId;
 
   const activeCases = cases.filter((c) => c.status !== 'RESOLVED' && c.status !== 'CLOSED');
   const highRiskPredictions = predictions.filter((p) => p.risk.level === 'HIGH' || p.risk.level === 'CRITICAL');
   const activeAlerts = alerts.filter((a) => !['RESOLVED', 'EXPIRED', 'FALSE_POSITIVE'].includes(a.status));
   const pendingActions = alerts.filter((a) => ['ACKNOWLEDGED', 'ASSIGNED'].includes(a.status));
-  const inProgressActions = actions.filter((a) => a.status === 'IN_PROGRESS');
+  const inProgressActions = scopedActions.filter((a) => a.status === 'IN_PROGRESS');
 
   const recentAlerts = useMemo(
     () => [...alerts].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()).slice(0, 6),
@@ -29,7 +63,23 @@ export default function LeaDashboard() {
 
   return (
     <div className="p-6">
-      <h1 className="mb-4 text-lg font-bold text-navy-900">LEA Investigation Dashboard</h1>
+      {bankId && (
+        <div className="mb-4">
+          <div className="text-[11px] text-slate-400">
+            <Link to="/banks/directory" className="hover:underline">Bank Analytics Dashboard</Link> / {bankName}
+          </div>
+          <h1 className="text-lg font-bold text-navy-900">{bankName} Bank Dashboard</h1>
+        </div>
+      )}
+      {districtId && districtFeature && !bankId && (
+        <div className="mb-4">
+          <div className="text-[11px] text-slate-400">
+            <Link to="/lea-dashboard" className="hover:underline">Telangana</Link> / {districtFeature.properties.district_name}
+          </div>
+          <h1 className="text-lg font-bold text-navy-900">{districtFeature.properties.district_name} District Dashboard</h1>
+        </div>
+      )}
+      {!districtId && !bankId && <h1 className="mb-4 text-lg font-bold text-navy-900">LEA Investigation Dashboard</h1>}
 
       <div className="mb-4 grid grid-cols-2 gap-3 md:grid-cols-4">
         <KpiCard label="Active Cases" value={activeCases.length} onClick={() => navigate('/cases')} />
@@ -40,7 +90,18 @@ export default function LeaDashboard() {
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         <div className="panel h-[420px] overflow-hidden lg:col-span-2">
-          <TelanganaMap />
+          {districtId && districtFeature ? (
+            <DistrictMap
+              district={districtFeature}
+              areas={districtAreas}
+              atms={districtAtms}
+              onSelectAtm={(atm) => open({ type: 'atm', id: atm.atm_id })}
+            />
+          ) : bankId ? (
+            <TelanganaMap atms={bankAtms} interactiveAtms onSelectAtm={(atm) => open({ type: 'atm', id: atm.atm_id })} disableDistrictNav />
+          ) : (
+            <TelanganaMap />
+          )}
         </div>
         <div className="panel flex flex-col">
           <div className="border-b border-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -97,7 +158,7 @@ export default function LeaDashboard() {
         </div>
       </div>
 
-      <AnalyticsSection />
+      <AnalyticsSection districtId={districtId} bankId={bankId} />
     </div>
   );
 }

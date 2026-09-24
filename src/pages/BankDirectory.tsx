@@ -36,7 +36,7 @@ export default function BankDirectory() {
 
   return (
     <div className="p-4 sm:p-6">
-      <h1 className="mb-1 text-lg font-bold text-navy-900">Bank / FI Analytics</h1>
+      <h1 className="mb-1 text-lg font-bold text-navy-900">Bank Analytics Dashboard</h1>
       <p className="mb-4 text-xs text-slate-500">
         All {banks.length} banks and financial institutions with ATM footprint in Telangana. Select one for detailed analytics.
       </p>

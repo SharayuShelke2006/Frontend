@@ -4,9 +4,9 @@ import { useStore } from '@/state/store';
 import type { Role } from '@/types/contract';
 
 export const ROLE_HOME: Record<Role, string> = {
-  LEA: '/lea',
+  LEA: '/lea-dashboard',
   I4C: '/i4c',
-  BANK: '/bank',
+  BANK: '/banks/directory',
   CITIZEN: '/citizen',
 };
 
