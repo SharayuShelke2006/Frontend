@@ -50,7 +50,6 @@ export default function PortalChrome({ children }: { children: ReactNode }) {
               Citizen Cybercrime Reporting Portal · SIH 2026 Prototype
             </div>
           </div>
-          <span className="ml-auto badge shrink-0 border border-amber-300 bg-amber-50 text-amber-700">Demo / Simulated Data</span>
         </div>
       </div>
 

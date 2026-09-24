@@ -81,6 +81,14 @@ export function useBankCases(bankId: string | undefined) {
   );
 }
 
+export function useBankPredictions(bankId: string | undefined) {
+  return useStore((s) => {
+    if (!bankId) return [];
+    const bankAtmIds = new Set((s.atmsByBankId.get(bankId) ?? []).map((atm) => atm.atm_id));
+    return s.predictions.filter((prediction) => bankAtmIds.has(prediction.predicted_cashout.atm_id));
+  });
+}
+
 export function useDistrictCases(districtId: string | undefined) {
   return useStore((s) =>
     districtId

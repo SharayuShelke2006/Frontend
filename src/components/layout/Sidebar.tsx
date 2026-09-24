@@ -11,9 +11,9 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { to: '/lea-dashboard', label: 'LEA Dashboard', roles: ['LEA'] },
   { to: '/i4c', label: 'I4C Command Center', roles: ['I4C'] },
-  { to: '/bank', label: 'Bank/FI Response Queue', roles: ['BANK'] },
+  { to: '/banks/directory', label: 'Bank Analytics Dashboard', roles: ['BANK'] },
   { to: '/gis', label: 'Telangana GIS', roles: ['LEA', 'I4C'] },
-  { to: '/banks/directory', label: 'Bank Analytics', roles: ['I4C', 'BANK'] },
+  { to: '/banks/directory', label: 'Bank Analytics Dashboard', roles: ['I4C'] },
   { to: '/predictions', label: 'Predictions', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/alerts', label: 'Alerts', roles: ['LEA', 'I4C', 'BANK'] },
   { to: '/cases', label: 'Cases', roles: ['LEA', 'I4C'] },

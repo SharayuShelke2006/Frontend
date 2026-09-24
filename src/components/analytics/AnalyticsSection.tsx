@@ -13,7 +13,7 @@ import {
   ZAxis,
 } from 'recharts';
 import { useStore } from '@/state/store';
-import { RISK_COLORS, useDistrictAlerts, useDistrictCases } from '@/lib/selectors';
+import { RISK_COLORS, useBankAlerts, useBankCases, useDistrictAlerts, useDistrictCases } from '@/lib/selectors';
 import type { RiskLevel } from '@/types/contract';
 import {
   CHART_INK,
@@ -192,17 +192,25 @@ function SpatialTooltip({ active, payload }: { active?: boolean; payload?: Array
   );
 }
 
-export default function AnalyticsSection({ districtId }: { districtId?: string } = {}) {
+export default function AnalyticsSection({ districtId, bankId }: { districtId?: string; bankId?: string } = {}) {
   const allCases = useStore((s) => s.cases);
   const allAlerts = useStore((s) => s.alerts);
   const districtCases = useDistrictCases(districtId);
   const districtAlerts = useDistrictAlerts(districtId);
+  const bankCases = useBankCases(bankId);
+  const bankAlerts = useBankAlerts(bankId);
   const district = useStore((s) => s.districtsGeojson?.features.find((feature) => feature.properties.district_id === districtId)?.properties);
-  const cases = districtId ? districtCases : allCases;
-  const alerts = districtId ? districtAlerts : allAlerts;
-  const isScoped = Boolean(districtId);
-  const scopeFactor = district ? 0.65 + district.risk_score * 0.7 : 1;
+  const bankAtms = useStore((s) => (bankId ? s.atmsByBankId.get(bankId) ?? [] : []));
+  const cases = bankId ? bankCases : districtId ? districtCases : allCases;
+  const alerts = bankId ? bankAlerts : districtId ? districtAlerts : allAlerts;
+  const isScoped = Boolean(districtId || bankId);
+  const bankRiskScore = bankAtms.length
+    ? bankAtms.reduce((total, atm) => total + atm.risk.risk_score, 0) / bankAtms.length
+    : 0;
+  const scopeFactor = district ? 0.65 + district.risk_score * 0.7 : bankId ? 0.65 + bankRiskScore * 0.7 : 1;
   const districtName = district?.district_name;
+  const bankName = bankAtms[0]?.bank_name ?? bankId;
+  const scopeName = bankName ?? districtName;
 
   const scopedPatternData = useMemo(
     () => cybercrimePatternData.map((row) => ({
@@ -227,10 +235,10 @@ export default function AnalyticsSection({ districtId }: { districtId?: string }
       ...point,
       distance: Math.round(point.distance * (0.8 + scopeFactor / 3) * 10) / 10,
       amount: Math.round(point.amount * scopeFactor),
-      district: districtName ?? point.district,
-      transactionId: districtId ? `${districtId}-${String(index + 1).padStart(2, '0')}` : point.transactionId,
+      district: scopeName ?? point.district,
+      transactionId: districtId || bankId ? `${districtId ?? bankId}-${String(index + 1).padStart(2, '0')}` : point.transactionId,
     })),
-    [districtId, districtName, scopeFactor],
+    [bankId, districtId, scopeName, scopeFactor],
   );
 
   const caseStatusDonut = useMemo<DonutSlice[]>(() => {

@@ -52,12 +52,6 @@ export default function Header({ scrolled = false, onToggleSidebar }: Props) {
             </div>
           </div>
         </Link>
-        <span className="badge hidden border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 md:inline-flex">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> System Online
-        </span>
-        <span className="badge hidden border border-amber-400/40 bg-amber-400/10 text-amber-300 md:inline-flex">
-          Demo / Simulated Data
-        </span>
       </div>
 
       <div className="flex items-center gap-2 text-sm sm:gap-4">
