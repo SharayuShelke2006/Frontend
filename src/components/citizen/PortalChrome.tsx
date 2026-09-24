@@ -30,11 +30,11 @@ export default function PortalChrome({ children }: { children: ReactNode }) {
           <span className="hidden truncate sm:inline">Government of Telangana (Prototype) · Ministry-style Citizen Portal</span>
         </div>
         <div className="hidden items-center gap-3 sm:flex">
-          <span className="text-slate-600">Viewing as: Citizen</span>
+          <span className="font-semibold text-slate-700">Viewing as: Citizen</span>
           <span className="text-slate-300">|</span>
-          <span className="text-slate-600">Switch to:</span>
+          <span className="font-semibold text-slate-700">Switch to:</span>
           {OFFICIAL_ROLES.map((r) => (
-            <button key={r.role} onClick={() => exitToOps(r.role)} className="citizen-utility-link">
+            <button key={r.role} onClick={() => exitToOps(r.role)} className="citizen-utility-link font-semibold">
               {r.label}
             </button>
           ))}
