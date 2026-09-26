@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import { dataApi, type AreaFeatureProperties, type DistrictFeatureProperties, type FlagshipRef } from '@/lib/data';
-import { generateDemoData } from '@/lib/demoData';
 import type {
   ActionRecord,
   Alert,
@@ -274,27 +273,15 @@ export const useStore = create<NirikshakState>((set, get) => ({
         dataApi.flagship(),
       ]);
 
-      const generatedDemo = generateDemoData(
-        districtsGeojson,
-        areasGeojson,
-        atms,
-        fixtureCases,
-        fixturePredictions,
-        fixturePaths,
-        fixtureAlerts,
-        fixtureActions,
-      );
-
       // If another tab already generated live cases/alerts, join that shared
       // state instead of starting back at the static fixtures; otherwise this
       // is the first tab, so publish the fixtures as the starting overlay.
       const overlay = readOverlay();
-      const hasGeneratedDemo = overlay?.cases.some((item) => item.case_id.startsWith('DEMO-C-'));
-      const cases = hasGeneratedDemo ? overlay!.cases : generatedDemo.cases;
-      const predictions = hasGeneratedDemo ? overlay!.predictions : generatedDemo.predictions;
+      const cases = overlay?.cases ?? fixtureCases;
+      const predictions = overlay?.predictions ?? fixturePredictions;
       const paths = overlay?.paths ?? fixturePaths;
-      const alerts = hasGeneratedDemo ? overlay!.alerts : generatedDemo.alerts;
-      const actions = hasGeneratedDemo ? overlay!.actions : generatedDemo.actions;
+      const alerts = overlay?.alerts ?? fixtureAlerts;
+      const actions = overlay?.actions ?? fixtureActions;
       const audit = overlay?.audit ?? fixtureAudit;
       const notifications = overlay?.notifications ?? fixtureNotifications;
       const outcomes = overlay?.outcomes ?? {};
