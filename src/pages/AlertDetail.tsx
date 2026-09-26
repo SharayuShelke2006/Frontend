@@ -35,8 +35,10 @@ export default function AlertDetail() {
 
   return (
     <div className="mx-auto max-w-4xl p-6">
-      <div className="mb-4 text-[11px] text-slate-400">
-        Alert / {alert.alert_id}
+      <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+        <span className="text-slate-700 transition-all duration-200 hover:text-accent-700 hover:scale-[1.03]">Alert</span>
+        <span className="text-base text-slate-400 transition-transform duration-200 hover:translate-x-0.5">&gt;</span>
+        <span className="font-bold text-navy-900 transition-all duration-200 hover:text-accent-700 hover:scale-[1.02]">{alert.alert_id}</span>
       </div>
 
       <div className="mb-4 flex items-start justify-between">
