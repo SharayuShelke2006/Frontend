@@ -21,11 +21,21 @@ export default function AtmDetail() {
     <div className="flex h-full flex-col">
       <div className="flex flex-col gap-2 border-b border-slate-200 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
-          <div className="text-[11px] text-slate-400">
-            <Link to={`/gis/districts/${atm.district_id}`} className="hover:underline">
+          <div className="inline-flex flex-wrap items-center gap-2 text-sm font-semibold text-slate-500">
+            <Link
+              to={`/gis/districts/${atm.district_id}`}
+              className="text-slate-700 transition-all duration-200 hover:text-accent-700 hover:scale-[1.03]"
+            >
               {atm.district_name}
             </Link>
-            {atm.area_name && <> / {atm.area_name}</>} / {atm.atm_id}
+            {atm.area_name && (
+              <>
+                <span className="text-base text-slate-400 transition-transform duration-200 hover:translate-x-0.5">&gt;</span>
+                <span className="font-medium text-slate-700 transition-all duration-200 hover:text-accent-700 hover:scale-[1.02]">{atm.area_name}</span>
+              </>
+            )}
+            <span className="text-base text-slate-400 transition-transform duration-200 hover:translate-x-0.5">&gt;</span>
+            <span className="font-bold text-navy-900 transition-all duration-200 hover:text-accent-700 hover:scale-[1.02]">{atm.atm_id}</span>
           </div>
           <h1 className="text-lg font-bold text-navy-900">{atm.name}</h1>
         </div>

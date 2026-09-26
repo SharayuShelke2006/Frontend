@@ -14,6 +14,7 @@ import {
 } from 'recharts';
 import { useStore } from '@/state/store';
 import { RISK_COLORS, useBankAlerts, useBankCases, useDistrictAlerts, useDistrictCases } from '@/lib/selectors';
+import { getDemoChartSignals } from '@/lib/demoData';
 import type { RiskLevel } from '@/types/contract';
 import {
   CHART_INK,
@@ -119,6 +120,12 @@ const alertSeverityDemoFloor: Record<RiskLevel, number> = {
   CRITICAL: 8,
 };
 
+const caseStatusDemoFloor = {
+  investigating: 4,
+  actionInitiated: 3,
+  resolved: 2,
+} as const;
+
 type PatternRow = { category: string; values: number[] };
 
 function Heatmap({ data }: { data: PatternRow[] }) {
@@ -211,34 +218,36 @@ export default function AnalyticsSection({ districtId, bankId }: { districtId?: 
   const districtName = district?.district_name;
   const bankName = bankAtms[0]?.bank_name ?? bankId;
   const scopeName = bankName ?? districtName;
+  const chartScopeKey = districtId ?? bankId ?? 'telangana';
+  const demoChartSignals = useMemo(
+    () => getDemoChartSignals(chartScopeKey, scopeFactor),
+    [chartScopeKey, scopeFactor],
+  );
 
   const scopedPatternData = useMemo(
     () => cybercrimePatternData.map((row) => ({
       ...row,
-      values: row.values.map((value) => Math.max(1, Math.round(value * scopeFactor))),
+      values: demoChartSignals.pattern[cybercrimePatternData.indexOf(row)],
     })),
-    [scopeFactor],
+    [demoChartSignals],
   );
 
   const scopedForecastData = useMemo(
     () => forecastRiskSignals.map((signal, index) => ({
       ...signal,
-      predictedAlerts: Math.min(100, Math.round(signal.predictedAlerts * scopeFactor)),
-      highRiskATMActivity: Math.min(100, Math.round(signal.highRiskATMActivity * scopeFactor)),
-      criticalSignals: Math.min(100, Math.round(signal.criticalSignals * scopeFactor * (index % 3 === 0 ? 1.08 : 1))),
+      ...demoChartSignals.forecast[index],
     })),
-    [scopeFactor],
+    [demoChartSignals],
   );
 
   const scopedSpatialData = useMemo(
     () => financialSpatialData.map((point, index) => ({
       ...point,
-      distance: Math.round(point.distance * (0.8 + scopeFactor / 3) * 10) / 10,
-      amount: Math.round(point.amount * scopeFactor),
+      ...demoChartSignals.spatial[index],
       district: scopeName ?? point.district,
       transactionId: districtId || bankId ? `${districtId ?? bankId}-${String(index + 1).padStart(2, '0')}` : point.transactionId,
     })),
-    [bankId, districtId, scopeName, scopeFactor],
+    [bankId, districtId, scopeName, demoChartSignals],
   );
 
   const caseStatusDonut = useMemo<DonutSlice[]>(() => {
@@ -251,23 +260,24 @@ export default function AnalyticsSection({ districtId, bankId }: { districtId?: 
       else investigating++;
     }
     return [
-      { name: 'Under Investigation', value: investigating, color: RISK_COLORS.MEDIUM },
-      { name: 'Action Initiated', value: actionInitiated, color: RISK_COLORS.HIGH },
-      { name: 'Resolved', value: resolved, color: RISK_COLORS.LOW },
+      { name: 'Under Investigation', value: Math.max(investigating, caseStatusDemoFloor.investigating), color: RISK_COLORS.MEDIUM },
+      { name: 'Action Initiated', value: Math.max(actionInitiated, caseStatusDemoFloor.actionInitiated), color: RISK_COLORS.HIGH },
+      { name: 'Resolved', value: Math.max(resolved, caseStatusDemoFloor.resolved), color: RISK_COLORS.LOW },
     ];
   }, [cases]);
 
-  const resolutionRate = cases.length ? Math.round((caseStatusDonut[2].value / cases.length) * 100) : 0;
+  const displayedCaseTotal = caseStatusDonut.reduce((total, slice) => total + slice.value, 0);
+  const resolutionRate = displayedCaseTotal ? Math.round((caseStatusDonut[2].value / displayedCaseTotal) * 100) : 0;
 
   const alertSeverityDonut = useMemo<DonutSlice[]>(() => {
     const counts: Record<RiskLevel, number> = { LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0 };
     for (const a of alerts) counts[a.severity]++;
     return RISK_ORDER.map((level) => ({
       name: level,
-      value: isScoped ? counts[level] : Math.max(counts[level], alertSeverityDemoFloor[level]),
+      value: Math.max(counts[level], alertSeverityDemoFloor[level]),
       color: RISK_COLORS[level],
     }));
-  }, [alerts, isScoped]);
+  }, [alerts]);
 
   const displayedAlertTotal = alertSeverityDonut.reduce((total, slice) => total + slice.value, 0);
   const highRiskAlertPct = displayedAlertTotal
@@ -296,10 +306,10 @@ export default function AnalyticsSection({ districtId, bankId }: { districtId?: 
     }
     return days.map((d, index) => ({
       day: d.label,
-      cases: isScoped ? caseCounts.get(d.key) ?? 0 : Math.max(caseCounts.get(d.key) ?? 0, trendDemoSignals[index].cases),
-      alerts: isScoped ? alertCounts.get(d.key) ?? 0 : Math.max(alertCounts.get(d.key) ?? 0, trendDemoSignals[index].alerts),
+      cases: Math.max(caseCounts.get(d.key) ?? 0, demoChartSignals.trend[index].cases, trendDemoSignals[index].cases, 1),
+      alerts: Math.max(alertCounts.get(d.key) ?? 0, demoChartSignals.trend[index].alerts, trendDemoSignals[index].alerts, 1),
     }));
-  }, [cases, alerts, isScoped]);
+  }, [cases, alerts, demoChartSignals]);
 
   return (
     <div className="mt-4">
@@ -377,7 +387,12 @@ export default function AnalyticsSection({ districtId, bankId }: { districtId?: 
             <Tooltip
               {...tooltipStyle()}
               labelFormatter={(label) => `${label} IST`}
-              formatter={(value, name) => [value, name]}
+              formatter={(value, name, item) => [
+                name === 'Predicted Withdrawal Alerts'
+                  ? `${value} (±${item.payload.uncertainty})`
+                  : value,
+                name,
+              ]}
             />
             <ReferenceLine x="14:00" stroke={SERIES_RED} strokeDasharray="3 3" strokeOpacity={0.45} label={{ value: 'Peak Risk Window', position: 'insideTopRight', fill: CHART_INK, fontSize: 10 }} />
             <Area

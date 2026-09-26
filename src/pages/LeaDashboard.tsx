@@ -65,16 +65,29 @@ export default function LeaDashboard({ districtId, bankId }: Props) {
     <div className="p-6">
       {bankId && (
         <div className="mb-4">
-          <div className="text-[11px] text-slate-400">
-            <Link to="/banks/directory" className="hover:underline">Bank Analytics Dashboard</Link> / {bankName}
+          <div className="mb-2 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+            <Link
+              to="/banks/directory"
+              className="text-slate-700 transition-all duration-200 hover:text-accent-700 hover:scale-[1.03]"
+            >
+              Bank Analytics Dashboard
+            </Link>
+            <span className="text-base text-slate-400 transition-transform duration-200 hover:translate-x-0.5">&gt;</span>
+            <span className="font-bold text-navy-900 transition-all duration-200 hover:text-accent-700 hover:scale-[1.02]">{bankName}</span>
           </div>
           <h1 className="text-lg font-bold text-navy-900">{bankName} Bank Dashboard</h1>
         </div>
       )}
       {districtId && districtFeature && !bankId && (
         <div className="mb-4">
-          <div className="text-[11px] text-slate-400">
-            <Link to="/lea-dashboard" className="hover:underline">Telangana</Link> / {districtFeature.properties.district_name}
+          <div className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+            <Link to="/lea-dashboard" className="text-slate-700 transition-all duration-200 hover:text-accent-700 hover:scale-[1.03]">
+              Telangana
+            </Link>
+            <span className="text-base text-slate-400 transition-transform duration-200 hover:translate-x-0.5">&gt;</span>
+            <span className="font-bold text-navy-900 transition-all duration-200 hover:text-accent-700 hover:scale-[1.02]">
+              {districtFeature.properties.district_name}
+            </span>
           </div>
           <h1 className="text-lg font-bold text-navy-900">{districtFeature.properties.district_name} District Dashboard</h1>
         </div>

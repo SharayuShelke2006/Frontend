@@ -32,8 +32,8 @@ export default function TelanganaMap({ riskFilter, atms: atmsOverride, interacti
     const props = feature!.properties;
     const dimmed = riskFilter && props.risk_level !== riskFilter;
     return {
-      color: props.district_highlight ? '#0a1628' : '#5b7fa6',
-      weight: props.district_highlight ? 2 : 1,
+      color: props.district_highlight ? '#071525' : '#365f7f',
+      weight: props.district_highlight ? 2.2 : 1.2,
       fillColor: RISK_COLORS[props.risk_level as keyof typeof RISK_COLORS],
       fillOpacity: dimmed ? 0.05 : RISK_FILL_OPACITY[props.risk_level as keyof typeof RISK_FILL_OPACITY],
     };

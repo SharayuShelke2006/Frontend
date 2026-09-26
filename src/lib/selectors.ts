@@ -12,10 +12,10 @@ export const RISK_COLORS: Record<RiskLevel, string> = {
 };
 
 export const RISK_FILL_OPACITY: Record<RiskLevel, number> = {
-  LOW: 0.22,
-  MEDIUM: 0.34,
-  HIGH: 0.46,
-  CRITICAL: 0.6,
+  LOW: 0.5,
+  MEDIUM: 0.62,
+  HIGH: 0.74,
+  CRITICAL: 0.88,
 };
 
 export function useAlertBundle(alertId: string | undefined) {

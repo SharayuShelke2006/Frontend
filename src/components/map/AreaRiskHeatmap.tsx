@@ -80,10 +80,10 @@ export default function AreaRiskHeatmap({
     const effectiveRisk = effectiveRiskByArea.get(props.area_id);
     const riskLevel = (effectiveRisk?.riskLevel ?? districtRiskLevel) as keyof typeof RISK_COLORS;
     return {
-      color: '#27445b',
-      weight: 1.2,
+      color: '#1b344b',
+      weight: 1.4,
       fillColor: RISK_COLORS[riskLevel] ?? '#cbd5e1',
-      fillOpacity: Math.min(Math.max(RISK_FILL_OPACITY[riskLevel] ?? 0.45, 0.45), 0.6),
+      fillOpacity: Math.min(Math.max(RISK_FILL_OPACITY[riskLevel] ?? 0.6, 0.6), 0.88),
       interactive: false,
     };
   };
