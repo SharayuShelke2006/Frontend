@@ -307,17 +307,17 @@ export const useStore = create<NirikshakState>((set, get) => ({
       set({
         ready: true,
         stateGeojson,
-        districtsGeojson: generatedDemo.districtsGeojson,
-        areasGeojson: generatedDemo.areasGeojson,
-        atms: generatedDemo.atms,
-        atmsById: new Map(generatedDemo.atms.map((a) => [a.atm_id, a])),
-        atmsByBankId: generatedDemo.atms.reduce((map, a) => {
+        districtsGeojson: districtsGeojson,
+        areasGeojson: areasGeojson,
+        atms: atms,
+        atmsById: new Map(atms.map((a) => [a.atm_id, a])),
+        atmsByBankId: atms.reduce((map, a) => {
           const list = map.get(a.bank_id) ?? [];
           list.push(a);
           map.set(a.bank_id, list);
           return map;
         }, new Map<string, Atm[]>()),
-        bankNameToId: new Map(generatedDemo.atms.map((a) => [a.bank_name, a.bank_id])),
+        bankNameToId: new Map(atms.map((a) => [a.bank_name, a.bank_id])),
         cases,
         predictions,
         paths,
