@@ -116,7 +116,7 @@ The frontend turns the full pipeline into a usable operational surface with maps
 The overall solution is designed around an event-to-intelligence pipeline:
 
 <p align="center">
-  <img src="./docs/architecture.png" alt="NIRIKSHAK system architecture" width="100%" />
+  <img src="./Architecture.png" alt="NIRIKSHAK system architecture" width="100%" />
 </p>
 
 > The architecture connects complaint intake, secure data ingestion, stream processing, transaction and relationship storage, predictive models, feature storage, spatial clustering, model monitoring and the operational intelligence interfaces for LEAs, banks and I4C.
@@ -185,7 +185,7 @@ It supports:
 The dashboard is built so that GIS supports interpretation of predictive intelligence rather than becoming an isolated map application.
 
 <p align="center">
-  <img src="./docs/gis-dashboard.png" alt="NIRIKSHAK Telangana GIS dashboard" width="100%" />
+  <img src="/GIS Dashboard.png" alt="NIRIKSHAK Telangana GIS dashboard" width="100%" />
 </p>
 
 <p align="center">
